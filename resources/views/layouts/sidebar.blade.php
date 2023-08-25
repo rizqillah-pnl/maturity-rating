@@ -14,7 +14,7 @@
                 <i class="bi bi-person-fill" style="font-size: 30px;"></i>
             </div>
             <div class="info">
-                <a href="" class="d-block">Administrator</a>
+                <a href="{{ url('/') }}" class="d-block">Administrator</a>
             </div>
         </div>
 

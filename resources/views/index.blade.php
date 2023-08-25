@@ -39,7 +39,7 @@
                                 <p>Aspek Keuangan</p>
                             </div>
                             <div class="icon">
-                                <i class="far fa-envelope"></i>
+                                <i class="ion ion-clipboard"></i>
                             </div>
                             <a href="{{ url('surat_masuk') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
@@ -67,7 +67,7 @@
                                 <p>Aspek Kapabilitas Internal</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-ios-paper"></i>
+                                <i class="ion ion-clipboard"></i>
                             </div>
                             <a href="{{ url('surat_tugas') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
@@ -81,35 +81,35 @@
                                 <p>Aspek Tata Kelola dan Kepemimpinan</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                                <i class="ion ion-clipboard"></i>
                             </div>
                             <a href="{{ url('users') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
-                        <div class="small-box bg-primary">
+                        <div class="small-box bg-warning">
                             <div class="inner">
                                 <h3>1</h3>
 
                                 <p>Aspek Inovasi</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                                <i class="ion ion-clipboard"></i>
                             </div>
                             <a href="{{ url('users') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
-                        <div class="small-box bg-primary">
+                        <div class="small-box bg-dark">
                             <div class="inner">
                                 <h3>1</h3>
 
                                 <p>Aspek Lingkungan</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                                <i class="ion ion-clipboard"></i>
                             </div>
                             <a href="{{ url('users') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
