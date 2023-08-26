@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Aspek Keuangan</h1>
+                        <h1 class="m-0">Aspek Pelayanan</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Aspek Keuangan</li>
+                            <li class="breadcrumb-item active">Aspek Pelayanan</li>
                         </ol>
                     </div>
                 </div>
@@ -31,10 +31,10 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-keuangan.ke1 />
-                            <x-keuangan.ke2 />
-                            <x-keuangan.ke3 />
-                            <x-keuangan.ke4 />
+                            <x-pelayanan.ke1 />
+                            <x-pelayanan.ke2 />
+                            <x-pelayanan.ke3 />
+                            <x-pelayanan.ke4 />
 
                             <x-button-submit />
                         </form>

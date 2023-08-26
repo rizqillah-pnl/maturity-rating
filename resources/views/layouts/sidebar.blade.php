@@ -35,7 +35,7 @@
                 <li class="nav-item {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'menu-open' : '' }}">
                     <a href="{{ url('keuangan') }}"
                         class="nav-link {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-envelope"></i>
+                        <i class="nav-icon bi bi-clipboard"></i>
                         <p>
                             Aspek Keuangan
                             {{-- <span class="right badge badge-danger">New</span> --}}
@@ -45,7 +45,7 @@
                 <li class="nav-item {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active' : '' }}">
                     <a href="{{ url('pelayanan') }}"
                         class="nav-link  {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-envelope-paper"></i>
+                        <i class="nav-icon bi bi-clipboard"></i>
                         <p>
                             Aspek Pelayanan
                         </p>
@@ -55,7 +55,7 @@
                     class="nav-item {{ str_contains(request()->getRequestUri(), 'kepabilitas_internal') ? 'active' : '' }}">
                     <a href="{{ url('surat_tugas') }}"
                         class="nav-link {{ str_contains(request()->getRequestUri(), 'kepabilitas_internal') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-briefcase"></i>
+                        <i class="nav-icon bi bi-clipboard"></i>
                         <p>
                             Aspek Kapabilitas Internal
                         </p>
