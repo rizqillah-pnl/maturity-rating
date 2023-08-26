@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-light-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
         <img src="{{ asset('logo.png') }}" alt="SISURAT Logo" class="brand-image img-circle">
@@ -11,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <i class="bi bi-person-fill" style="font-size: 30px;"></i>
+                <i class="bi bi-person-fill text-white" style="font-size: 30px;"></i>
             </div>
             <div class="info">
                 <a href="{{ url('/') }}" class="d-block">Administrator</a>
@@ -20,12 +20,12 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item {{ request()->getRequestUri() == '/' ? 'menu-open' : '' }}">
                     <a href="{{ url('/') }}"
-                        class="nav-link {{ request()->getRequestUri() == '/' ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-house-door"></i>
+                        class="nav-link {{ request()->getRequestUri() == '/' ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-house-door text-white"></i>
                         <p>
                             Home
                         </p>
@@ -34,55 +34,59 @@
                 <li class="nav-header">DATA MASTER</li>
                 <li class="nav-item {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'menu-open' : '' }}">
                     <a href="{{ url('keuangan') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard"></i>
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-clipboard text-white"></i>
                         <p>
                             Aspek Keuangan
                             {{-- <span class="right badge badge-danger">New</span> --}}
                         </p>
                     </a>
                 </li>
-                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active' : '' }}">
+                <li
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active text-white' : '' }}">
                     <a href="{{ url('pelayanan') }}"
-                        class="nav-link  {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard"></i>
+                        class="nav-link  {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-clipboard text-white"></i>
                         <p>
                             Aspek Pelayanan
                         </p>
                     </a>
                 </li>
                 <li
-                    class="nav-item {{ str_contains(request()->getRequestUri(), 'kepabilitas_internal') ? 'active' : '' }}">
-                    <a href="{{ url('surat_tugas') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'kepabilitas_internal') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard"></i>
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'kapabilitas_internal') ? 'active text-white' : '' }}">
+                    <a href="{{ url('kapabilitas_internal') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'kapabilitas_internal') ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-clipboard text-white"></i>
                         <p>
                             Aspek Kapabilitas Internal
                         </p>
                     </a>
                 </li>
-                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active' : '' }}">
-                    <a href="{{ url('jenis_surat') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard"></i>
+                <li
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active text-white' : '' }}">
+                    <a href="{{ url('tata_kk') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-clipboard text-white"></i>
                         <p>
                             Aspek Kepemimpinan
                         </p>
                     </a>
                 </li>
-                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active' : '' }}">
-                    <a href="{{ url('jenis_surat') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard"></i>
+                <li
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active text-white' : '' }}">
+                    <a href="{{ url('inovasi') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-clipboard text-white"></i>
                         <p>
                             Aspek Inovasi
                         </p>
                     </a>
                 </li>
-                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active' : '' }}">
-                    <a href="{{ url('jenis_surat') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard"></i>
+                <li
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active text-white' : '' }}">
+                    <a href="{{ url('lingkungan') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active text-white' : '' }}">
+                        <i class="nav-icon bi bi-clipboard text-white"></i>
                         <p>
                             Aspek Lingkungan
                         </p>

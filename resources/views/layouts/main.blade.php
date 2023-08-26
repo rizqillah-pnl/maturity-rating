@@ -65,7 +65,7 @@
     @stack('css-script')
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="sidebar-mini layout-fixed control-sidebar-slide-open layout-navbar-fixed">
     @if (session()->has('success'))
         <script>
             let text = "{{ session()->get('success') }}";

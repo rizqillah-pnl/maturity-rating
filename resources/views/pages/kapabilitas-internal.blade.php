@@ -27,14 +27,14 @@
                             <a href="{{ url('/') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i>
                                 Kembali</a>
                         </div> --}}
-                        <form action="{{ url('pelayanan') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('surat_masuk') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <x-button-submit />
 
-                            <x-pelayanan.1 />
-                            <x-pelayanan.2 />
-                            <x-pelayanan.3 />
-                            <x-pelayanan.4 />
+                            <x-kapabilitas-internal.1 />
+                            <x-kapabilitas-internal.2 />
+                            <x-kapabilitas-internal.3 />
+                            <x-kapabilitas-internal.4 />
 
                             <x-button-submit />
                         </form>

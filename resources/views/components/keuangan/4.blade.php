@@ -8,12 +8,12 @@
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="pendapatan_lra">
-                    KE.4.1 Total Pendapatan (LRA) (1-5) <span class="text-danger">*</span>
+                    KE.4.1 Total Pendapatan (LRA) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pendapatan_lra')is-invalid @enderror"
-                        id="pendapatan_lra" name="pendapatan_lra" min="1" max="5"
-                        placeholder="Masukkan Nilai Total Pendapatan (LRA) (1-5)" required>
+                        id="pendapatan_lra" name="pendapatan_lra" placeholder="Masukkan Nilai Total Pendapatan (LRA)"
+                        required>
                     @error('pendapatan_lra')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -23,12 +23,12 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="total_belanja_lra">
-                    KE.4.2 Total Belanja (LRA) (1-5) <span class="text-danger">*</span>
+                    KE.4.2 Total Belanja (LRA) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_belanja_lra')is-invalid @enderror"
-                        id="total_belanja_lra" name="total_belanja_lra" placeholder="Masukkan Total Belanja (LRA) (1-5)"
-                        min="1" max="5" required>
+                        id="total_belanja_lra" name="total_belanja_lra" placeholder="Masukkan Total Belanja (LRA)"
+                        required>
                     @error('total_belanja_lra')
                         <div class="invalid-feedback">
                             {{ $message }}
