@@ -152,9 +152,8 @@
                         <input class="form-check-input" type="radio" name="indikator_predicatable4"
                             id="indikator_predicatable41" checked>
                         <label class="form-check-label" for="indikator_predicatable41">
-                            Seluruh proses bisnis yang berkaitan dengan tata kelola TI mampu menghasilkan output yang
-                            bersifat standar. Organisasi mampu mengidentifikasi risiko TI secara cepat dan melakukan
-                            audit TI secara berkala.
+                            Organisasi setidaknya melakukan analisis tren dan output yang dihasilkan dalam memberikan
+                            layanan publik berdasarkan efektivitas layanan maupun revenue management.
                         </label>
                     </div>
                 </div>
@@ -163,8 +162,8 @@
                         <input class="form-check-input" type="radio" name="indikator_predicatable4"
                             id="indikator_predicatable42">
                         <label class="form-check-label" for="indikator_predicatable42">
-                            Organisasi memiliki dana investasi TI untuk memastikan kinerja dapat dikelola secara optimal
-                            dan kualitas layanan TI terus meningkat.
+                            Organisasi setidaknya memiliki sistem/aplikasi/ERP dalam merespon keluhan masyarakat yang
+                            terintegrasi dengan dashboard monitoring kinerja organisasi secara keseluruhan.
                         </label>
                     </div>
                 </div>
@@ -173,17 +172,8 @@
                         <input class="form-check-input" type="radio" name="indikator_predicatable4"
                             id="indikator_predicatable43">
                         <label class="form-check-label" for="indikator_predicatable43">
-                            Day-to-day aktivitas operasional telah terintegrasi secara penuh melalui automation tools.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable4"
-                            id="indikator_predicatable43">
-                        <label class="form-check-label" for="indikator_predicatable43">
-                            Organisasi telah menindaklanjuti feedback terkait tata kelola TI berdasarkan hasil audit
-                            kinerja TI.
+                            Organisasi setidaknya memiliki sistem/aplikasi/ERP untuk memantau Key Performance Indicator
+                            pelayanan publik.
                         </label>
                     </div>
                 </div>
@@ -202,8 +192,8 @@
                         <input class="form-check-input" type="radio" name="indikator_optimizing4"
                             id="indikator_optimizing41" checked>
                         <label class="form-check-label" for="indikator_optimizing41">
-                            Organisasi secara aktif mengidentifikasi peluang inovasi dalam manajemen TI untuk mendukung
-                            continuous improvement.
+                            Organisasi setidaknya menanamkan budaya inovasi untuk memastikan layanan publik yang
+                            diberikan kepada masyarakat sesuai dengan tren terkini.
                         </label>
                     </div>
                 </div>
@@ -212,18 +202,18 @@
                         <input class="form-check-input" type="radio" name="indikator_optimizing4"
                             id="indikator_optimizing42">
                         <label class="form-check-label" for="indikator_optimizing42">
-                            Service Governance TI organisasi telah mencakup pengelolaan atas relationship management
-                            pengguna TI antar unit kerja maupun dengan pihak ketiga.
+                            Organisasi mengembangkan sistem/aplikasi/ERP sesuai tren terkini dalam merespon keluhan
+                            masyarakat yang terintegrasi dengan ERP/Customer Relationship Management support.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator_optimizing4"
-                            id="indikator_optimizing42">
-                        <label class="form-check-label" for="indikator_optimizing42">
-                            Organisasi telah melakukan analisis terhadap stakeholder feedback untuk mengidentifikasi
-                            potensi perbaikan kinerja layanan TI.
+                            id="indikator_optimizing43">
+                        <label class="form-check-label" for="indikator_optimizing43">
+                            Organisasi telah memiliki sistem/aplikasi/ERP untuk memantau Key Performance Indicator
+                            pelayanan publik yang terintegrasi dengan sistem pengendalian internal.
                         </label>
                     </div>
                 </div>

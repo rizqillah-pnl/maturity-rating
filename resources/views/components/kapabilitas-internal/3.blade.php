@@ -59,9 +59,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed21" checked>
-                        <label class="form-check-label" for="indikator_managed21">
+                        <input class="form-check-input" type="radio" name="indikator_managed3"
+                            id="indikator_managed31" checked>
+                        <label class="form-check-label" for="indikator_managed31">
                             Organisasi setidaknya telah melakukan manajemen layanan TI secara rutin, di mana organisasi
                             telah memiliki visi dan misi dalam mengelola TI.
                         </label>
@@ -69,9 +69,9 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed22">
-                        <label class="form-check-label" for="indikator_managed22">
+                        <input class="form-check-input" type="radio" name="indikator_managed3"
+                            id="indikator_managed32">
+                        <label class="form-check-label" for="indikator_managed32">
                             Organisasi setidaknya memiliki beberapa/sebagian proses/aktivitas operasional day-to-day
                             yang didukung oleh sistem.
                         </label>
@@ -79,23 +79,23 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed23">
-                        <label class="form-check-label" for="indikator_managed23">
+                        <input class="form-check-input" type="radio" name="indikator_managed3"
+                            id="indikator_managed33">
+                        <label class="form-check-label" for="indikator_managed33">
                             Organisasi setidaknya telah mengidentifikasi proses bisnis yang membutuhkan dukungan TI.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed24">
-                        <label class="form-check-label" for="indikator_managed24">
+                        <input class="form-check-input" type="radio" name="indikator_managed3"
+                            id="indikator_managed34">
+                        <label class="form-check-label" for="indikator_managed34">
                             Sebagian tata kelola TI setidaknya telah dipusatkan pada customer/service focus.
                         </label>
                     </div>
                 </div>
-                @error('indikator_managed2')
+                @error('indikator_managed3')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
