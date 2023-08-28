@@ -20,9 +20,9 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item {{ request()->getRequestUri() == '/' ? 'menu-open' : '' }}">
+                <li class="nav-item {{ request()->getRequestUri() == '/' ? 'active' : '' }}">
                     <a href="{{ url('/') }}"
                         class="nav-link {{ request()->getRequestUri() == '/' ? 'active text-white' : '' }}">
                         <i class="nav-icon bi bi-house-door text-white"></i>
@@ -32,65 +32,160 @@
                     </a>
                 </li>
                 <li class="nav-header">DATA MASTER</li>
-                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'menu-open' : '' }}">
-                    <a href="{{ url('keuangan') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'active text-white' : '' }}">
-                        <i class="nav-icon bi bi-clipboard text-white"></i>
+                <li
+                    class="nav-item {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-bar-chart-steps"></i>
                         <p>
-                            Aspek Keuangan
-                            {{-- <span class="right badge badge-danger">New</span> --}}
+                            DATA MASTER
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                    {{-- , '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan' --}}
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('keuangan') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'keuangan') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Aspek Keuangan
+                                    {{-- <span class="right badge badge-danger">New</span> --}}
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('pelayanan') }}"
+                                class="nav-link  {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Aspek Pelayanan
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('kapabilitas_internal') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'kapabilitas_internal') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Aspek Kapabilitas Intern
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('tata_kk') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Aspek Kepemimpinan
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('inovasi') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Aspek Inovasi
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active' : '' }}">
+                            <a href="{{ url('lingkungan') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Aspek Lingkungan
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li
-                    class="nav-item {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active text-white' : '' }}">
-                    <a href="{{ url('pelayanan') }}"
-                        class="nav-link  {{ str_contains(request()->getRequestUri(), 'pelayanan') ? 'active text-white' : '' }}">
-                        <i class="nav-icon bi bi-clipboard text-white"></i>
+                    class="nav-item {{ in_array(request()->getRequestUri(), ['/hasil_keuangan', '/hasil_pelayanan', '/hasil_kapabilitas_internal', '/hasil_tata_kk', '/hasil_inovasi', '/hasil_lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ in_array(request()->getRequestUri(), ['/hasil_keuangan', '/hasil_pelayanan', '/hasil_kapabilitas_internal', '/hasil_tata_kk', '/hasil_inovasi', '/hasil_lingkungan']) ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-activity"></i>
                         <p>
-                            Aspek Pelayanan
+                            DATA HASIL
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                </li>
-                <li
-                    class="nav-item {{ str_contains(request()->getRequestUri(), 'kapabilitas_internal') ? 'active text-white' : '' }}">
-                    <a href="{{ url('kapabilitas_internal') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'kapabilitas_internal') ? 'active text-white' : '' }}">
-                        <i class="nav-icon bi bi-clipboard text-white"></i>
-                        <p>
-                            Aspek Kapabilitas Internal
-                        </p>
-                    </a>
-                </li>
-                <li
-                    class="nav-item {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active text-white' : '' }}">
-                    <a href="{{ url('tata_kk') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'tata_kk') ? 'active text-white' : '' }}">
-                        <i class="nav-icon bi bi-clipboard text-white"></i>
-                        <p>
-                            Aspek Kepemimpinan
-                        </p>
-                    </a>
-                </li>
-                <li
-                    class="nav-item {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active text-white' : '' }}">
-                    <a href="{{ url('inovasi') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'inovasi') ? 'active text-white' : '' }}">
-                        <i class="nav-icon bi bi-clipboard text-white"></i>
-                        <p>
-                            Aspek Inovasi
-                        </p>
-                    </a>
-                </li>
-                <li
-                    class="nav-item {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active text-white' : '' }}">
-                    <a href="{{ url('lingkungan') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'lingkungan') ? 'active text-white' : '' }}">
-                        <i class="nav-icon bi bi-clipboard text-white"></i>
-                        <p>
-                            Aspek Lingkungan
-                        </p>
-                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'result_maturity') ? 'menu-open' : '' }}">
+                            <a href="{{ url('result_maturity') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'result_maturity') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Result Maturity
+                                    {{-- <span class="right badge badge-danger">New</span> --}}
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_keuangan') ? 'menu-open' : '' }}">
+                            <a href="{{ url('hasil_keuangan') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_keuangan') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Hasil Keuangan
+                                    {{-- <span class="right badge badge-danger">New</span> --}}
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_pelayanan') ? 'active' : '' }}">
+                            <a href="{{ url('hasil_pelayanan') }}"
+                                class="nav-link  {{ str_contains(request()->getRequestUri(), 'hasil_pelayanan') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Hasil Pelayanan
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_kapabilitas_internal') ? 'active' : '' }}">
+                            <a href="{{ url('hasil_kapabilitas_internal') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_kapabilitas_internal') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Hasil Kapabilitas Intern
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_tata_kk') ? 'active' : '' }}">
+                            <a href="{{ url('hasil_tata_kk') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_tata_kk') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Hasil Kepemimpinan
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_inovasi') ? 'active' : '' }}">
+                            <a href="{{ url('hasil_inovasi') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_inovasi') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Hasil Inovasi
+                                </p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_lingkungan') ? 'active' : '' }}">
+                            <a href="{{ url('hasil_lingkungan') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_lingkungan') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard"></i>
+                                <p>
+                                    Hasil Lingkungan
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 {{-- <li class="nav-header">ADMINISTRATOR</li>
                 <li class="nav-item">

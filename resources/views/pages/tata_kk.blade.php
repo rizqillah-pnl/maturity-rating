@@ -23,14 +23,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ url('kapabilitas_internal') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('tata_kk') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <x-button-submit />
 
-                            <x-kapabilitas-internal.1 />
-                            <x-kapabilitas-internal.2 />
-                            <x-kapabilitas-internal.3 />
-                            <x-kapabilitas-internal.4 />
+                            <x-tata_kk.1 />
+                            <x-tata_kk.2 />
+                            <x-tata_kk.3 />
+                            <x-tata_kk.4 />
 
                             <x-button-submit />
                         </form>
