@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AspekMaturitySeeder::class,
             IndikatorMaturitySeeder::class,
+            KriteriaMaturitySeeder::class,
         ]);
     }
 }

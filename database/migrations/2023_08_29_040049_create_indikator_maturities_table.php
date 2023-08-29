@@ -14,8 +14,10 @@ class CreateIndikatorMaturitiesTable extends Migration
     public function up()
     {
         Schema::create('indikator_maturities', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('kode_indikator')->unique();
+            // $table->increments('id');
+            $table->string('kode_indikator')->primary();
+            $table->string('kode_aspek_id');
+            $table->foreign('kode_aspek_id')->on('aspek_maturities')->references('kode_aspek');
             $table->string('nama_indikator');
             $table->timestamps();
         });

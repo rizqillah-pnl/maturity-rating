@@ -14,7 +14,7 @@ class CreateAspekMaturitiesTable extends Migration
     public function up()
     {
         Schema::create('aspek_maturities', function (Blueprint $table) {
-            $table->increments('id');
+            // $table->increments('id');
             $table->string('kode_aspek')->unique();
             $table->string('nama_aspek');
             $table->timestamps();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKomponenHasilsTable extends Migration
+class CreateKriteriaMaturitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateKomponenHasilsTable extends Migration
      */
     public function up()
     {
-        Schema::create('komponen_hasils', function (Blueprint $table) {
-            // $table->increments('id');
+        Schema::create('kriteria_maturities', function (Blueprint $table) {
+            // $table->id();
             $table->string('kode_kriteria')->primary();
-            $table->enum('maturity_level', ['1', '2', '3', '4', '5']);
+            $table->string('kode_indikator_id');
+            $table->foreign('kode_indikator_id')->on('indikator_maturities')->references('kode_indikator');
+            $table->string('maturity_level');
             $table->string('kriteria_indikator');
             $table->string('work_product')->nullable();
             $table->timestamps();
@@ -30,6 +32,6 @@ class CreateKomponenHasilsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('komponen_hasils');
+        Schema::dropIfExists('kriteria_maturities');
     }
 }
