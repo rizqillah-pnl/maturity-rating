@@ -1,34 +1,84 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KI.2 - Proses Bisnis</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir LI.2 - Penggunaan Sumber Daya</h2>
     </div>
     <div id="button-datatable"></div>
     <div class="card-body">
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.1 Indikator Initial <span class="text-danger">*</span>
+                    LI.2.1 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial2"
-                            id="indikator_initial21" checked>
-                        <label class="form-check-label" for="indikator_initial21">
-                            Proses bisnis pada organisasi setidaknya telah dikelola secara ad hoc.
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator211">
+                            Organisasi setidaknya telah memiliki
+                            kesadaran terkait pentingnya efisiensi
+                            penggunaan sumber daya dalam
+                            melakukan kegiatan operasionalnya.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial2"
-                            id="indikator_initial22">
-                        <label class="form-check-label" for="indikator_initial22">
-                            Panduan dalam melaksanakan proses bisnis dan peningkatan kualitas layanan setidaknya
-                            dilakukan secara informal.
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
+                            value="2">
+                        <label class="form-check-label" for="indikator212">
+                            Kegiatan yang bertujuan untuk
+                            efisiensi penggunaan sumber daya
+                            setidaknya telah didefinisikan
+                            meskipun belum terdapat standar
+                            yang baku, serta belum dilakukan
+                            secara berkala (contoh: pelaporan
+                            penggunaan sumber daya dilakukan 1
+                            tahun sekali).
                         </label>
                     </div>
                 </div>
-                @error('indikator_initial2')
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
+                            value="3">
+                        <label class="form-check-label" for="indikator213">
+                            Kegiatan efisiensi penggunaan sumber
+                            daya setidaknya telah
+                            mempertimbangkan isu lingkungan
+                            terkini dalam skala nasional dan
+                            internasional, analisis internal dan
+                            eksternal, serta berbagai riset.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
+                            value="4">
+                        <label class="form-check-label" for="indikator214">
+                            Penyusunan metode pengukuran atas
+                            penggunaan sumber daya sudah
+                            mempertimbangkan seluruh faktor dan
+                            menggunakan standar internasional
+                            dalam penggunaan sumber daya.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
+                            value="5">
+                        <label class="form-check-label" for="indikator215">
+                            Kegiatan efisiensi penggunaan sumber
+                            daya telah memenuhi standar
+                            internasional ISO 14001 terkait sistem
+                            manajemen lingkungan yang juga
+                            mencakup penggunaan sumber daya
+                            untuk mencapai eko-efisiensi.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator21')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -36,29 +86,80 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.2 Indikator Managed <span class="text-danger">*</span>
+                    LI.2.2 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed21" checked>
-                        <label class="form-check-label" for="indikator_managed21">
-                            Organisasi setidaknya memiliki arahan dari manajemen eksekutif, rencana strategis, serta
-                            ketersediaan anggaran untuk menunjang kegiatan operasional.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator221">
+                            Kegiatan yang bertujuan untuk
+                            efisiensi penggunaan sumber daya
+                            setidaknya telah dilakukan secara adhoc, atau setidaknya telah dilakukan
+                            berdasarkan permintaan dari pihak
+                            internal maupun eksternal.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed22">
-                        <label class="form-check-label" for="indikator_managed22">
-                            Organisasi setidaknya telah mengelola layanan dan produk dari pihak ketiga untuk memenuhi
-                            kebutuhan internal maupun eksternal organisasi.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
+                            value="2">
+                        <label class="form-check-label" for="indikator222">
+                            Dokumentasi yang berkaitan dengan
+                            proses efisiensi sumber daya setidaknya telah bersifat formal dan
+                            sudah konsisten.
                         </label>
                     </div>
                 </div>
-                @error('indikator_managed2')
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
+                            value="3">
+                        <label class="form-check-label" for="indikator223">
+                            Standar baku dalam melakukan
+                            kegiatan efisiensi penggunaan sumber
+                            daya setidaknya telah tersedia.
+                            Standar tersebut setidaknya telah
+                            mempertimbangkan seluruh faktor,
+                            mulai dari kebutuhan internal dan
+                            eksternal hingga kebutuhan
+                            dokumentasi.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
+                            value="4">
+                        <label class="form-check-label" for="indikator224">
+                            Standar baku dalam melakukan
+                            kegiatan efisiensi penggunaan sumber
+                            daya setidaknya telah menetapkan
+                            proses penyusunan metode
+                            pengukuran dampak lingkungan atas
+                            penggunaan sumber daya. Proses
+                            penyusunan metode pengukuran
+                            tersebut setidaknya telah
+                            mempertimbangkan penggunaan
+                            standar internasional dalam
+                            penggunaan sumber daya.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
+                            value="5">
+                        <label class="form-check-label" for="indikator225">
+                            Kegiatan efisiensi penggunaan sumber
+                            daya menjadi dasar organisasi dalam mengembangkan action plan untuk
+                            mengatasi isu lingkungan yang
+                            teridentifikasi dari kegiatan tersebut.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator22')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -66,111 +167,70 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.3 Indikator Defined <span class="text-danger">*</span>
+                    LI.2.3 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined2"
-                            id="indikator_defined21" checked>
-                        <label class="form-check-label" for="indikator_defined21">
-                            Seluruh proses bisnis organisasi telah didefinisikan dalam prosedur baku yang dilengkapi
-                            dengan tujuan, input, proses, output, dan process owner.
+                        <input class="form-check-input" type="radio" name="indikator23" id="indikator231" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator231">
+                            Dokumentasi yang berkaitan dengan
+                            kegiatan efisiensi penggunaan sumber
+                            daya setidaknya bersifat informal.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined2"
-                            id="indikator_defined22">
-                        <label class="form-check-label" for="indikator_defined22">
-                            Organisasi setidaknya mampu mengelola barang dan jasa yang diberikan kepada publik. Pada
-                            level ini, organisasi dapat mengelola infrastruktur, persediaan, dan sumber daya lainnya
-                            untuk memastikan layanan yang diberikan kepada masyarakat berkualitas baik.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_defined2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.4 Indikator Predicatable <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable21" checked>
-                        <label class="form-check-label" for="indikator_predicatable21">
-                            Organisasi setidaknya mampu memprediksi output yang dihasilkan untuk selanjutnya digunakan
-                            sebagai basis dalam meningkatkan kinerja, kualitas layanan, cycle time, serta memprediksi
-                            pendapatan organisasi.
+                        <input class="form-check-input" type="radio" name="indikator23" id="indikator232"
+                            value="2">
+                        <label class="form-check-label" for="indikator232">
+                            Identifikasi kebutuhan dari internal
+                            dan eksternal BLU untuk keperluan
+                            pelaksanaan aktivitas terkait efisiensi
+                            penggunaan sumber daya setidaknya
+                            sudah mulai dilakukan.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable22">
-                        <label class="form-check-label" for="indikator_predicatable22">
-                            Organisasi setidaknya memiliki manajemen database, baseline, dan analisis tren output
+                        <input class="form-check-input" type="radio" name="indikator23" id="indikator233"
+                            value="3">
+                        <label class="form-check-label" for="indikator233">
+                            Kegiatan efisiensi penggunaan sumber
+                            daya setidaknya telah dilakukan
+                            secara berkala sesuai dengan standar
+                            baku yang telah ditetapkan.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator23" id="indikator234"
+                            value="4">
+                        <label class="form-check-label" for="indikator234">
+                            Terdapat aktivitas peninjauan dan
+                            pengawasan oleh pejabat berwenang
+                            atas penggunaan sumber daya.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator23" id="indikator235"
+                            value="5">
+                        <label class="form-check-label" for="indikator235">
+                            Hasil dari pengukuran dampak
+                            lingkungan dan action plan yang
+                            disusun terkait penggunaan sumber
+                            daya telah dipertimbangkan dalam
+                            perumusan rencana strategis
                             organisasi.
                         </label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable23">
-                        <label class="form-check-label" for="indikator_predicatable23">
-                            Organisasi setidaknya mengintegrasikan dan meningkatkan efektivitas serta efisiensi proses
-                            bisnis melalui kolaborasi lintas unit.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable24">
-                        <label class="form-check-label" for="indikator_predicatable24">
-                            Organisasi telah mengidentifikasi isu atau potensi risiko penurunan kinerja yang dapat
-                            diukur secara kuantitatif.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_predicatable2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.5 Indikator Optimizing <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing2"
-                            id="indikator_optimizing21" checked>
-                        <label class="form-check-label" for="indikator_optimizing21">
-                            Organisasi setidaknya memiliki improvement dan sustainability planning dalam meningkatkan
-                            kinerja organisasi secara keseluruhan dalam jangka panjang.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing2"
-                            id="indikator_optimizing22">
-                        <label class="form-check-label" for="indikator_optimizing22">
-                            Organisasi telah melakukan analisis terhadap stakeholder feedback untuk mengidentifikasi
-                            potensi perbaikan kinerja layanan proses bisnis organisasi.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_optimizing2')
+                @error('indikator23')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

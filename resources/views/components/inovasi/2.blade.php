@@ -1,146 +1,87 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KI.2 - Proses Bisnis</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir IN.2 - Proses Inovasi</h2>
     </div>
-    <div id="button-datatable"></div>
     <div class="card-body">
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.1 Indikator Initial <span class="text-danger">*</span>
+                    IN.2.1 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial2"
-                            id="indikator_initial21" checked>
-                        <label class="form-check-label" for="indikator_initial21">
-                            Proses bisnis pada organisasi setidaknya telah dikelola secara ad hoc.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial2"
-                            id="indikator_initial22">
-                        <label class="form-check-label" for="indikator_initial22">
-                            Panduan dalam melaksanakan proses bisnis dan peningkatan kualitas layanan setidaknya
-                            dilakukan secara informal.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_initial2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.2 Indikator Managed <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed21" checked>
-                        <label class="form-check-label" for="indikator_managed21">
-                            Organisasi setidaknya memiliki arahan dari manajemen eksekutif, rencana strategis, serta
-                            ketersediaan anggaran untuk menunjang kegiatan operasional.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed22">
-                        <label class="form-check-label" for="indikator_managed22">
-                            Organisasi setidaknya telah mengelola layanan dan produk dari pihak ketiga untuk memenuhi
-                            kebutuhan internal maupun eksternal organisasi.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_managed2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.3 Indikator Defined <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined2"
-                            id="indikator_defined21" checked>
-                        <label class="form-check-label" for="indikator_defined21">
-                            Seluruh proses bisnis organisasi telah didefinisikan dalam prosedur baku yang dilengkapi
-                            dengan tujuan, input, proses, output, dan process owner.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined2"
-                            id="indikator_defined22">
-                        <label class="form-check-label" for="indikator_defined22">
-                            Organisasi setidaknya mampu mengelola barang dan jasa yang diberikan kepada publik. Pada
-                            level ini, organisasi dapat mengelola infrastruktur, persediaan, dan sumber daya lainnya
-                            untuk memastikan layanan yang diberikan kepada masyarakat berkualitas baik.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_defined2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.4 Indikator Predicatable <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable21" checked>
-                        <label class="form-check-label" for="indikator_predicatable21">
-                            Organisasi setidaknya mampu memprediksi output yang dihasilkan untuk selanjutnya digunakan
-                            sebagai basis dalam meningkatkan kinerja, kualitas layanan, cycle time, serta memprediksi
-                            pendapatan organisasi.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable22">
-                        <label class="form-check-label" for="indikator_predicatable22">
-                            Organisasi setidaknya memiliki manajemen database, baseline, dan analisis tren output
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator211">
+                            Organisasi setidaknya telah memiliki
+                            kesadaran terkait pentingnya proses
+                            inovasi dalam mendukung kegiatan
+                            operasional dan kelangsungan bisnis
                             organisasi.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable23">
-                        <label class="form-check-label" for="indikator_predicatable23">
-                            Organisasi setidaknya mengintegrasikan dan meningkatkan efektivitas serta efisiensi proses
-                            bisnis melalui kolaborasi lintas unit.
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
+                            value="2">
+                        <label class="form-check-label" for="indikator212">
+                            Organisasi setidaknya telah melakukan
+                            proses perancangan inovasi secara
+                            rutin/berulang dan informal.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable24">
-                        <label class="form-check-label" for="indikator_predicatable24">
-                            Organisasi telah mengidentifikasi isu atau potensi risiko penurunan kinerja yang dapat
-                            diukur secara kuantitatif.
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
+                            value="3">
+                        <label class="form-check-label" for="indikator213">
+                            Organisasi setidaknya telah
+                            mendefinisikan standar baku dan
+                            prosedur formal dalam melakukan
+                            proses inovasi.
                         </label>
                     </div>
                 </div>
-                @error('indikator_predicatable2')
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
+                            value="4">
+                        <label class="form-check-label" for="indikator214">
+                            Organisasi setidaknya telah
+                            menetapkan struktur/unit/fungsi
+                            pengawas yang bertugas untuk
+                            mengevaluasi dan mengawasi proses
+                            inovasi secara terpusat di organisasi.
+                            Dalam hal ini, struktur/unit/fungsi
+                            pengawas setidaknya telah melakukan
+                            reviu dan evaluasi berkala terhadap
+                            pelaksanaan proses inovasi untuk
+                            memastikan bahwa proses inovasi
+                            sesuai dengan standar baku dan
+                            prosedur yang telah ditetapkan serta Terdapat pengukuran hasil inovasi
+                            yang telah diimplementasikan secara
+                            berkala, termasuk pengukuran atas
+                            ketercapaian/keberhasilan inovasi,
+                            dampak inovasi, dan sebagainya.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
+                            value="5">
+                        <label class="form-check-label" for="indikator215">
+                            Hasil evaluasi atas pelaksanaan proses
+                            inovasi digunakan sebagai dasar untuk
+                            melakukan proses inovasi berikutnya,
+                            sehingga tercipta continuous
+                            improvement.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator21')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -148,29 +89,70 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.5 Indikator Optimizing <span class="text-danger">*</span>
+                    IN.2.2 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing2"
-                            id="indikator_optimizing21" checked>
-                        <label class="form-check-label" for="indikator_optimizing21">
-                            Organisasi setidaknya memiliki improvement dan sustainability planning dalam meningkatkan
-                            kinerja organisasi secara keseluruhan dalam jangka panjang.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator221">
+                            Organisasi setidaknya telah melakukan
+                            proses inovasi secara ad-hoc dan/atau
+                            berdasarkan permintaan dari pihak
+                            manajemen.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing2"
-                            id="indikator_optimizing22">
-                        <label class="form-check-label" for="indikator_optimizing22">
-                            Organisasi telah melakukan analisis terhadap stakeholder feedback untuk mengidentifikasi
-                            potensi perbaikan kinerja layanan proses bisnis organisasi.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
+                            value="2">
+                        <label class="form-check-label" for="indikator222">
+                            Organisasi setidaknya telah melakukan
+                            proses pembuatan inovasi secara rutin
+                            dan informal.
                         </label>
                     </div>
                 </div>
-                @error('indikator_optimizing2')
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
+                            value="3">
+                        <label class="form-check-label" for="indikator223">
+                            Proses inovasi dilakukan secara
+                            terintegrasi dan saling mendukung,
+                            tidak overlapping atau tumpang tindih serta Proses inovasi sudah diterapkan atau
+                            dilaksanakan di seluruh organisasi
+                            secara konsisten sesuai dengan
+                            panduan yang telah ditetapkan.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
+                            value="4">
+                        <label class="form-check-label" for="indikator224">
+                            Proses inovasi dijadikan sebagai Key
+                            Performance Indicator (KPI) pada
+                            unit/bagian di organisasi.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
+                            value="5">
+                        <label class="form-check-label" for="indikator225">
+                            Organisasi memiliki innovation tools
+                            yang mampu mendukung pelaksanaan
+                            proses inovasi, di mana tools ini dapat
+                            digunakan oleh seluruh
+                            unit/tim/individu di organisasi.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator22')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

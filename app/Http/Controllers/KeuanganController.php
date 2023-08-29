@@ -10,4 +10,9 @@ class KeuanganController extends Controller
     {
         return view('pages.keuangan', ['title' => 'Aspek Keuangan']);
     }
+
+    public function store(Request $request)
+    {
+        dd($request);
+    }
 }

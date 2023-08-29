@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KE.2 Efisiensi</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir KE.2 Efisiensi</h2>
     </div>
     <div id="button-datatable"></div>
     <div class="card-body">
@@ -27,6 +27,21 @@
                     <input type="number" class="form-control @error('input_blu')is-invalid @enderror" id="input_blu"
                         name="input_blu" placeholder="Masukkan Input BLU (Total Beban)" required>
                     @error('input_blu')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-12 col-md-4 form-label" for="target_pobo">
+                    Target Pendapatan Operasional terhadap Beban Operasional <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-8">
+                    <input type="number" class="form-control @error('target_pobo')is-invalid @enderror"
+                        id="target_pobo" name="target_pobo"
+                        placeholder="Masukkan Nilai Target Operasional terhadap Beban Operasional" required>
+                    @error('target_pobo')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKeuangansTable extends Migration
+class CreateAspekMaturitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateKeuangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('keuangans', function (Blueprint $table) {
-            $table->id();
-            $table->enum('tipe', ['KE.1', 'KE.2', 'KE.3', 'KE.4']);
-            $table->enum('hasil', ['initial', 'managed', 'defined', 'predicatable', 'optimizing']);
+        Schema::create('aspek_maturities', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('kode_aspek')->unique();
+            $table->string('nama_aspek');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateKeuangansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keuangans');
+        Schema::dropIfExists('aspek_maturities');
     }
 }

@@ -1,53 +1,160 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KI.3 - Teknologi</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir IN.3 - Manajemen Pengetahuan</h2>
     </div>
-    <div id="button-datatable"></div>
     <div class="card-body">
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.3.1 Indikator Initial <span class="text-danger">*</span>
+                    IN.3.1 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial3"
-                            id="indikator_initial31" checked>
-                        <label class="form-check-label" for="indikator_initial31">
-                            Organisasi setidaknya telah melakukan manajemen layanan TI secara ad-hoc.
+                        <input class="form-check-input" type="radio" name="indikator31" id="indikator311" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator311">
+                            Organisasi setidaknya telah memiliki
+                            kesadaran terkait pentingnya
+                            pengelolaan sumber daya
+                            pengetahuan dalam mendukung
+                            kegiatan operasional dan inovasi.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial3"
-                            id="indikator_initial32">
-                        <label class="form-check-label" for="indikator_initial32">
-                            Organisasi setidaknya memiliki satu proses/aktivitas operasional day-to-day yang didukung
-                            oleh sistem.
+                        <input class="form-check-input" type="radio" name="indikator31" id="indikator312"
+                            value="2">
+                        <label class="form-check-label" for="indikator312">
+                            Organisasi setidaknya telah melakukan
+                            pengelolaan sumber daya
+                            pengetahuan secara rutin, di mana
+                            pengetahuan yang diperlukan untuk
+                            melakukan tugas rutin telah
+                            didokumentasikan.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial3"
-                            id="indikator_initial33">
-                        <label class="form-check-label" for="indikator_initial33">
-                            Organisasi setidaknya telah melakukan identifikasi isu TI dan penyelesaiannya secara
+                        <input class="form-check-input" type="radio" name="indikator31" id="indikator313"
+                            value="3">
+                        <label class="form-check-label" for="indikator313">
+                            Organisasi menganggap sumber daya
+                            pengetahuan sebagai informasi yang
+                            ditempatkan dalam konteks tujuan
+                            organisasi, pengetahuan dipelihara
+                            (maintained) sehingga tetap relevan serta Organisasi setidaknya telah memiliki
+                            infrastruktur dasar untuk mendukung pengelolaan sumber daya
+                            pengetahuan.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator31" id="indikator314"
+                            value="4">
+                        <label class="form-check-label" for="indikator314">
+                            Terdapat aktivitas pengawasan
+                            dan/atau evaluasi kegiatan manajemen
+                            pengetahuan, serta pengukuran
+                            tingkat partisipan yang menggunakan
+                            informasi dan pengetahuan yang telah
+                            dikelola.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator31" id="indikator315"
+                            value="5">
+                        <label class="form-check-label" for="indikator315">
+                            Kegiatan pengumpulan, penyimpanan,
+                            dan berbagi pengetahuan pada
+                            organisasi ditinjau dan diperbaiki
+                            secara berkelanjutan, kelemahan dari
+                            proses ini dapat dengan mudah
+                            diidentifikasi dan diperbaiki.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator31')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="row mb-3">
+                <label class="col-12 form-label">
+                    IN.3.2 <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator32" id="indikator321" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator321">
+                            Organisasi setidaknya telah melakukan
+                            pengelolaan sumber daya
+                            pengetahuan secara ad-hoc dan/atau
+                            jika terdapat permintaan dari pihak
+                            manajemen.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator32" id="indikator322"
+                            value="2">
+                        <label class="form-check-label" for="indikator322">
+                            Personel (individu) organisasi
+                            setidaknya telah melakukan pertukaran
+                            informasi/pengetahuan secara
                             informal.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial3"
-                            id="indikator_initial34">
-                        <label class="form-check-label" for="indikator_initial34">
-                            Organisasi setidaknya memiliki tata kelola TI untuk mendukung technical focus.
+                        <input class="form-check-input" type="radio" name="indikator32" id="indikator323"
+                            value="3">
+                        <label class="form-check-label" for="indikator323">
+                            Organisasi setidaknya telah
+                            mendefinisikan standar baku dan
+                            prosedur formal dalam melakukan
+                            manajemen pengetahuan.
                         </label>
                     </div>
                 </div>
-                @error('indikator_initial3')
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator32" id="indikator324"
+                            value="4">
+                        <label class="form-check-label" for="indikator324">
+                            Terdapat aktivitas pengawasan
+                            dan/atau evaluasi terhadap
+                            infrastruktur dari sistem informasi
+                            manajemen pengetahuan.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator32" id="indikator325"
+                            value="5">
+                        <label class="form-check-label" for="indikator325">
+                            Infrastruktur sistem informasi yang
+                            digunakan untuk manajemen
+                            pengetahuan terus ditingkatkan.
+                            Dalam hal ini, sistem manajemen
+                            pengetahuan terintegrasi dengan
+                            sistem informasi sumber daya manusia
+                            (HRIS), sehingga dapat memantau
+                            perkembangan pengetahuan dari
+                            setiap individu.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator32')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -55,177 +162,36 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.3.2 Indikator Managed <span class="text-danger">*</span>
+                    IN.3.3 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed3"
-                            id="indikator_managed31" checked>
-                        <label class="form-check-label" for="indikator_managed31">
-                            Organisasi setidaknya telah melakukan manajemen layanan TI secara rutin, di mana organisasi
-                            telah memiliki visi dan misi dalam mengelola TI.
+                        <input class="form-check-input" type="radio" name="indikator33" id="indikator331" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator331">
+                            Personel (individu) organisasi
+                            setidaknya telah melakukan
+                            penyimpanan dan/atau dokumentasi
+                            pengetahuan/informasi yang dimiliki
+                            pribadi secara ad-hoc.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed3"
-                            id="indikator_managed32">
-                        <label class="form-check-label" for="indikator_managed32">
-                            Organisasi setidaknya memiliki beberapa/sebagian proses/aktivitas operasional day-to-day
-                            yang didukung oleh sistem.
+                        <input class="form-check-input" type="radio" name="indikator33" id="indikator332"
+                            value="3">
+                        <label class="form-check-label" for="indikator332">
+                            Terdapat pelatihan secara berkala
+                            untuk pengetahuan/informasi yang
+                            bersifat mandatory dalam rangka
+                            memastikan seluruh pegawai memiliki
+                            pengetahuan terkini dan sesuai
+                            dengan tugas dan fungsinya.
                         </label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed3"
-                            id="indikator_managed33">
-                        <label class="form-check-label" for="indikator_managed33">
-                            Organisasi setidaknya telah mengidentifikasi proses bisnis yang membutuhkan dukungan TI.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed3"
-                            id="indikator_managed34">
-                        <label class="form-check-label" for="indikator_managed34">
-                            Sebagian tata kelola TI setidaknya telah dipusatkan pada customer/service focus.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_managed3')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.3.3 Indikator Defined <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined3"
-                            id="indikator_defined31" checked>
-                        <label class="form-check-label" for="indikator_defined31">
-                            Seluruh proses bisnis yang berkaitan dengan tata kelola TI telah didefinisikan dalam
-                            prosedur baku yang dilengkapi dengan tujuan, input, proses, output, dan process owner.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined3"
-                            id="indikator_defined32">
-                        <label class="form-check-label" for="indikator_defined32">
-                            Sebagian day-to-day aktivitas operasional yang berhubungan dengan TI dikelola menggunakan
-                            sistem yang terotomatisasi.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined3"
-                            id="indikator_defined33">
-                        <label class="form-check-label" for="indikator_defined33">
-                            Tata kelola TI telah bersifat proaktif, di mana organisasi mampu mengidentifikasi risiko TI,
-                            melakukan investigasi serta recovery plan atas isu TI.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_defined3')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.3.4 Indikator Predicatable <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable3"
-                            id="indikator_predicatable31" checked>
-                        <label class="form-check-label" for="indikator_predicatable31">
-                            Seluruh proses bisnis yang berkaitan dengan tata kelola TI mampu menghasilkan output yang
-                            bersifat standar. Organisasi mampu mengidentifikasi risiko TI secara cepat dan melakukan
-                            audit TI secara berkala.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable3"
-                            id="indikator_predicatable32">
-                        <label class="form-check-label" for="indikator_predicatable32">
-                            Organisasi memiliki dana investasi TI untuk memastikan kinerja dapat dikelola secara optimal
-                            dan kualitas layanan TI terus meningkat.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable3"
-                            id="indikator_predicatable33">
-                        <label class="form-check-label" for="indikator_predicatable33">
-                            Day-to-day aktivitas operasional telah terintegrasi secara penuh melalui automation tools.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable3"
-                            id="indikator_predicatable34">
-                        <label class="form-check-label" for="indikator_predicatable34">
-                            Organisasi telah menindaklanjuti feedback terkait tata kelola TI berdasarkan hasil audit
-                            kinerja TI.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_predicatable3')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.3.5 Indikator Optimizing <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing3"
-                            id="indikator_optimizing31" checked>
-                        <label class="form-check-label" for="indikator_optimizing31">
-                            Organisasi secara aktif mengidentifikasi peluang inovasi dalam manajemen TI untuk mendukung
-                            continuous improvement.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing3"
-                            id="indikator_optimizing32">
-                        <label class="form-check-label" for="indikator_optimizing32">
-                            Service Governance TI organisasi telah mencakup pengelolaan atas relationship management
-                            pengguna TI antar unit kerja maupun dengan pihak ketiga.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing3"
-                            id="indikator_optimizing33">
-                        <label class="form-check-label" for="indikator_optimizing33">
-                            Organisasi telah melakukan analisis terhadap stakeholder feedback untuk mengidentifikasi
-                            potensi perbaikan kinerja layanan TI.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_optimizing3')
+                @error('indikator33')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

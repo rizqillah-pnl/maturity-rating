@@ -34,7 +34,7 @@ class LingkunganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

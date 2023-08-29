@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KE.4 Tingkat Kemandirian
+        <h2 class="card-title" style="font-weight: 600">Formulir KE.4 Tingkat Kemandirian
         </h2>
     </div>
     <div id="button-datatable"></div>
@@ -30,6 +30,21 @@
                         id="total_belanja_lra" name="total_belanja_lra" placeholder="Masukkan Total Belanja (LRA)"
                         required>
                     @error('total_belanja_lra')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-12 col-md-4 form-label" for="target_tingkat_kemandirian">
+                    Target Target Tingkat Kemandirian <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-8">
+                    <input type="number" class="form-control @error('target_tingkat_kemandirian')is-invalid @enderror"
+                        id="target_tingkat_kemandirian" name="target_tingkat_kemandirian"
+                        placeholder="Masukkan Nilai Target Target Tingkat Kemandirian" required>
+                    @error('target_tingkat_kemandirian')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

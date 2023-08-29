@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir PL.4 Tingkat Keberhasilan Pemenuhan Layanan</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir PL.4 Tingkat Keberhasilan Pemenuhan Layanan</h2>
     </div>
     <div id="button-datatable"></div>
     <div class="card-body">

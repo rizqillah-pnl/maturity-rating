@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir PL.1 - Indeks Kepuasan Masyarakat</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir PL.1 - Indeks Kepuasan Masyarakat</h2>
     </div>
     <div id="button-datatable"></div>
     <div class="card-body">

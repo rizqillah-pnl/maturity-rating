@@ -23,14 +23,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ url('tata_kk') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('inovasi') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <x-button-submit />
 
-                            <x-tata_kk.1 />
-                            <x-tata_kk.2 />
-                            <x-tata_kk.3 />
-                            <x-tata_kk.4 />
+                            <x-inovasi.1 />
+                            <x-inovasi.2 />
+                            <x-inovasi.3 />
+                            <x-inovasi.4 />
 
                             <x-button-submit />
                         </form>

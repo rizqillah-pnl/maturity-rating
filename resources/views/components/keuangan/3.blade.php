@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KE.3 Efektivitas</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir KE.3 Efektivitas</h2>
     </div>
     <div id="button-datatable"></div>
     <div class="card-body">
@@ -42,6 +42,36 @@
                     <input type="number" class="form-control @error('total_ekuitas')is-invalid @enderror"
                         id="total_ekuitas" name="total_ekuitas" placeholder="Masukkan Total Ekuitas" required>
                     @error('total_ekuitas')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-12 col-md-4 form-label" for="target_imbalan_atas_aset">
+                    Target Imbalan Atas Aset <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-8">
+                    <input type="number" class="form-control @error('target_imbalan_atas_aset')is-invalid @enderror"
+                        id="target_imbalan_atas_aset" name="target_imbalan_atas_aset"
+                        placeholder="Masukkan Nilai Target Imbalan Atas Aset" required>
+                    @error('target_imbalan_atas_aset')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-12 col-md-4 form-label" for="target_imbalan_atas_ekuitas">
+                    Target Imbalan Atas Ekuitas <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-8">
+                    <input type="number" class="form-control @error('target_imbalan_atas_ekuitas')is-invalid @enderror"
+                        id="target_imbalan_atas_ekuitas" name="target_imbalan_atas_ekuitas"
+                        placeholder="Masukkan Nilai Target Imbalan Atas Ekuitas" required>
+                    @error('target_imbalan_atas_ekuitas')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

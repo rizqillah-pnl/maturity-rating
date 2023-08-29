@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
         <img src="{{ asset('logo.png') }}" alt="SISURAT Logo" class="brand-image img-circle">
-        <span class="brand-text font-weight-light">Maturity Rating | SPI</span>
+        <span class="brand-text font-weight-light">Maturity Rating BLU</span>
     </a>
 
     <!-- Sidebar -->

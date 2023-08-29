@@ -1,34 +1,73 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title">Formulir KI.2 - Proses Bisnis</h2>
+        <h2 class="card-title" style="font-weight: 600">Formulir TK.2 - Etika Bisnis</h2>
     </div>
     <div id="button-datatable"></div>
     <div class="card-body">
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.1 Indikator Initial <span class="text-danger">*</span>
+                    TK.2.1 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial2"
-                            id="indikator_initial21" checked>
-                        <label class="form-check-label" for="indikator_initial21">
-                            Proses bisnis pada organisasi setidaknya telah dikelola secara ad hoc.
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator211">
+                            Kode etik organisasi (spesifik untuk internal organisasi) setidaknya telah ditetapkan secara
+                            lisan atau informal.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_initial2"
-                            id="indikator_initial22">
-                        <label class="form-check-label" for="indikator_initial22">
-                            Panduan dalam melaksanakan proses bisnis dan peningkatan kualitas layanan setidaknya
-                            dilakukan secara informal.
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
+                            value="2">
+                        <label class="form-check-label" for="indikator212">
+                            Kode etik organisasi setidaknya telah disusun dan ditetapkan secara formal untuk kelompok
+                            kerja atau divisi tertentu.
                         </label>
                     </div>
                 </div>
-                @error('indikator_initial2')
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
+                            value="3">
+                        <label class="form-check-label" for="indikator213">
+                            Kode etik organisasi telah disusun dan ditetapkan secara formal dalam kebijakan baku/standar
+                            yang berlaku di lingkungan organisasi secara keseluruhan serta Kode etik organisasi
+                            setidaknya sudah dikomunikasikan secara rutin dalam setiap kegiatan induction/on-boarding
+                            kepada pegawai baru
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
+                            value="4">
+                        <label class="form-check-label" for="indikator214">
+                            Organisasi setidaknya telah
+                            melaksanakan reviu dan evaluasi
+                            untuk memastikan kode etik organisasi
+                            sudah ditegakkan/diterapkan di
+                            seluruh organisasi.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
+                            value="5">
+                        <label class="form-check-label" for="indikator215">
+                            Hasil reviu dan evaluasi digunakan
+                            sebagai umpan balik (feedback) atau
+                            referensi perbaikan atau penyesuaian
+                            kode etik organisasi periode
+                            berikutnya.
+                        </label>
+                    </div>
+                </div>
+                @error('indikator21')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -36,141 +75,77 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 form-label">
-                    KI.2.2 Indikator Managed <span class="text-danger">*</span>
+                    TK.2.2 <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed21" checked>
-                        <label class="form-check-label" for="indikator_managed21">
-                            Organisasi setidaknya memiliki arahan dari manajemen eksekutif, rencana strategis, serta
-                            ketersediaan anggaran untuk menunjang kegiatan operasional.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
+                            value="1">
+                        <label class="form-check-label" for="indikator221">
+                            Kode etik organisasi setidaknya sudah
+                            diterapkan atau berlaku dalam
+                            skala/lingkup yang kecil seperti
+                            kelompok kerja atau divisi tertentu.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_managed2"
-                            id="indikator_managed22">
-                        <label class="form-check-label" for="indikator_managed22">
-                            Organisasi setidaknya telah mengelola layanan dan produk dari pihak ketiga untuk memenuhi
-                            kebutuhan internal maupun eksternal organisasi.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_managed2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.3 Indikator Defined <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined2"
-                            id="indikator_defined21" checked>
-                        <label class="form-check-label" for="indikator_defined21">
-                            Seluruh proses bisnis organisasi telah didefinisikan dalam prosedur baku yang dilengkapi
-                            dengan tujuan, input, proses, output, dan process owner.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
+                            value="2">
+                        <label class="form-check-label" for="indikator222">
+                            Kode etik organisasi setidaknya sudah
+                            dikomunikasikan secara ad-hoc,
+                            berdasarkan permintaan dari pihak
+                            manajemen.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_defined2"
-                            id="indikator_defined22">
-                        <label class="form-check-label" for="indikator_defined22">
-                            Organisasi setidaknya mampu mengelola barang dan jasa yang diberikan kepada publik. Pada
-                            level ini, organisasi dapat mengelola infrastruktur, persediaan, dan sumber daya lainnya
-                            untuk memastikan layanan yang diberikan kepada masyarakat berkualitas baik.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_defined2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.4 Indikator Predicatable <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable21" checked>
-                        <label class="form-check-label" for="indikator_predicatable21">
-                            Organisasi setidaknya mampu memprediksi output yang dihasilkan untuk selanjutnya digunakan
-                            sebagai basis dalam meningkatkan kinerja, kualitas layanan, cycle time, serta memprediksi
-                            pendapatan organisasi.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
+                            value="3">
+                        <label class="form-check-label" for="indikator223">
+                            Kode etik organisasi setidaknya sudah
+                            dikomunikasikan secara rutin kepada
+                            seluruh pegawai minimal satu kali
+                            dalam setahun, sehingga tidak ada kesenjangan pemahaman antara
+                            pegawai lama dan pegawai baru serta Peraturan atau ketentuan reward and
+                            punishment untuk setiap pelanggaran
+                            atau kepatuhan atas kode etik
+                            organisasi setidaknya telah ditetapkan
+                            secara formal.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable22">
-                        <label class="form-check-label" for="indikator_predicatable22">
-                            Organisasi setidaknya memiliki manajemen database, baseline, dan analisis tren output
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
+                            value="4">
+                        <label class="form-check-label" for="indikator224">
+                            Organisasi setidaknya telah
+                            memastikan bahwa sistem reward and
+                            punishment dari setiap pelanggaran
+                            atau kepatuhan terhadap kode etik
+                            organisasi telah diterapkan
+                            /diberlakukan dengan tegas di seluruh
                             organisasi.
                         </label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable23">
-                        <label class="form-check-label" for="indikator_predicatable23">
-                            Organisasi setidaknya mengintegrasikan dan meningkatkan efektivitas serta efisiensi proses
-                            bisnis melalui kolaborasi lintas unit.
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
+                            value="5">
+                        <label class="form-check-label" for="indikator225">
+                            Organisasi selalu mempertimbangkan
+                            masukan dari setiap stakeholder dalam
+                            melakukan perbaikan/penyesuaian
+                            kode etik organisasi.
                         </label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_predicatable2"
-                            id="indikator_predicatable24">
-                        <label class="form-check-label" for="indikator_predicatable24">
-                            Organisasi telah mengidentifikasi isu atau potensi risiko penurunan kinerja yang dapat
-                            diukur secara kuantitatif.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_predicatable2')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="row mb-3">
-                <label class="col-12 form-label">
-                    KI.2.5 Indikator Optimizing <span class="text-danger">*</span>
-                </label>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing2"
-                            id="indikator_optimizing21" checked>
-                        <label class="form-check-label" for="indikator_optimizing21">
-                            Organisasi setidaknya memiliki improvement dan sustainability planning dalam meningkatkan
-                            kinerja organisasi secara keseluruhan dalam jangka panjang.
-                        </label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator_optimizing2"
-                            id="indikator_optimizing22">
-                        <label class="form-check-label" for="indikator_optimizing22">
-                            Organisasi telah melakukan analisis terhadap stakeholder feedback untuk mengidentifikasi
-                            potensi perbaikan kinerja layanan proses bisnis organisasi.
-                        </label>
-                    </div>
-                </div>
-                @error('indikator_optimizing2')
+                @error('indikator22')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

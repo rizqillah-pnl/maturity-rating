@@ -34,7 +34,7 @@ class KapabilitasInternalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
