@@ -39,6 +39,20 @@ Route::resource('/lingkungan', LingkunganController::class);
 
 
 Route::get('/coba', function () {
+    $data = [
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null
+    ];
+    dd(count($data));
+
     // $kode = ['KE.1', 'KE.2', 'KE.3', 'KE.4', 'PL.1', 'PL.2', 'PL.3', 'PL.4', 'KI.1', 'KI.2', 'KI.3', 'KI.4', 'TK.1', 'TK.2', 'TK.3', 'TK.4', 'TK.5', 'IN.1', 'IN.2', 'IN.3', 'IN.4', 'LI.1', 'LI.2'];
     // foreach ($kode as $value) {
     //     dd(explode('.', $value)[0]);

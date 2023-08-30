@@ -102,7 +102,17 @@
                         </li>
                     </ul>
                 </li>
-                <li
+
+                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_maturity') ? 'active' : '' }}">
+                    <a href="{{ url('hasil_maturity') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_maturity') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-activity"></i>
+                        <p>
+                            Hasil Maturity
+                        </p>
+                    </a>
+                </li>
+                {{-- <li
                     class="nav-item {{ in_array(request()->getRequestUri(), ['/hasil_keuangan', '/hasil_pelayanan', '/hasil_kapabilitas_internal', '/hasil_tata_kk', '/hasil_inovasi', '/hasil_lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#"
                         class="nav-link {{ in_array(request()->getRequestUri(), ['/hasil_keuangan', '/hasil_pelayanan', '/hasil_kapabilitas_internal', '/hasil_tata_kk', '/hasil_inovasi', '/hasil_lingkungan']) ? 'active' : '' }}">
@@ -114,13 +124,12 @@
                     </a>
                     <ul class="nav nav-treeview" style="display: none;">
                         <li
-                            class="nav-item {{ str_contains(request()->getRequestUri(), 'result_maturity') ? 'menu-open' : '' }}">
-                            <a href="{{ url('result_maturity') }}"
-                                class="nav-link {{ str_contains(request()->getRequestUri(), 'result_maturity') ? 'active' : '' }}">
+                            class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_maturity') ? 'menu-open' : '' }}">
+                            <a href="{{ url('hasil_maturity') }}"
+                                class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_maturity') ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-clipboard"></i>
                                 <p>
                                     Result Maturity
-                                    {{-- <span class="right badge badge-danger">New</span> --}}
                                 </p>
                             </a>
                         </li>
@@ -131,7 +140,6 @@
                                 <i class="nav-icon bi bi-clipboard"></i>
                                 <p>
                                     Hasil Keuangan
-                                    {{-- <span class="right badge badge-danger">New</span> --}}
                                 </p>
                             </a>
                         </li>
@@ -186,7 +194,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-header">ADMINISTRATOR</li>
                 <li class="nav-item">
                     <a href="{{ url('users') }}" class="nav-link">
