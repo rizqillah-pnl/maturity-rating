@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class KriteriaMaturity extends Model
 {
     use HasFactory;
+
+    protected $guarder = ['kode_kriteria'];
 }

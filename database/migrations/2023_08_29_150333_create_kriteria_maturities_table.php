@@ -19,8 +19,8 @@ class CreateKriteriaMaturitiesTable extends Migration
             $table->string('kode_indikator_id');
             $table->foreign('kode_indikator_id')->on('indikator_maturities')->references('kode_indikator');
             $table->string('maturity_level');
-            $table->string('kriteria_indikator');
-            $table->string('work_product')->nullable();
+            $table->text('kriteria_indikator');
+            $table->text('work_product')->nullable();
             $table->timestamps();
         });
     }
