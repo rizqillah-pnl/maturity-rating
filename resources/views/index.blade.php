@@ -78,7 +78,7 @@
                             <div class="inner">
                                 <h5>(Maturity)</h5>
 
-                                <p>Aspek Tata Kelola dan Kepemimpinan</p>
+                                <p class="mb-0">Aspek Tata Kelola dan Kepemimpinan</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-clipboard"></i>
