@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAspekMaturitiesTable extends Migration
+class CreateLevelMaturitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateAspekMaturitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('aspek_maturities', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('kode_aspek')->unique();
-            $table->string('nama_aspek');
+        Schema::create('level_maturities', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_level');
+            $table->string('color');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateAspekMaturitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aspek_maturities');
+        Schema::dropIfExists('level_maturities');
     }
 }

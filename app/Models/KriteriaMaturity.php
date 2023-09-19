@@ -10,4 +10,9 @@ class KriteriaMaturity extends Model
     use HasFactory;
 
     protected $guarder = ['kode_kriteria'];
+
+    public function indikator_maturity()
+    {
+        return $this->belongsTo(IndikatorMaturity::class, 'kode_indikator', 'indikator_maturity_id');
+    }
 }

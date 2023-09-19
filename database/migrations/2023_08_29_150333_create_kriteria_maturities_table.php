@@ -14,10 +14,10 @@ class CreateKriteriaMaturitiesTable extends Migration
     public function up()
     {
         Schema::create('kriteria_maturities', function (Blueprint $table) {
-            // $table->id();
-            $table->string('kode_kriteria')->primary();
-            $table->string('kode_indikator_id');
-            $table->foreign('kode_indikator_id')->on('indikator_maturities')->references('kode_indikator');
+            $table->increments('id');
+            $table->string('kode_kriteria')->unique();
+            $table->string('indikator_maturity_id');
+            $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
             $table->string('maturity_level');
             $table->text('kriteria_indikator');
             $table->text('work_product')->nullable();

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\LevelMaturity;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
             AspekMaturitySeeder::class,
             IndikatorMaturitySeeder::class,
             KriteriaMaturitySeeder::class,
+            LevelMaturitySeeder::class,
         ]);
     }
 }

@@ -19,7 +19,7 @@ class IndikatorMaturitySeeder extends Seeder
 
         foreach ($kode as $index => $value) {
             IndikatorMaturity::create([
-                'kode_aspek_id' => explode('.', $value)[0],
+                'aspek_maturity_id' => explode('.', $value)[0],
                 'kode_indikator' => $value,
                 'nama_indikator' => $nama[$index]
             ]);

@@ -14,14 +14,29 @@ class AspekMaturitySeeder extends Seeder
      */
     public function run()
     {
-        $kode = ['KE', 'PL', 'KI', 'TK', 'IN', 'LI'];
-        $nama = ['Keuangan', 'Pelayanan', 'Kapabilitas Internal', 'Tata Kelola dan Kepemimpinan', 'Inovasi', 'Lingkungan'];
-
-        foreach ($kode as $index => $value) {
-            AspekMaturity::create([
-                'kode_aspek' => $value,
-                'nama_aspek' => $nama[$index]
-            ]);
-        }
+        AspekMaturity::create([
+            'kode_aspek' => 'KE',
+            'nama_aspek' => 'Keuangan'
+        ]);
+        AspekMaturity::create([
+            'kode_aspek' => 'PL',
+            'nama_aspek' => 'Pelayanan'
+        ]);
+        AspekMaturity::create([
+            'kode_aspek' => 'KI',
+            'nama_aspek' => 'Kapabilitas Internal'
+        ]);
+        AspekMaturity::create([
+            'kode_aspek' => 'TK',
+            'nama_aspek' => 'Tata Kelola dan Kepemimpinan'
+        ]);
+        AspekMaturity::create([
+            'kode_aspek' => 'IN',
+            'nama_aspek' => 'Inovasi'
+        ]);
+        AspekMaturity::create([
+            'kode_aspek' => 'LI',
+            'nama_aspek' => 'Lingkungan'
+        ]);
     }
 }
