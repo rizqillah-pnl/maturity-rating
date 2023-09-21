@@ -31,7 +31,17 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-header">DATA MASTER</li>
+                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'maturity_rating') ? 'active' : '' }}">
+                    <a href="{{ url('maturity_rating') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'maturity_rating') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-info-circle"></i>
+                        <p>
+                            Aspek Maturity Rating
+                        </p>
+                    </a>
+                </li>
                 <li
                     class="nav-item {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#"

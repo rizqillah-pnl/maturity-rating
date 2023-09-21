@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
@@ -38,4 +39,5 @@ Route::resource('/tata_kk', TataKKController::class);
 Route::resource('/inovasi', InovasiController::class);
 Route::resource('/lingkungan', LingkunganController::class);
 
+Route::get('/maturity_rating', [DashboardController::class, 'maturity_rating']);
 Route::get('/hasil_maturity', [HasilMaturityController::class, 'index']);
