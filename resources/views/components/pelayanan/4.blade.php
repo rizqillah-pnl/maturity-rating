@@ -27,8 +27,24 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_sub_indikator')is-invalid @enderror"
                         id="target_sub_indikator" name="target_sub_indikator"
-                        placeholder="Masukkan Target sub-indikator" required>
+                        placeholder="Masukkan Nilai Target sub-indikator" required>
                     @error('target_sub_indikator')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-12 col-md-4 form-label" for="target_keberhasilan_pemenuhan_lyn">
+                    (%) Target Keberhasilan Pemenuhan Layanan <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-8">
+                    <input type="number"
+                        class="form-control @error('target_keberhasilan_pemenuhan_lyn')is-invalid @enderror"
+                        id="target_keberhasilan_pemenuhan_lyn" name="target_keberhasilan_pemenuhan_lyn"
+                        placeholder="Masukkan Nilai (%) Target Keberhasilan Pemenuhan Layanan" required>
+                    @error('target_keberhasilan_pemenuhan_lyn')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

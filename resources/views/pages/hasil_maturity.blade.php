@@ -41,39 +41,18 @@
                                                     <div class="card mb-2">
                                                         <div class="card-header">
                                                             <h4 class="card-title w-100">
-                                                                <a class="d-block w-100" data-bs-toggle="collapse"
-                                                                    href="#collapse{{ $index . $index2 }}"
-                                                                    aria-expanded="true">
-                                                                    {{ $row2->kode_indikator }} |
-                                                                    {{ $row2->nama_indikator }}
-                                                                </a>
+                                                                {{ $row2->kode_indikator }} |
+                                                                {{ $row2->nama_indikator }}
                                                             </h4>
                                                         </div>
-                                                        <div id="collapse{{ $index . $index2 }}" class="collapse"
-                                                            data-parent="#accordion" style="">
-                                                            <div class="card-body">
-                                                                <div class="col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-2">ID</div>
-                                                                        <div class="col-5">Kriteria Indikator</div>
-                                                                        <div class="col-3">Work Product</div>
-                                                                        <div class="col-2">Level</div>
-                                                                    </div>
-                                                                    @foreach ($row2->kriteria_maturity as $index3 => $row3)
-                                                                        <div class="row" style="font-weight: 500">
-                                                                            <div class="col-2">{{ $row3->kode_kriteria }}
-                                                                            </div>
-                                                                            <div class="col-5">
-                                                                                {{ $row3->kriteria_indikator }}</div>
-                                                                            <div class="col-3">
-                                                                                {!! $row3->work_product ? $row3->work_product : 'Tidak ada work product.' !!}</div>
-                                                                            <div
-                                                                                class="col-2 text-{{ $level[$row3->maturity_level - 1]->color }}">
-                                                                                {{ $level[$row3->maturity_level - 1]->nama_level . '(' . $row3->maturity_level . ')' }}
-                                                                            </div>
-                                                                        </div>
-                                                                        <hr>
-                                                                    @endforeach
+
+                                                        <div class="card-body">
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-2">ID</div>
+                                                                    <div class="col-5">Kriteria Indikator</div>
+                                                                    <div class="col-3">Work Product</div>
+                                                                    <div class="col-2">Level</div>
                                                                 </div>
                                                             </div>
                                                         </div>

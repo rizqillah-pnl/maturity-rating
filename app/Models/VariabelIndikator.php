@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KriteriaMaturity extends Model
+class VariabelIndikator extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['kode_kriteria'];
+    protected $guarded = ['id'];
 
     public function indikator_maturity()
     {

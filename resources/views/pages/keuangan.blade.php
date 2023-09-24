@@ -35,7 +35,7 @@
                             <x-keuangan.2 />
                             <x-keuangan.3 />
                             <x-keuangan.4 />
-                            <x-keuangan.5 />
+                            {{-- <x-keuangan.5 /> --}}
 
                             <x-button-submit />
                         </form>

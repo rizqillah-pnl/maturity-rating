@@ -35,8 +35,22 @@
                 </div>
             </div>
             <div class="row mb-3">
+                <label class="col-12 col-md-4 form-label" for="total_aset">
+                    KE.3.3 Total Aset <span class="text-danger">*</span>
+                </label>
+                <div class="col-12 col-md-8">
+                    <input type="number" class="form-control @error('total_aset')is-invalid @enderror" id="total_aset"
+                        name="total_aset" placeholder="Masukkan Total Aset" required>
+                    @error('total_aset')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="total_ekuitas">
-                    KE.3.3 Total Ekuitas <span class="text-danger">*</span>
+                    KE.3.4 Total Ekuitas <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_ekuitas')is-invalid @enderror"
@@ -50,12 +64,12 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_imbalan_atas_aset">
-                    Target Imbalan Atas Aset <span class="text-danger">*</span>
+                    (%) Target Imbalan Atas Aset <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_imbalan_atas_aset')is-invalid @enderror"
                         id="target_imbalan_atas_aset" name="target_imbalan_atas_aset"
-                        placeholder="Masukkan Nilai Target Imbalan Atas Aset" required>
+                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Aset" required>
                     @error('target_imbalan_atas_aset')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -65,12 +79,12 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_imbalan_atas_ekuitas">
-                    Target Imbalan Atas Ekuitas <span class="text-danger">*</span>
+                    (%) Target Imbalan Atas Ekuitas <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_imbalan_atas_ekuitas')is-invalid @enderror"
                         id="target_imbalan_atas_ekuitas" name="target_imbalan_atas_ekuitas"
-                        placeholder="Masukkan Nilai Target Imbalan Atas Ekuitas" required>
+                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Ekuitas" required>
                     @error('target_imbalan_atas_ekuitas')
                         <div class="invalid-feedback">
                             {{ $message }}

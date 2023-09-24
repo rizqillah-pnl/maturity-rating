@@ -35,12 +35,12 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_pobo">
-                    Target Pendapatan Operasional terhadap Beban Operasional <span class="text-danger">*</span>
+                    (%) Target Pendapatan Operasional terhadap Beban Operasional <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_pobo')is-invalid @enderror"
                         id="target_pobo" name="target_pobo"
-                        placeholder="Masukkan Nilai Target Operasional terhadap Beban Operasional" required>
+                        placeholder="Masukkan Nilai (%) Target Operasional terhadap Beban Operasional" required>
                     @error('target_pobo')
                         <div class="invalid-feedback">
                             {{ $message }}
