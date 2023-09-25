@@ -18,4 +18,9 @@ class IndikatorMaturity extends Model
     {
         return $this->hasMany(KriteriaMaturity::class, 'indikator_maturity_id', 'kode_indikator');
     }
+
+    public function variabel_indikator()
+    {
+        return $this->hasMany(VariabelIndikator::class, 'indikator_maturity_id', 'kode_indikator');
+    }
 }

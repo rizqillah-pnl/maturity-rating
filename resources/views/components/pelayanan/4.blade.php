@@ -36,15 +36,15 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-12 col-md-4 form-label" for="target_keberhasilan_pemenuhan_lyn">
+                <label class="col-12 col-md-4 form-label" for="target_keberhasilan_pemenuhan_layanan">
                     (%) Target Keberhasilan Pemenuhan Layanan <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number"
-                        class="form-control @error('target_keberhasilan_pemenuhan_lyn')is-invalid @enderror"
-                        id="target_keberhasilan_pemenuhan_lyn" name="target_keberhasilan_pemenuhan_lyn"
+                        class="form-control @error('target_keberhasilan_pemenuhan_layanan')is-invalid @enderror"
+                        id="target_keberhasilan_pemenuhan_layanan" name="target_keberhasilan_pemenuhan_layanan"
                         placeholder="Masukkan Nilai (%) Target Keberhasilan Pemenuhan Layanan" required>
-                    @error('target_keberhasilan_pemenuhan_lyn')
+                    @error('target_keberhasilan_pemenuhan_layanan')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

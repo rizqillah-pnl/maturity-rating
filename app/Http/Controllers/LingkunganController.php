@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\VariabelIndikator;
+use App\Http\Controllers\Controller;
 
 class LingkunganController extends Controller
 {
@@ -34,7 +36,15 @@ class LingkunganController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // INDIKATOR LI.1
+        $li1 = intval(round(($request->indikator11 + $request->indikator12 + $request->indikator13) / 3));
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.1', 'variabel' => 'li1', 'hasil' => $li1, 'variabel_fullname' => 'LI.1 - Environmental Footprint Management'], ['variabel', 'indikator_maturity_id']);
+
+        // INDIKATOR LI.2
+        $li2 = intval(round(($request->indikator21 + $request->indikator22 + $request->indikator23) / 3));
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.2', 'variabel' => 'li2', 'hasil' => $li2, 'variabel_fullname' => 'LI.2 - Penggunaan Sumber Daya'], ['variabel', 'indikator_maturity_id']);
+
+        return redirect()->to('hasil_maturity')->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
     }
 
     /**
