@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVariabelIndikatorsTable extends Migration
+class CreateInputanMaturitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateVariabelIndikatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('variabel_indikators', function (Blueprint $table) {
+        Schema::create('inputan_maturities', function (Blueprint $table) {
             $table->id();
             $table->string('indikator_maturity_id');
             $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
-            $table->string('variabel')->unique();
-            $table->string('variabel_fullname')->nullable();
-            $table->bigInteger('hasil');
+            $table->string('inputan');
+            $table->string('tipe_inputan')->unique();
+            $table->bigInteger('nilai');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateVariabelIndikatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('variabel_indikators');
+        Schema::dropIfExists('inputan_maturities');
     }
 }

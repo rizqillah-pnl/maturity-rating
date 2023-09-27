@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\IndikatorHasil;
 use App\Models\VariabelIndikator;
 use App\Http\Controllers\Controller;
+use App\Models\InputanMaturity;
 
 class KeuanganController extends Controller
 {
@@ -16,6 +17,30 @@ class KeuanganController extends Controller
 
     public function store(Request $request)
     {
+        // Menginput Nilai Variabel Awal
+        InputanMaturity::upsert([
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'aset_lancar', 'tipe_inputan' => 'ke_aset_lancar', 'nilai' => $request->aset_lancar],
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'kwjb_jgk', 'tipe_inputan' => 'ke_kwjb_jgk', 'nilai' => $request->kwjb_jgk],
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'pdp_inves_jgk', 'tipe_inputan' => 'ke_pdp_inves_jgk', 'nilai' => $request->pdp_inves_jgk],
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'saldo_rek_op', 'tipe_inputan' => 'ke_saldo_rek_op', 'nilai' => $request->saldo_rek_op],
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'pengelolaan_kas', 'tipe_inputan' => 'ke_pengelolaan_kas', 'nilai' => $request->pengelolaan_kas],
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'target_rasio_lancar', 'tipe_inputan' => 'ke_target_rasio_lancar', 'nilai' => $request->target_rasio_lancar],
+            ['indikator_maturity_id' => 'KE.1', 'inputan' => 'target_optimalisasi_kas', 'tipe_inputan' => 'ke_target_optimalisasi_kas', 'nilai' => $request->target_optimalisasi_kas],
+            ['indikator_maturity_id' => 'KE.2', 'inputan' => 'output_blu', 'tipe_inputan' => 'ke_output_blu', 'nilai' => $request->output_blu],
+            ['indikator_maturity_id' => 'KE.2', 'inputan' => 'input_blu', 'tipe_inputan' => 'ke_input_blu', 'nilai' => $request->input_blu],
+            ['indikator_maturity_id' => 'KE.2', 'inputan' => 'target_pobo', 'tipe_inputan' => 'ke_target_pobo', 'nilai' => $request->target_pobo],
+            ['indikator_maturity_id' => 'KE.3', 'inputan' => 'surplus_pos', 'tipe_inputan' => 'ke_surplus_pos', 'nilai' => $request->surplus_pos],
+            ['indikator_maturity_id' => 'KE.3', 'inputan' => 'kerugian', 'tipe_inputan' => 'ke_kerugian', 'nilai' => $request->kerugian],
+            ['indikator_maturity_id' => 'KE.3', 'inputan' => 'total_aset', 'tipe_inputan' => 'ke_total_aset', 'nilai' => $request->total_aset],
+            ['indikator_maturity_id' => 'KE.3', 'inputan' => 'total_ekuitas', 'tipe_inputan' => 'ke_total_ekuitas', 'nilai' => $request->total_ekuitas],
+            ['indikator_maturity_id' => 'KE.3', 'inputan' => 'target_imbalan_atas_aset', 'tipe_inputan' => 'ke_target_imbalan_atas_aset', 'nilai' => $request->target_imbalan_atas_aset],
+            ['indikator_maturity_id' => 'KE.3', 'inputan' => 'target_imbalan_atas_ekuitas', 'tipe_inputan' => 'ke_target_imbalan_atas_ekuitas', 'nilai' => $request->target_imbalan_atas_ekuitas],
+            ['indikator_maturity_id' => 'KE.4', 'inputan' => 'pendapatan_lra', 'tipe_inputan' => 'ke_pendapatan_lra', 'nilai' => $request->pendapatan_lra],
+            ['indikator_maturity_id' => 'KE.4', 'inputan' => 'total_belanja_lra', 'tipe_inputan' => 'ke_total_belanja_lra', 'nilai' => $request->total_belanja_lra],
+            ['indikator_maturity_id' => 'KE.4', 'inputan' => 'target_tingkat_kemandirian', 'tipe_inputan' => 'ke_target_tingkat_kemandirian', 'nilai' => $request->target_tingkat_kemandirian],
+        ], ['tipe_inputan', 'indikator_maturity_id'], ['nilai']);
+
+
         // INDIKATOR KE.1
         $rasio_lancar = $request->aset_lancar / $request->kwjb_jgk;
         $target_rasio_lancar = $request->target_rasio_lancar / 100;

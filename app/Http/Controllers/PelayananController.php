@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\InputanMaturity;
 use App\Models\VariabelIndikator;
 use App\Http\Controllers\Controller;
 
@@ -36,6 +37,23 @@ class PelayananController extends Controller
      */
     public function store(Request $request)
     {
+        // Menginput Nilai Variabel Awal
+        InputanMaturity::upsert([
+            ['indikator_maturity_id' => 'PL.1', 'inputan' => 'hasil_penilaian_ikm', 'tipe_inputan' => 'pl_hasil_penilaian_ikm', 'nilai' => $request->hasil_penilaian_ikm],
+            ['indikator_maturity_id' => 'PL.1', 'inputan' => 'skala_maks_ikm', 'tipe_inputan' => 'pl_skala_maks_ikm', 'nilai' => $request->skala_maks_ikm],
+            ['indikator_maturity_id' => 'PL.1', 'inputan' => 'target_ikm', 'tipe_inputan' => 'pl_target_ikm', 'nilai' => $request->target_ikm],
+            ['indikator_maturity_id' => 'PL.2', 'inputan' => 'layanan_tpt_waktu', 'tipe_inputan' => 'pl_layanan_tpt_waktu', 'nilai' => $request->layanan_tpt_waktu],
+            ['indikator_maturity_id' => 'PL.2', 'inputan' => 'jum_layanan', 'tipe_inputan' => 'pl_jum_layanan', 'nilai' => $request->jum_layanan],
+            ['indikator_maturity_id' => 'PL.2', 'inputan' => 'target_efisiensi_pelayanan', 'tipe_inputan' => 'pl_target_efisiensi_pelayanan', 'nilai' => $request->target_efisiensi_pelayanan],
+            ['indikator_maturity_id' => 'PL.3', 'inputan' => 'pengaduan_ditindaklanjut', 'tipe_inputan' => 'pl_pengaduan_ditindaklanjut', 'nilai' => $request->pengaduan_ditindaklanjut],
+            ['indikator_maturity_id' => 'PL.3', 'inputan' => 'jumlah_pengaduan', 'tipe_inputan' => 'pl_jumlah_pengaduan', 'nilai' => $request->jumlah_pengaduan],
+            ['indikator_maturity_id' => 'PL.3', 'inputan' => 'penyelasaian_tepat_waktu', 'tipe_inputan' => 'pl_penyelasaian_tepat_waktu', 'nilai' => $request->penyelasaian_tepat_waktu],
+            ['indikator_maturity_id' => 'PL.4', 'inputan' => 'realisasi_sub_indikator', 'tipe_inputan' => 'pl_realisasi_sub_indikator', 'nilai' => $request->realisasi_sub_indikator],
+            ['indikator_maturity_id' => 'PL.4', 'inputan' => 'target_sub_indikator', 'tipe_inputan' => 'pl_target_sub_indikator', 'nilai' => $request->target_sub_indikator],
+            ['indikator_maturity_id' => 'PL.4', 'inputan' => 'target_keberhasilan_pemenuhan_layanan', 'tipe_inputan' => 'pl_target_keberhasilan_pemenuhan_layanan', 'nilai' => $request->target_keberhasilan_pemenuhan_layanan],
+        ], ['tipe_inputan', 'indikator_maturity_id'], ['nilai']);
+
+
         // INDIKATOR PL.1
         $indeks_kepuasan_masyarakat = $request->hasil_penilaian_ikm / $request->skala_maks_ikm;
         $target_ikm = $request->target_ikm / 100;
