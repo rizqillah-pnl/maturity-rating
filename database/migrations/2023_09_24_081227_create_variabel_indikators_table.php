@@ -19,7 +19,7 @@ class CreateVariabelIndikatorsTable extends Migration
             $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
             $table->string('variabel')->unique();
             $table->string('variabel_fullname')->nullable();
-            $table->bigInteger('hasil');
+            $table->string('hasil');
             $table->timestamps();
         });
     }

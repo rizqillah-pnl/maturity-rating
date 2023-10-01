@@ -19,7 +19,7 @@ class CreateInputanMaturitiesTable extends Migration
             $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
             $table->string('inputan');
             $table->string('tipe_inputan')->unique();
-            $table->bigInteger('nilai');
+            $table->string('nilai');
             $table->timestamps();
         });
     }
