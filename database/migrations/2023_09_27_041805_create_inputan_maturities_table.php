@@ -15,6 +15,8 @@ class CreateInputanMaturitiesTable extends Migration
     {
         Schema::create('inputan_maturities', function (Blueprint $table) {
             $table->id();
+            $table->string('aspek_maturity_id');
+            $table->foreign('aspek_maturity_id')->on('aspek_maturities')->references('kode_aspek');
             $table->string('indikator_maturity_id');
             $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
             $table->string('inputan');

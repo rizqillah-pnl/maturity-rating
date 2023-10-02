@@ -23,9 +23,28 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 style="font-weight: bold">Jenis-jenis Hasil Aspek :</h5>
+                                <ol>
+                                    <li class="text-danger">Initial</li>
+                                    <li class="text-warning">Managed</li>
+                                    <li class="text-orange">Defined</li>
+                                    <li class="text-primary">Predicatable</li>
+                                    <li class="text-success">Optimizing</li>
+                                </ol>
+                            </div>
+                        </div>
 
+                        @push('css-script')
+                            <style>
+                                .text-orange {
+                                    color: rgb(187, 121, 0);
+                                }
+                            </style>
+                        @endpush
                         @php
-                            $color = ['primary', 'danger', 'success', 'warning', 'info', 'dark'];
+                            $color = ['danger', 'warning', 'orange', 'primary', 'success', 'info', 'dark'];
                         @endphp
                         @foreach ($aspek_maturity as $index => $row)
                             <div class="card card-{{ $color[$index] }}">
@@ -80,7 +99,7 @@
                                                                                 <td
                                                                                     class="text-nowrap {{ $aspek_tipe == 'Level' ? 'text-' . $color[$row3->hasil - 1] : '' }}">
                                                                                     @if ($aspek_tipe == 'Level')
-                                                                                        {{ $level[$row3->hasil - 1]->nama_level }}
+                                                                                        {{ $row3->hasil . ' - ' . $level[$row3->hasil - 1]->nama_level }}
                                                                                     @else
                                                                                         {{ $row3->hasil }}
                                                                                     @endif

@@ -122,6 +122,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'rangkuman_hasil') ? 'active' : '' }}">
+                    <a href="{{ url('rangkuman_hasil') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'rangkuman_hasil') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-activity"></i>
+                        <p>
+                            Rangkuman Hasil
+                        </p>
+                    </a>
+                </li>
                 {{-- <li
                     class="nav-item {{ in_array(request()->getRequestUri(), ['/hasil_keuangan', '/hasil_pelayanan', '/hasil_kapabilitas_internal', '/hasil_tata_kk', '/hasil_inovasi', '/hasil_lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#"

@@ -14,10 +14,12 @@ class CreateKomponenHasilsTable extends Migration
     public function up()
     {
         Schema::create('komponen_hasils', function (Blueprint $table) {
-            // $table->increments('id');
-            $table->string('kode_kriteria')->primary();
-            $table->enum('maturity_level', ['1', '2', '3', '4', '5']);
-            $table->string('kriteria_indikator');
+            $table->id();
+            $table->string('indikator_maturity_id');
+            $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
+            $table->string('indikator')->unique();
+            $table->string('indikator_fullname')->nullable();
+            $table->string('nilai');
             $table->string('work_product')->nullable();
             $table->timestamps();
         });

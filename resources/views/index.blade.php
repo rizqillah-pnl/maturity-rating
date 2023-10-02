@@ -24,8 +24,8 @@
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
 
+        <!-- /.content-header -->
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -34,7 +34,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h5>(Maturity)</h5>
+                                <h5>{{ array_key_exists('KE', $data_count) ? $data_count['KE'] : '0' }} Indikator</h5>
 
                                 <p>Aspek Keuangan</p>
                             </div>
@@ -48,7 +48,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h5>(Maturity)</h5>
+                                <h5>{{ array_key_exists('PL', $data_count) ? $data_count['PL'] : '0' }} Indikator</h5>
 
                                 <p>Aspek Pelayanan</p>
                             </div>
@@ -62,7 +62,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h5>(Maturity)</h5>
+                                <h5>{{ array_key_exists('KI', $data_count) ? $data_count['KI'] : '0' }} Indikator</h5>
 
                                 <p>Aspek Kapabilitas Internal</p>
                             </div>
@@ -76,7 +76,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-primary">
                             <div class="inner">
-                                <h5>(Maturity)</h5>
+                                <h5>{{ array_key_exists('TK', $data_count) ? $data_count['TK'] : '0' }} Indikator</h5>
 
                                 <p class="mb-0">Aspek Tata Kelola dan Kepemimpinan</p>
                             </div>
@@ -90,7 +90,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h5>(Maturity)</h5>
+                                <h5>{{ array_key_exists('IN', $data_count) ? $data_count['IN'] : '0' }} Indikator</h5>
 
                                 <p>Aspek Inovasi</p>
                             </div>
@@ -104,7 +104,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-dark">
                             <div class="inner">
-                                <h5>(Maturity)</h5>
+                                <h5>{{ array_key_exists('LI', $data_count) ? $data_count['LI'] : '0' }} Indikator</h5>
 
                                 <p>Aspek Lingkungan</p>
                             </div>
