@@ -17,7 +17,13 @@ class InovasiController extends Controller
      */
     public function index()
     {
-        return view('pages.inovasi', ['title' => 'Aspek Inovasi']);
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'IN')->get();
+        $new_inputan = [];
+        foreach ($inputan as $index => $row) {
+            $new_inputan[$row->inputan] = $row->nilai;
+        }
+
+        return view('pages.inovasi', ['title' => 'Aspek Inovasi', 'inputan' => $new_inputan]);
     }
 
     /**
@@ -76,7 +82,7 @@ class InovasiController extends Controller
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'IN.4', 'indikator' => 'in4', 'nilai' => $in4, 'indikator_fullname' => 'IN.4 - Manajemen Perubahan'], ['indikator', 'indikator_maturity_id']);
 
-        return redirect()->route('lingkungan.index')->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
+        return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
     }
 
     /**

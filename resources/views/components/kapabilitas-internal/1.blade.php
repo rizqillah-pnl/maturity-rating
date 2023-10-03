@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator11" id="indikator111" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator11" id="indikator111"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator11'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator111">
                             Organisasi setidaknya telah melakukan pengelolaan SDM secara ad-hoc dan bersifat
                             administratif
@@ -22,7 +23,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator112"
-                            value="2">
+                            {{ $inputan['indikator11'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator112">
                             Proses rekruitmen SDM/tenaga kerja
                             telah sesuai dengan kualifikasi yang
@@ -36,7 +37,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator113"
-                            value="3">
+                            {{ $inputan['indikator11'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator113">
                             Organisasi setidaknya telah
                             mendefinisikan analisis kapabilitas
@@ -51,8 +52,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator11"
-                            id="indikator114"value="4">
+                        <input class="form-check-input" type="radio" name="indikator11" id="indikator114"
+                            {{ $inputan['indikator11'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator114">
                             Seluruh SDM organisasi telah mampu
                             berkolaborasi secara lintas unit
@@ -63,8 +64,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator11"
-                            id="indikator115"value="5">
+                        <input class="form-check-input" type="radio" name="indikator11" id="indikator115"
+                            {{ $inputan['indikator11'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator115">
                             Organisasi selalu memberikan
                             dukungan kepada SDM untuk
@@ -85,8 +86,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator12" id="indikator121" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator12" id="indikator121"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator12'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator121">
                             Organisasi setidaknya telah
                             mendefinisikan peran dan
@@ -97,8 +99,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator12"
-                            id="indikator122"value="2">
+                        <input class="form-check-input" type="radio" name="indikator12" id="indikator122"
+                            {{ $inputan['indikator12'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator122">
                             Organisasi setidaknya telah
                             memberikan pelatihan kepada SDM
@@ -109,8 +111,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator12"
-                            id="indikator123"value="3">
+                        <input class="form-check-input" type="radio" name="indikator12" id="indikator123"
+                            {{ $inputan['indikator12'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator123">
                             Organisasi telah menerapkan
                             workgroup development yang
@@ -122,8 +124,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator12"
-                            id="indikator124"value="4">
+                        <input class="form-check-input" type="radio" name="indikator12" id="indikator124"
+                            {{ $inputan['indikator12'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator124">
                             Organisasi telah melakukan analisis
                             kinerja SDM untuk memprediksi tren
@@ -133,8 +135,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator12"
-                            id="indikator125"value="5">
+                        <input class="form-check-input" type="radio" name="indikator12" id="indikator125"
+                            {{ $inputan['indikator12'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator125">
                             Organisasi telah melakukan identifikasi
                             dan evaluasi peluang inovasi yang
@@ -155,8 +157,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator13" id="indikator131" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator13" id="indikator131"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator13'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator131">
                             Organisasi setidaknya telah
                             memberikan pelatihan kepada SDM
@@ -166,8 +169,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator13"
-                            id="indikator132"value="2">
+                        <input class="form-check-input" type="radio" name="indikator13" id="indikator132"
+                            {{ $inputan['indikator13'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator132">
                             Organisasi setidaknya telah
                             menyediakan fasilitas dasar untuk
@@ -180,8 +183,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator13"
-                            id="indikator133"value="3">
+                        <input class="form-check-input" type="radio" name="indikator13" id="indikator133"
+                            {{ $inputan['indikator13'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator133">
                             Organisasi telah menanamkan budaya
                             partisipatoris setidaknya dengan
@@ -192,8 +195,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator13"
-                            id="indikator134"value="4">
+                        <input class="form-check-input" type="radio" name="indikator13" id="indikator134"
+                            {{ $inputan['indikator13'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator134">
                             Organisasi telah menerapkan program
                             mentoring SDM yang setidaknya dalam
@@ -205,8 +208,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator13"
-                            id="indikator135"value="5">
+                        <input class="form-check-input" type="radio" name="indikator13" id="indikator135"
+                            {{ $inputan['indikator13'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator135">
                             Organisasi memiliki kelompok kerja
                             khusus yang bertugas untuk

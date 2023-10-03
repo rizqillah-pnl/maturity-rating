@@ -17,7 +17,13 @@ class TataKKController extends Controller
      */
     public function index()
     {
-        return view('pages.tata_kk', ['title' => 'Aspek Tata Kelola dan Kepemimpinan']);
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'TK')->get();
+        $new_inputan = [];
+        foreach ($inputan as $index => $row) {
+            $new_inputan[$row->inputan] = $row->nilai;
+        }
+
+        return view('pages.tata_kk', ['title' => 'Aspek Tata Kelola dan Kepemimpinan', 'inputan' => $new_inputan]);
     }
 
     /**
@@ -85,7 +91,7 @@ class TataKKController extends Controller
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'TK.5', 'indikator' => 'tk5', 'nilai' => $tk5, 'indikator_fullname' => 'TK.5 - Pengawasan dan Pelaporan'], ['indikator', 'indikator_maturity_id']);
 
-        return redirect()->route('inovasi.index')->with('success', 'Berhasil Mengupload Data Aspek Tata Kelola dan Kepemimpinan!');
+        return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Tata Kelola dan Kepemimpinan!');
     }
 
     /**

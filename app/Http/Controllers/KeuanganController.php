@@ -13,7 +13,13 @@ class KeuanganController extends Controller
 {
     public function index()
     {
-        return view('pages.keuangan', ['title' => 'Aspek Keuangan']);
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'KE')->get();
+        $new_inputan = [];
+        foreach ($inputan as $index => $row) {
+            $new_inputan[$row->inputan] = $row->nilai;
+        }
+
+        return view('pages.keuangan', ['title' => 'Aspek Keuangan', 'inputan' => $new_inputan]);
     }
 
     public function store(Request $request)
@@ -78,7 +84,7 @@ class KeuanganController extends Controller
             $ke12 = 1;
         }
 
-        $ke1 = intval(round(($ke11 + $ke12) / 2));
+        $ke1 = intval(($ke11 + $ke12) / 2);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'ke1', 'hasil' => $ke1, 'variabel_fullname' => 'KE.1 - Likuiditas'], ['variabel', 'indikator_maturity_id']);
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'KE.1', 'indikator' => 'ke1', 'nilai' => $ke1, 'indikator_fullname' => 'KE.1 - Likuiditas'], ['indikator', 'indikator_maturity_id']);
@@ -143,7 +149,7 @@ class KeuanganController extends Controller
         } else {
             $ke32 = 1;
         }
-        $ke3 = intval(round(($ke31 + $ke32) / 2));
+        $ke3 = intval(($ke31 + $ke32) / 2);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'ke3', 'hasil' => $ke3, 'variabel_fullname' => 'KE.3 - Efektivitas'], ['variabel', 'indikator_maturity_id']);
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'KE.3', 'indikator' => 'ke3', 'nilai' => $ke3, 'indikator_fullname' => 'KE.3 - Efektivitas'], ['indikator', 'indikator_maturity_id']);
@@ -172,6 +178,6 @@ class KeuanganController extends Controller
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'KE.4', 'indikator' => 'ke4', 'nilai' => $ke4, 'indikator_fullname' => 'KE.4 - Tingkat Kemandirian'], ['indikator', 'indikator_maturity_id']);
 
-        return redirect()->route('pelayanan.index')->with('success', 'Berhasil Mengupload Data Aspek Keuangan!');
+        return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Keuangan!');
     }
 }

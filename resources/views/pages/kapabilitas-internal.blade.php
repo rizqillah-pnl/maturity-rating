@@ -27,10 +27,10 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-kapabilitas-internal.1 />
-                            <x-kapabilitas-internal.2 />
-                            <x-kapabilitas-internal.3 />
-                            <x-kapabilitas-internal.4 />
+                            <x-kapabilitas-internal.1 :inputan="$inputan" />
+                            <x-kapabilitas-internal.2 :inputan="$inputan" />
+                            <x-kapabilitas-internal.3 :inputan="$inputan" />
+                            <x-kapabilitas-internal.4 :inputan="$inputan" />
 
                             <x-button-submit />
                         </form>

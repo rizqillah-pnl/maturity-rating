@@ -12,7 +12,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('hasil_penilaian_ikm')is-invalid @enderror"
                         id="hasil_penilaian_ikm" name="hasil_penilaian_ikm"
-                        placeholder="Masukkan Nilai Hasil Penilaian IKM" required autofocus>
+                        placeholder="Masukkan Nilai Hasil Penilaian IKM" required autofocus
+                        value="{{ $inputan ? $inputan['hasil_penilaian_ikm'] : '' }}">
                     @error('hasil_penilaian_ikm')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -27,7 +28,7 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('skala_maks_ikm')is-invalid @enderror"
                         id="skala_maks_ikm" name="skala_maks_ikm" placeholder="Masukkan Skala Maksimal Nilai IKM"
-                        required>
+                        required value="{{ $inputan ? $inputan['skala_maks_ikm'] : '' }}">
                     @error('skala_maks_ikm')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -42,7 +43,7 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_ikm')is-invalid @enderror" id="target_ikm"
                         name="target_ikm" placeholder="Masukkan Nilai (%) Target Indeks Kepuasan Masyarakat (IKM)"
-                        required>
+                        required value="{{ $inputan ? $inputan['target_ikm'] : '' }}">
                     @error('target_ikm')
                         <div class="invalid-feedback">
                             {{ $message }}

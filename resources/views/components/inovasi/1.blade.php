@@ -10,8 +10,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator11" id="indikator111" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator11" id="indikator111"
+                            {{ $inputan['indikator11'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator111">
                             Organisasi setidaknya telah memiliki
                             kesadaran terkait pentingnya
@@ -24,7 +25,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator112"
-                            value="2">
+                            {{ $inputan['indikator11'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator112">
                             Organisasi setidaknya telah melibatkan
                             pengguna layanan (internal BLU)
@@ -38,7 +39,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator113"
-                            value="3">
+                            {{ $inputan['indikator11'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator113">
                             Organisasi setidaknya telah melibatkan
                             pengguna layanan (internal dan
@@ -60,7 +61,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator114"
-                            value="4">
+                            {{ $inputan['indikator11'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator114">
                             Organisasi setidaknya telah melibatkan
                             pengguna layanan (internal dan
@@ -79,7 +80,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator115"
-                            value="5">
+                            {{ $inputan['indikator11'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator115">
                             Pengguna layanan berperan aktif
                             dalam end-to-end process
@@ -108,8 +109,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator12" id="indikator121" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator12" id="indikator121"
+                            {{ $inputan['indikator12'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator121">
                             Organisasi setidaknya telah
                             melibatkan pengguna layanan dalam
@@ -120,7 +122,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator122"
-                            value="2">
+                            {{ $inputan['indikator12'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator122">
                             Organisasi setidaknya telah
                             melibatkan pengguna layanan (internal
@@ -132,7 +134,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator123"
-                            value="3">
+                            {{ $inputan['indikator12'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator123">
                             Organisasi setidaknya telah menyusun
                             strategi keterlibatan pengguna
@@ -150,7 +152,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator124"
-                            value="4">
+                            {{ $inputan['indikator12'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator124">
                             Organisasi telah menyusun strategi
                             keterlibatan pengguna layanan
@@ -164,7 +166,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator125"
-                            value="5">
+                            {{ $inputan['indikator12'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator125">
                             Organisasi memiliki tools pendukung
                             yang mampu mendukung pelaksanaan

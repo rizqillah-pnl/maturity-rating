@@ -20,19 +20,19 @@ class LevelMaturitySeeder extends Seeder
         ]);
         LevelMaturity::create([
             'nama_level' => 'Managed',
-            'color' => 'dark',
-        ]);
-        LevelMaturity::create([
-            'nama_level' => 'Defined',
             'color' => 'warning',
         ]);
         LevelMaturity::create([
+            'nama_level' => 'Defined',
+            'color' => 'orange',
+        ]);
+        LevelMaturity::create([
             'nama_level' => 'Predicatable',
-            'color' => 'success',
+            'color' => 'primary',
         ]);
         LevelMaturity::create([
             'nama_level' => 'Optimizing',
-            'color' => 'primary',
+            'color' => 'success',
         ]);
     }
 }

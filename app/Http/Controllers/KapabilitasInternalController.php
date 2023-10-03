@@ -17,7 +17,13 @@ class KapabilitasInternalController extends Controller
      */
     public function index()
     {
-        return view('pages.kapabilitas-internal', ['title' => 'Aspek Kapabilitas Internal']);
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'KI')->get();
+        $new_inputan = [];
+        foreach ($inputan as $index => $row) {
+            $new_inputan[$row->inputan] = $row->nilai;
+        }
+
+        return view('pages.kapabilitas-internal', ['title' => 'Aspek Kapabilitas Internal', 'inputan' => $new_inputan]);
     }
 
     /**
@@ -79,7 +85,7 @@ class KapabilitasInternalController extends Controller
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'KI.4', 'indikator' => 'ki4', 'nilai' => $ki4, 'indikator_fullname' => 'KI.4 - Customer Focus'], ['indikator', 'indikator_maturity_id']);
 
-        return redirect()->route('tata_kk.index')->with('success', 'Berhasil Mengupload Data Aspek Kapabilitas Internal!');
+        return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Kapabilitas Internal!');
     }
 
     /**

@@ -31,11 +31,11 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-keuangan.1 />
-                            <x-keuangan.2 />
-                            <x-keuangan.3 />
-                            <x-keuangan.4 />
-                            {{-- <x-keuangan.5 /> --}}
+                            <x-keuangan.1 :inputan="$inputan" />
+                            <x-keuangan.2 :inputan="$inputan" />
+                            <x-keuangan.3 :inputan="$inputan" />
+                            <x-keuangan.4 :inputan="$inputan" />
+                            {{-- <x-keuangan.5 :inputan="$inputan"/> --}}
 
                             <x-button-submit />
                         </form>

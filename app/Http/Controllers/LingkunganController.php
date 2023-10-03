@@ -17,7 +17,13 @@ class LingkunganController extends Controller
      */
     public function index()
     {
-        return view('pages.lingkungan', ['title' => 'Aspek Lingkungan']);
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'LI')->get();
+        $new_inputan = [];
+        foreach ($inputan as $index => $row) {
+            $new_inputan[$row->inputan] = $row->nilai;
+        }
+
+        return view('pages.lingkungan', ['title' => 'Aspek Lingkungan', 'inputan' => $new_inputan]);
     }
 
     /**
@@ -61,7 +67,7 @@ class LingkunganController extends Controller
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'LI.2', 'indikator' => 'li2', 'nilai' => $li2, 'indikator_fullname' => 'LI.2 - Penggunaan Sumber Daya'], ['indikator', 'indikator_maturity_id']);
 
-        return redirect()->to('hasil_maturity')->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
+        return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
     }
 
     /**

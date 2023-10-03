@@ -17,6 +17,7 @@ class CreateAspekMaturitiesTable extends Migration
             $table->increments('id');
             $table->string('kode_aspek')->unique();
             $table->string('nama_aspek');
+            $table->string('bobot');
             $table->timestamps();
         });
     }

@@ -27,10 +27,10 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-inovasi.1 />
-                            <x-inovasi.2 />
-                            <x-inovasi.3 />
-                            <x-inovasi.4 />
+                            <x-inovasi.1 :inputan="$inputan" />
+                            <x-inovasi.2 :inputan="$inputan" />
+                            <x-inovasi.3 :inputan="$inputan" />
+                            <x-inovasi.4 :inputan="$inputan" />
 
                             <x-button-submit />
                         </form>

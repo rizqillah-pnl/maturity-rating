@@ -12,7 +12,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('surplus_pos')is-invalid @enderror"
                         id="surplus_pos" name="surplus_pos"
-                        placeholder="Masukkan Nilai Surplus atau Defisit sebelum Pos Keuntungan" required>
+                        placeholder="Masukkan Nilai Surplus atau Defisit sebelum Pos Keuntungan" required
+                        value="{{ $inputan ? $inputan['surplus_pos'] : '' }}">
                     @error('surplus_pos')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -26,7 +27,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('kerugian')is-invalid @enderror" id="kerugian"
-                        name="kerugian" placeholder="Masukkan Kerugian" required>
+                        name="kerugian" placeholder="Masukkan Kerugian" required
+                        value="{{ $inputan ? $inputan['kerugian'] : '' }}">
                     @error('kerugian')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -40,7 +42,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_aset')is-invalid @enderror" id="total_aset"
-                        name="total_aset" placeholder="Masukkan Total Aset" required>
+                        name="total_aset" placeholder="Masukkan Total Aset" required
+                        value="{{ $inputan ? $inputan['total_aset'] : '' }}">
                     @error('total_aset')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -54,7 +57,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_ekuitas')is-invalid @enderror"
-                        id="total_ekuitas" name="total_ekuitas" placeholder="Masukkan Total Ekuitas" required>
+                        id="total_ekuitas" name="total_ekuitas" placeholder="Masukkan Total Ekuitas" required
+                        value="{{ $inputan ? $inputan['total_ekuitas'] : '' }}">
                     @error('total_ekuitas')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -69,7 +73,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_imbalan_atas_aset')is-invalid @enderror"
                         id="target_imbalan_atas_aset" name="target_imbalan_atas_aset"
-                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Aset" required>
+                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Aset" required
+                        value="{{ $inputan ? $inputan['target_imbalan_atas_aset'] : '' }}">
                     @error('target_imbalan_atas_aset')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -84,7 +89,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_imbalan_atas_ekuitas')is-invalid @enderror"
                         id="target_imbalan_atas_ekuitas" name="target_imbalan_atas_ekuitas"
-                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Ekuitas" required>
+                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Ekuitas" required
+                        value="{{ $inputan ? $inputan['target_imbalan_atas_ekuitas'] : '' }}">
                     @error('target_imbalan_atas_ekuitas')
                         <div class="invalid-feedback">
                             {{ $message }}

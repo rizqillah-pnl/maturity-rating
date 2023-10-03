@@ -27,11 +27,11 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-tata_kk.1 />
-                            <x-tata_kk.2 />
-                            <x-tata_kk.3 />
-                            <x-tata_kk.4 />
-                            <x-tata_kk.5 />
+                            <x-tata_kk.1 :inputan="$inputan" />
+                            <x-tata_kk.2 :inputan="$inputan" />
+                            <x-tata_kk.3 :inputan="$inputan" />
+                            <x-tata_kk.4 :inputan="$inputan" />
+                            <x-tata_kk.5 :inputan="$inputan" />
 
                             <x-button-submit />
                         </form>

@@ -50,6 +50,10 @@
                                     MATURITAS
                                     BLU</h5>
                                 <div class="row">
+                                    @php
+                                        $arr_aspek_maturity = [];
+                                        $arr_bobot = [];
+                                    @endphp
                                     @foreach ($aspek_maturity as $index => $row)
                                         <div class="col-4">
                                             <div class="card card-{{ $color[$index] }}" style="min-height: 385px;">
@@ -88,16 +92,92 @@
                                                         <div class="col-8 bg-{{ $color[$index] }} text-center">
                                                             MATURITAS ASPEK
                                                         </div>
+                                                        @php
+                                                            $jum_aspek_maturity = $maturitas_aspek / count($row->indikator_maturity);
+                                                            $arr_aspek_maturity[$row->kode_aspek] = $jum_aspek_maturity;
+                                                            $arr_bobot[$row->kode_aspek] = $row->bobot;
+                                                        @endphp
                                                         <div class="col-4">
                                                             <input type="text" name="nilai11" id="nilai11"
                                                                 class="form-control" readonly
-                                                                value="{{ $maturitas_aspek / count($row->indikator_maturity) }}">
+                                                                value="{{ $jum_aspek_maturity }}">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="text-center mb-4" style="font-weight: bold;">BOBOT PERHITUNGAN MATURITAS</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach ($aspek_maturity as $index => $row)
+                                        <div class="col-4">
+                                            <div class="mb-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control"
+                                                        value="{{ $loop->iteration . '. ' . $row->nama_aspek }}" readonly>
+                                                    <span class="input-group-text bg-{{ $color[$index] }}"
+                                                        id="basic-addon3">{{ $row->bobot }}%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="text-center mb-4" style="font-weight: bold;">DETAIL PERHITUNGAN MATURITAS</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <h6 style="text-decoration: underline; font-weight: bold">ASPEK</h6>
+                                        @foreach ($aspek_maturity as $index => $row)
+                                            <div class="mb-3 mt-2">
+                                                <p>{{ $row->nama_aspek }}</p>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="col-3">
+                                        <h6 style="text-decoration: underline; font-weight: bold">BOBOT PENILAIAN</h6>
+                                        @foreach ($aspek_maturity as $index => $row)
+                                            <div class="mb-3 mt-2">
+                                                <p>{{ $row->bobot }}%</p>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="col-3">
+                                        <h6 style="text-decoration: underline; font-weight: bold">TINGKAT MATURITAS</h6>
+                                        @php
+                                            $maturity = 0;
+                                        @endphp
+                                        @foreach ($arr_aspek_maturity as $index => $row)
+                                            @php
+                                                $bobot = $arr_bobot[$index] / 100;
+                                                $maturity += $bobot * $row;
+                                            @endphp
+                                            <div class="mb-3 mt-2">
+                                                <p>{{ $row }}</p>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="col-3">
+                                        <h6 style="text-decoration: underline; font-weight: bold">TINGKAT MATURITAS BLU</h6>
+                                        <div class="mb-3 mt-2 border p-5 text-center bg-{{ $color[$maturity > 0 ? round($maturity) - 1 : 0] }}"
+                                            style="font-weight: bold;">
+                                            <span style="font-size: 50px;">{{ number_format($maturity, 2) }}</span>
+                                            <span style="font-size: 20px;"> atau
+                                                {{ number_format(($maturity / 5) * 100, 2) }}%</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -13,7 +13,7 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pendapatan_lra')is-invalid @enderror"
                         id="pendapatan_lra" name="pendapatan_lra" placeholder="Masukkan Nilai Total Pendapatan (LRA)"
-                        required>
+                        required value="{{ $inputan ? $inputan['pendapatan_lra'] : '' }}">
                     @error('pendapatan_lra')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -28,7 +28,7 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_belanja_lra')is-invalid @enderror"
                         id="total_belanja_lra" name="total_belanja_lra" placeholder="Masukkan Total Belanja (LRA)"
-                        required>
+                        required value="{{ $inputan ? $inputan['total_belanja_lra'] : '' }}">
                     @error('total_belanja_lra')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -43,7 +43,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_tingkat_kemandirian')is-invalid @enderror"
                         id="target_tingkat_kemandirian" name="target_tingkat_kemandirian"
-                        placeholder="Masukkan Nilai (%) Target Target Tingkat Kemandirian" required>
+                        placeholder="Masukkan Nilai (%) Target Target Tingkat Kemandirian" required
+                        value="{{ $inputan ? $inputan['target_tingkat_kemandirian'] : '' }}">
                     @error('target_tingkat_kemandirian')
                         <div class="invalid-feedback">
                             {{ $message }}

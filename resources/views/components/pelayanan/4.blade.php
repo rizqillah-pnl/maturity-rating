@@ -12,7 +12,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('realisasi_sub_indikator')is-invalid @enderror"
                         id="realisasi_sub_indikator" name="realisasi_sub_indikator"
-                        placeholder="Masukkan Nilai Realisasi sub-indikator" required>
+                        placeholder="Masukkan Nilai Realisasi sub-indikator" required
+                        value="{{ $inputan ? $inputan['realisasi_sub_indikator'] : '' }}">
                     @error('realisasi_sub_indikator')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -27,7 +28,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_sub_indikator')is-invalid @enderror"
                         id="target_sub_indikator" name="target_sub_indikator"
-                        placeholder="Masukkan Nilai Target sub-indikator" required>
+                        placeholder="Masukkan Nilai Target sub-indikator" required
+                        value="{{ $inputan ? $inputan['target_sub_indikator'] : '' }}">
                     @error('target_sub_indikator')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -43,7 +45,8 @@
                     <input type="number"
                         class="form-control @error('target_keberhasilan_pemenuhan_layanan')is-invalid @enderror"
                         id="target_keberhasilan_pemenuhan_layanan" name="target_keberhasilan_pemenuhan_layanan"
-                        placeholder="Masukkan Nilai (%) Target Keberhasilan Pemenuhan Layanan" required>
+                        placeholder="Masukkan Nilai (%) Target Keberhasilan Pemenuhan Layanan" required
+                        value="{{ $inputan ? $inputan['target_keberhasilan_pemenuhan_layanan'] : '' }}">
                     @error('target_keberhasilan_pemenuhan_layanan')
                         <div class="invalid-feedback">
                             {{ $message }}

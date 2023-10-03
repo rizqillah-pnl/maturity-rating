@@ -12,7 +12,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pengaduan_ditindaklanjut')is-invalid @enderror"
                         id="pengaduan_ditindaklanjut" name="pengaduan_ditindaklanjut"
-                        placeholder="Masukkan Nilai Pengaduan Ditindaklanjuti" required>
+                        placeholder="Masukkan Nilai Pengaduan Ditindaklanjuti" required
+                        value="{{ $inputan ? $inputan['pengaduan_ditindaklanjut'] : '' }}">
                     @error('pengaduan_ditindaklanjut')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -26,7 +27,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('jumlah_pengaduan')is-invalid @enderror"
-                        id="jumlah_pengaduan" name="jumlah_pengaduan" placeholder="Masukkan Jumlah Pengaduan" required>
+                        id="jumlah_pengaduan" name="jumlah_pengaduan" placeholder="Masukkan Jumlah Pengaduan" required
+                        value="{{ $inputan ? $inputan['jumlah_pengaduan'] : '' }}">
                     @error('jumlah_pengaduan')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -41,7 +43,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('penyelasaian_tepat_waktu')is-invalid @enderror"
                         id="penyelasaian_tepat_waktu" name="penyelasaian_tepat_waktu"
-                        placeholder="Masukkan Penyelesaian Tepat Waktu" required>
+                        placeholder="Masukkan Penyelesaian Tepat Waktu" required
+                        value="{{ $inputan ? $inputan['penyelasaian_tepat_waktu'] : '' }}">
                     @error('penyelasaian_tepat_waktu')
                         <div class="invalid-feedback">
                             {{ $message }}

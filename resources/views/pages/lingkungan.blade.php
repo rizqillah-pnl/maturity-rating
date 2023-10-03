@@ -27,8 +27,8 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-lingkungan.1 />
-                            <x-lingkungan.2 />
+                            <x-lingkungan.1 :inputan="$inputan" />
+                            <x-lingkungan.2 :inputan="$inputan" />
 
                             <x-button-submit />
                         </form>

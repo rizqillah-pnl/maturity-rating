@@ -10,8 +10,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator41" id="indikator411" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator41" id="indikator411"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator41'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator411">
                             Keberhasilan proses perubahan
                             setidaknya bergantung pada upaya
@@ -22,7 +23,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator412"
-                            value="2">
+                            {{ $inputan['indikator41'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator412">
                             Keberhasilan proses perubahan
                             setidaknya bergantung pada upaya dan
@@ -36,7 +37,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator413"
-                            value="3">
+                            {{ $inputan['indikator41'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator413">
                             Keberhasilan proses perubahan
                             setidaknya bergantung pada upaya dan
@@ -51,7 +52,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator414"
-                            value="4">
+                            {{ $inputan['indikator41'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator414">
                             Keberhasilan proses perubahan
                             bergantung pada organisasi secara
@@ -72,7 +73,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator415"
-                            value="5">
+                            {{ $inputan['indikator41'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator415">
                             Keberhasilkan manajemen perubahan
                             sudah sepenuhnya bergantung pada
@@ -95,8 +96,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator42" id="indikator421" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator42" id="indikator421"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator42'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator421">
                             Proses manajemen perubahan
                             setidaknya telah dilakukan secara adhoc.
@@ -106,7 +108,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator422"
-                            value="2">
+                            {{ $inputan['indikator42'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator422">
                             Proses manajemen perubahan
                             setidaknya telah dilakukan secara
@@ -117,7 +119,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator423"
-                            value="3">
+                            {{ $inputan['indikator42'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator423">
                             Proses manajemen perubahan
                             setidaknya telah dilakukan secara
@@ -130,7 +132,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator424"
-                            value="4">
+                            {{ $inputan['indikator42'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator424">
                             Proses manajemen perubahan
                             setidaknya telah dilakukan secara rutin
@@ -146,7 +148,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator425"
-                            value="5">
+                            {{ $inputan['indikator42'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator425">
                             Proses manajemen perubahan sudah
                             dalam tahap continuous improvement
@@ -168,8 +170,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator43" id="indikator431" checked
-                            value="2">
+                        <input class="form-check-input" type="radio" name="indikator43" id="indikator431"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator43'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator431">
                             Unsur-unsur perencanaan komunikasi
                             jelas, dan setidaknya terdapat sedikit
@@ -181,7 +184,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator43" id="indikator432"
-                            value="3">
+                            {{ $inputan['indikator43'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator432">
                             Terdapat pelatihan dan alat
                             pendukung bagi para pemimpin proyek
@@ -193,7 +196,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator43" id="indikator433"
-                            value="4">
+                            {{ $inputan['indikator43'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator433">
                             Terdapat pelatihan secara berkala dan
                             BLU berpartisipasi aktif dalam

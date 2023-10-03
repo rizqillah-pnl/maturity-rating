@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator21'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator211">
                             Proses bisnis pada organisasi setidaknya telah dikelola secara ad hoc.
                         </label>
@@ -21,7 +22,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
-                            value="2">
+                            {{ $inputan['indikator21'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator212">
                             Organisasi setidaknya memiliki arahan
                             dari manajemen eksekutif, rencana
@@ -34,7 +35,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
-                            value="3">
+                            {{ $inputan['indikator21'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator213">
                             Seluruh proses bisnis organisasi telah
                             didefinisikan dalam prosedur baku
@@ -46,7 +47,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
-                            value="4">
+                            {{ $inputan['indikator21'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator214">
                             Organisasi setidaknya mampu
                             memprediksi output yang dihasilkan
@@ -62,7 +63,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
-                            value="5">
+                            {{ $inputan['indikator21'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator215">
                             Organisasi setidaknya memiliki
                             improvement dan sustainability
@@ -84,8 +85,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator22'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator221">
                             Panduan dalam melaksanakan proses
                             bisnis dan peningkatan kualitas layanan setidaknya dilakukan secara
@@ -96,7 +98,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
-                            value="2">
+                            {{ $inputan['indikator22'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator222">
                             Organisasi setidaknya telah mengelola
                             layanan dan produk dari pihak ketiga
@@ -108,7 +110,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
-                            value="3">
+                            {{ $inputan['indikator22'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator223">
                             Organisasi setidaknya mampu
                             mengelola barang dan jasa yang
@@ -124,7 +126,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
-                            value="4">
+                            {{ $inputan['indikator22'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator224">
                             Organisasi setidaknya
                             mengintegrasikan dan meningkatkan
@@ -138,7 +140,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
-                            value="5">
+                            {{ $inputan['indikator22'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator225">
                             Organisasi telah melakukan analisis
                             terhadap stakeholder feedback untuk

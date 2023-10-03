@@ -23,9 +23,27 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
+                        @push('css-script')
+                            <style>
+                                .text-orange {
+                                    color: rgb(187, 121, 0);
+                                }
+
+                                .btn-orange,
+                                .bg-orange {
+                                    background-color: rgb(187, 121, 0);
+                                    color: white !important;
+                                }
+
+                                .btn-warning,
+                                .bg-warning {
+                                    color: white !important;
+                                }
+                            </style>
+                        @endpush
 
                         @php
-                            $color = ['primary', 'danger', 'success', 'warning', 'info', 'dark'];
+                            $color = ['danger', 'warning', 'orange', 'primary', 'success', 'info', 'dark'];
                         @endphp
                         @foreach ($data as $index => $row)
                             <div class="card card-{{ $color[$index] }}">

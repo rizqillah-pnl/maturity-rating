@@ -12,7 +12,7 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('layanan_tpt_waktu')is-invalid @enderror"
                         id="layanan_tpt_waktu" name="layanan_tpt_waktu" placeholder="Masukkan Nilai Layanan Tepat Waktu"
-                        required>
+                        required value="{{ $inputan ? $inputan['layanan_tpt_waktu'] : '' }}">
                     @error('layanan_tpt_waktu')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -26,7 +26,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('jum_layanan')is-invalid @enderror"
-                        id="jum_layanan" name="jum_layanan" placeholder="Masukkan Jumlah Layanan Dihantarkan" required>
+                        id="jum_layanan" name="jum_layanan" placeholder="Masukkan Jumlah Layanan Dihantarkan" required
+                        value="{{ $inputan ? $inputan['jum_layanan'] : '' }}">
                     @error('jum_layanan')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -41,7 +42,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_efisiensi_pelayanan')is-invalid @enderror"
                         id="target_efisiensi_pelayanan" name="target_efisiensi_pelayanan"
-                        placeholder="Masukkan Nilai (%) Target Efisiensi Waktu Pelayanan" required>
+                        placeholder="Masukkan Nilai (%) Target Efisiensi Waktu Pelayanan" required
+                        value="{{ $inputan ? $inputan['target_efisiensi_pelayanan'] : '' }}">
                     @error('target_efisiensi_pelayanan')
                         <div class="invalid-feedback">
                             {{ $message }}

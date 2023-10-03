@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211"
+                            {{ $inputan['indikator21'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator211">
                             Organisasi setidaknya telah memiliki
                             kesadaran terkait pentingnya efisiensi
@@ -24,7 +25,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
-                            value="2">
+                            {{ $inputan['indikator21'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator212">
                             Kegiatan yang bertujuan untuk
                             efisiensi penggunaan sumber daya
@@ -40,7 +41,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
-                            value="3">
+                            {{ $inputan['indikator21'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator213">
                             Kegiatan efisiensi penggunaan sumber
                             daya setidaknya telah
@@ -54,7 +55,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
-                            value="4">
+                            {{ $inputan['indikator21'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator214">
                             Penyusunan metode pengukuran atas
                             penggunaan sumber daya sudah
@@ -67,7 +68,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
-                            value="5">
+                            {{ $inputan['indikator21'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator215">
                             Kegiatan efisiensi penggunaan sumber
                             daya telah memenuhi standar
@@ -90,8 +91,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221"
+                            {{ $inputan['indikator22'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator221">
                             Kegiatan yang bertujuan untuk
                             efisiensi penggunaan sumber daya
@@ -104,7 +106,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
-                            value="2">
+                            {{ $inputan['indikator22'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator222">
                             Dokumentasi yang berkaitan dengan
                             proses efisiensi sumber daya setidaknya telah bersifat formal dan
@@ -115,7 +117,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
-                            value="3">
+                            {{ $inputan['indikator22'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator223">
                             Standar baku dalam melakukan
                             kegiatan efisiensi penggunaan sumber
@@ -131,7 +133,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
-                            value="4">
+                            {{ $inputan['indikator22'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator224">
                             Standar baku dalam melakukan
                             kegiatan efisiensi penggunaan sumber
@@ -150,7 +152,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
-                            value="5">
+                            {{ $inputan['indikator22'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator225">
                             Kegiatan efisiensi penggunaan sumber
                             daya menjadi dasar organisasi dalam mengembangkan action plan untuk
@@ -171,8 +173,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator23" id="indikator231" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator23" id="indikator231"
+                            {{ $inputan['indikator23'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator231">
                             Dokumentasi yang berkaitan dengan
                             kegiatan efisiensi penggunaan sumber
@@ -183,7 +186,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator23" id="indikator232"
-                            value="2">
+                            {{ $inputan['indikator23'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator232">
                             Identifikasi kebutuhan dari internal
                             dan eksternal BLU untuk keperluan
@@ -196,7 +199,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator23" id="indikator233"
-                            value="3">
+                            {{ $inputan['indikator23'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator233">
                             Kegiatan efisiensi penggunaan sumber
                             daya setidaknya telah dilakukan
@@ -208,7 +211,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator23" id="indikator234"
-                            value="4">
+                            {{ $inputan['indikator23'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator234">
                             Terdapat aktivitas peninjauan dan
                             pengawasan oleh pejabat berwenang
@@ -219,7 +222,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator23" id="indikator235"
-                            value="5">
+                            {{ $inputan['indikator23'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator235">
                             Hasil dari pengukuran dampak
                             lingkungan dan action plan yang

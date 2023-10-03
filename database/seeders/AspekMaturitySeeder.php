@@ -16,27 +16,33 @@ class AspekMaturitySeeder extends Seeder
     {
         AspekMaturity::create([
             'kode_aspek' => 'KE',
-            'nama_aspek' => 'Keuangan'
+            'nama_aspek' => 'Keuangan',
+            'bobot' => 25
         ]);
         AspekMaturity::create([
             'kode_aspek' => 'PL',
-            'nama_aspek' => 'Pelayanan'
+            'nama_aspek' => 'Pelayanan',
+            'bobot' => 20
         ]);
         AspekMaturity::create([
             'kode_aspek' => 'KI',
-            'nama_aspek' => 'Kapabilitas Internal'
+            'nama_aspek' => 'Kapabilitas Internal',
+            'bobot' => 20
         ]);
         AspekMaturity::create([
             'kode_aspek' => 'TK',
-            'nama_aspek' => 'Tata Kelola dan Kepemimpinan'
+            'nama_aspek' => 'Tata Kelola dan Kepemimpinan',
+            'bobot' => 20
         ]);
         AspekMaturity::create([
             'kode_aspek' => 'IN',
-            'nama_aspek' => 'Inovasi'
+            'nama_aspek' => 'Inovasi',
+            'bobot' => 10
         ]);
         AspekMaturity::create([
             'kode_aspek' => 'LI',
-            'nama_aspek' => 'Lingkungan'
+            'nama_aspek' => 'Lingkungan',
+            'bobot' => 5
         ]);
     }
 }

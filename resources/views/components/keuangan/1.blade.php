@@ -11,7 +11,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('aset_lancar')is-invalid @enderror"
-                        id="aset_lancar" name="aset_lancar" placeholder="Masukkan Nilai Aset Lancar" required autofocus>
+                        id="aset_lancar" name="aset_lancar" placeholder="Masukkan Nilai Aset Lancar" required autofocus
+                        value="{{ $inputan ? $inputan['aset_lancar'] : '' }}">
                     @error('aset_lancar')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -25,7 +26,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('kwjb_jgk')is-invalid @enderror" id="kwjb_jgk"
-                        name="kwjb_jgk" placeholder="Masukkan Kewajiban Jangka Pendek" required>
+                        name="kwjb_jgk" placeholder="Masukkan Kewajiban Jangka Pendek" required
+                        value="{{ $inputan ? $inputan['kwjb_jgk'] : '' }}">
                     @error('kwjb_jgk')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -40,7 +42,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pdp_inves_jgk')is-invalid @enderror"
                         id="pdp_inves_jgk" name="pdp_inves_jgk"
-                        placeholder="Masukkan Pendapatan Investasi Jangka Pendek" required>
+                        placeholder="Masukkan Pendapatan Investasi Jangka Pendek" required
+                        value="{{ $inputan ? $inputan['pdp_inves_jgk'] : '' }}">
                     @error('pdp_inves_jgk')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -54,8 +57,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('saldo_rek_op')is-invalid @enderror"
-                        id="saldo_rek_op" name="saldo_rek_op" placeholder="Masukkan Saldo rekening operasional"
-                        required>
+                        id="saldo_rek_op" name="saldo_rek_op" placeholder="Masukkan Saldo rekening operasional" required
+                        value="{{ $inputan ? $inputan['saldo_rek_op'] : '' }}">
                     @error('saldo_rek_op')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -69,8 +72,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pengelolaan_kas')is-invalid @enderror"
-                        id="pengelolaan_kas" name="pengelolaan_kas" placeholder="Masukkan Nama Pengelolaan Kas"
-                        required>
+                        id="pengelolaan_kas" name="pengelolaan_kas" placeholder="Masukkan Nama Pengelolaan Kas" required
+                        value="{{ $inputan ? $inputan['pengelolaan_kas'] : '' }}">
                     @error('pengelolaan_kas')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -85,7 +88,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_rasio_lancar')is-invalid @enderror"
                         id="target_rasio_lancar" name="target_rasio_lancar"
-                        placeholder="Masukkan Nilai (%) Target Rasio Lancar" required>
+                        placeholder="Masukkan Nilai (%) Target Rasio Lancar" required
+                        value="{{ $inputan ? $inputan['target_rasio_lancar'] : '' }}">
                     @error('target_rasio_lancar')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -100,7 +104,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_optimalisasi_kas')is-invalid @enderror"
                         id="target_optimalisasi_kas" name="target_optimalisasi_kas"
-                        placeholder="Masukkan Nilai (%) Target Optimalisasi Kas" required>
+                        placeholder="Masukkan Nilai (%) Target Optimalisasi Kas" required
+                        value="{{ $inputan ? $inputan['target_optimalisasi_kas'] : '' }}">
                     @error('target_optimalisasi_kas')
                         <div class="invalid-feedback">
                             {{ $message }}

@@ -11,7 +11,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('output_blu')is-invalid @enderror" id="output_blu"
-                        name="output_blu" placeholder="Masukkan Nilai Output BLU (Pendapatan Operasional)" required>
+                        name="output_blu" placeholder="Masukkan Nilai Output BLU (Pendapatan Operasional)" required
+                        value="{{ $inputan ? $inputan['output_blu'] : '' }}">
                     @error('output_blu')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -25,7 +26,8 @@
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('input_blu')is-invalid @enderror" id="input_blu"
-                        name="input_blu" placeholder="Masukkan Input BLU (Total Beban)" required>
+                        name="input_blu" placeholder="Masukkan Input BLU (Total Beban)" required
+                        value="{{ $inputan ? $inputan['input_blu'] : '' }}">
                     @error('input_blu')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -40,7 +42,8 @@
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_pobo')is-invalid @enderror"
                         id="target_pobo" name="target_pobo"
-                        placeholder="Masukkan Nilai (%) Target Operasional terhadap Beban Operasional" required>
+                        placeholder="Masukkan Nilai (%) Target Operasional terhadap Beban Operasional" required
+                        value="{{ $inputan ? $inputan['target_pobo'] : '' }}">
                     @error('target_pobo')
                         <div class="invalid-feedback">
                             {{ $message }}

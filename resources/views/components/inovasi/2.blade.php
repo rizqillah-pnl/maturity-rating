@@ -10,8 +10,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator21'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator211">
                             Organisasi setidaknya telah memiliki
                             kesadaran terkait pentingnya proses
@@ -24,7 +25,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
-                            value="2">
+                            {{ $inputan['indikator21'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator212">
                             Organisasi setidaknya telah melakukan
                             proses perancangan inovasi secara
@@ -35,7 +36,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
-                            value="3">
+                            {{ $inputan['indikator21'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator213">
                             Organisasi setidaknya telah
                             mendefinisikan standar baku dan
@@ -47,7 +48,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
-                            value="4">
+                            {{ $inputan['indikator21'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator214">
                             Organisasi setidaknya telah
                             menetapkan struktur/unit/fungsi
@@ -71,7 +72,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
-                            value="5">
+                            {{ $inputan['indikator21'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator215">
                             Hasil evaluasi atas pelaksanaan proses
                             inovasi digunakan sebagai dasar untuk
@@ -93,8 +94,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator22'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator221">
                             Organisasi setidaknya telah melakukan
                             proses inovasi secara ad-hoc dan/atau
@@ -106,7 +108,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
-                            value="2">
+                            {{ $inputan['indikator22'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator222">
                             Organisasi setidaknya telah melakukan
                             proses pembuatan inovasi secara rutin
@@ -117,7 +119,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
-                            value="3">
+                            {{ $inputan['indikator22'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator223">
                             Proses inovasi dilakukan secara
                             terintegrasi dan saling mendukung,
@@ -131,7 +133,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
-                            value="4">
+                            {{ $inputan['indikator22'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator224">
                             Proses inovasi dijadikan sebagai Key
                             Performance Indicator (KPI) pada
@@ -142,7 +144,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
-                            value="5">
+                            {{ $inputan['indikator22'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator225">
                             Organisasi memiliki innovation tools
                             yang mampu mendukung pelaksanaan

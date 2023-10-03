@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator21" id="indikator211"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator21'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator211">
                             Kode etik organisasi (spesifik untuk internal organisasi) setidaknya telah ditetapkan secara
                             lisan atau informal.
@@ -22,7 +23,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator212"
-                            value="2">
+                            {{ $inputan['indikator21'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator212">
                             Kode etik organisasi setidaknya telah disusun dan ditetapkan secara formal untuk kelompok
                             kerja atau divisi tertentu.
@@ -32,7 +33,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator213"
-                            value="3">
+                            {{ $inputan['indikator21'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator213">
                             Kode etik organisasi telah disusun dan ditetapkan secara formal dalam kebijakan baku/standar
                             yang berlaku di lingkungan organisasi secara keseluruhan serta Kode etik organisasi
@@ -44,7 +45,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator214"
-                            value="4">
+                            {{ $inputan['indikator21'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator214">
                             Organisasi setidaknya telah
                             melaksanakan reviu dan evaluasi
@@ -57,7 +58,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator21" id="indikator215"
-                            value="5">
+                            {{ $inputan['indikator21'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator215">
                             Hasil reviu dan evaluasi digunakan
                             sebagai umpan balik (feedback) atau
@@ -79,8 +80,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator22" id="indikator221"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan['indikator22'] == 1 ? 'checked' : '' }} value="1">
                         <label class="form-check-label" for="indikator221">
                             Kode etik organisasi setidaknya sudah
                             diterapkan atau berlaku dalam
@@ -92,7 +94,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator222"
-                            value="2">
+                            {{ $inputan['indikator22'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator222">
                             Kode etik organisasi setidaknya sudah
                             dikomunikasikan secara ad-hoc,
@@ -104,7 +106,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator223"
-                            value="3">
+                            {{ $inputan['indikator22'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator223">
                             Kode etik organisasi setidaknya sudah
                             dikomunikasikan secara rutin kepada
@@ -121,7 +123,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator224"
-                            value="4">
+                            {{ $inputan['indikator22'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator224">
                             Organisasi setidaknya telah
                             memastikan bahwa sistem reward and
@@ -136,7 +138,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator22" id="indikator225"
-                            value="5">
+                            {{ $inputan['indikator22'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator225">
                             Organisasi selalu mempertimbangkan
                             masukan dari setiap stakeholder dalam

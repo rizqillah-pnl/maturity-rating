@@ -17,7 +17,13 @@ class PelayananController extends Controller
      */
     public function index()
     {
-        return view('pages.pelayanan', ['title' => 'Aspek Pelayanan']);
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'PL')->get();
+        $new_inputan = [];
+        foreach ($inputan as $index => $row) {
+            $new_inputan[$row->inputan] = $row->nilai;
+        }
+
+        return view('pages.pelayanan', ['title' => 'Aspek Pelayanan', 'inputan' => $new_inputan]);
     }
 
     /**
@@ -163,7 +169,7 @@ class PelayananController extends Controller
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'PL.4', 'indikator' => 'pl4', 'nilai' => $pl4, 'indikator_fullname' => 'PL.4 - Tingkat Keberhasilan Pemenuhan Layanan'], ['indikator', 'indikator_maturity_id']);
 
-        return redirect()->route('kapabilitas_internal.index')->with('success', 'Berhasil Mengupload Data Aspek Pelayanan!');
+        return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Pelayanan!');
     }
 
     /**

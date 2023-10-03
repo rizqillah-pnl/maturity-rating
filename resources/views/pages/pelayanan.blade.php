@@ -31,10 +31,10 @@
                             @csrf
                             <x-button-submit />
 
-                            <x-pelayanan.1 />
-                            <x-pelayanan.2 />
-                            <x-pelayanan.3 />
-                            <x-pelayanan.4 />
+                            <x-pelayanan.1 :inputan="$inputan" />
+                            <x-pelayanan.2 :inputan="$inputan" />
+                            <x-pelayanan.3 :inputan="$inputan" />
+                            <x-pelayanan.4 :inputan="$inputan" />
 
                             <x-button-submit />
                         </form>

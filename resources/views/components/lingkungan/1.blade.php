@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator11" id="indikator111" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator11" id="indikator111"
+                            {{ $inputan['indikator11'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator111">
                             Organisasi setidaknya telah memiliki
                             kesadaran terkait pentingnya
@@ -25,7 +26,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator112"
-                            value="2">
+                            {{ $inputan['indikator11'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator112">
                             Kegiatan pengelolaan environmental
                             footprint setidaknya telah didefinisikan
@@ -40,7 +41,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator113"
-                            value="3">
+                            {{ $inputan['indikator11'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator113">
                             Kegiatan pengelolaan environmental
                             footprint oleh BLU setidaknya telah
@@ -54,7 +55,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator114"
-                            value="4">
+                            {{ $inputan['indikator11'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator114">
                             Kegiatan pengelolaan environmental
                             footprint oleh BLU setidaknya telah
@@ -68,7 +69,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator115"
-                            value="5">
+                            {{ $inputan['indikator11'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator115">
                             Kegiatan pengelolaan environmental
                             footprint telah memenuhi standar
@@ -92,7 +93,8 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator121" checked
-                            value="1">
+                            {{ $inputan['indikator12'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator121">
                             Kegiatan pengelolaan environmental
                             footprint setidaknya telah dilakukan
@@ -105,7 +107,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator122"
-                            value="2">
+                            {{ $inputan['indikator12'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator122">
                             Dokumentasi yang berkaitan dengan
                             kegiatan pengelolaan environmental footprint setidaknya telah bersifat
@@ -116,7 +118,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator123"
-                            value="3">
+                            {{ $inputan['indikator12'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator123">
                             Standar baku dalam melakukan
                             kegiatan pengelolaan environmental
@@ -132,7 +134,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator124"
-                            value="4">
+                            {{ $inputan['indikator12'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator124">
                             Standar baku dalam melakukan
                             kegiatan pengelolaan environmental
@@ -151,7 +153,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator125"
-                            value="5">
+                            {{ $inputan['indikator12'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator125">
                             Kegiatan pengelolaan environmental
                             footprint menjadi dasar organisasi
@@ -174,7 +176,8 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator13" id="indikator131" checked
-                            value="1">
+                            {{ $inputan['indikator13'] == 1 ? 'checked' : '' }}
+                            {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator131">
                             Dokumentasi yang berkaitan dengan
                             kegiatan pengelolaan environmental
@@ -185,7 +188,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator13" id="indikator132"
-                            value="2">
+                            {{ $inputan['indikator13'] == 2 ? 'checked' : '' }} value="2">
                         <label class="form-check-label" for="indikator132">
                             Identifikasi kebutuhan dari internal
                             dan eksternal BLU untuk keperluan
@@ -198,7 +201,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator13" id="indikator133"
-                            value="3">
+                            {{ $inputan['indikator13'] == 3 ? 'checked' : '' }} value="3">
                         <label class="form-check-label" for="indikator133">
                             Kegiatan pengelolaan environmental
                             footprint setidaknya telah dilakukan
@@ -210,7 +213,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator13" id="indikator134"
-                            value="4">
+                            {{ $inputan['indikator13'] == 4 ? 'checked' : '' }} value="4">
                         <label class="form-check-label" for="indikator134">
                             Terdapat aktivitas peninjauan dan
                             pengawasan oleh pejabat berwenang
@@ -222,7 +225,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator13" id="indikator135"
-                            value="5">
+                            {{ $inputan['indikator13'] == 5 ? 'checked' : '' }} value="5">
                         <label class="form-check-label" for="indikator135">
                             Hasil dari pengukuran dampak
                             lingkungan dan action plan yang
