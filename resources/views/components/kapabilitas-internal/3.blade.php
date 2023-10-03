@@ -13,7 +13,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator311"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator31'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator31'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator311">
                             Organisasi setidaknya telah melakukan manajemen layanan TI secara ad-hoc.
                         </label>
@@ -22,7 +22,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator312"
-                            {{ $inputan['indikator31'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator31'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator312">
                             Organisasi setidaknya telah melakukan
                             manajemen layanan TI secara rutin, di
@@ -34,7 +34,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator313"
-                            {{ $inputan['indikator31'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator31'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator313">
                             Seluruh proses bisnis yang berkaitan
                             dengan tata kelola TI telah
@@ -47,7 +47,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator314"
-                            {{ $inputan['indikator31'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator31'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator314">
                             Seluruh proses bisnis yang berkaitan
                             dengan tata kelola TI mampu
@@ -61,7 +61,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator315"
-                            {{ $inputan['indikator31'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator31'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator315">
                             Organisasi secara aktif
                             mengidentifikasi peluang inovasi
@@ -84,7 +84,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator321"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator32'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator32'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator321">
                             Organisasi setidaknya memiliki satu
                             proses/aktivitas operasional day-to-day
@@ -95,7 +95,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator322"
-                            {{ $inputan['indikator32'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator32'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator322">
                             Organisasi setidaknya memiliki
                             beberapa/sebagian proses/aktivitas
@@ -107,7 +107,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator323"
-                            {{ $inputan['indikator32'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator32'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator323">
                             Sebagian day-to-day aktivitas
                             operasional yang berhubungan dengan
@@ -119,7 +119,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator324"
-                            {{ $inputan['indikator32'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator32'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator324">
                             Organisasi memiliki dana investasi TI
                             untuk memastikan kinerja dapat
@@ -131,7 +131,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator325"
-                            {{ $inputan['indikator32'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator32'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator325">
                             Service Governance TI organisasi telah
                             mencakup pengelolaan atas
@@ -155,7 +155,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator331"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator33'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator33'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator331">
                             Organisasi setidaknya telah melakukan
                             identifikasi isu TI dan penyelesaiannya
@@ -166,7 +166,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator332"
-                            {{ $inputan['indikator33'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator33'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator332">
                             Organisasi setidaknya telah
                             mengidentifikasi proses bisnis yang
@@ -177,7 +177,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator333"
-                            {{ $inputan['indikator33'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator33'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator333">
                             Tata kelola TI telah bersifat proaktif, di
                             mana organisasi mampu
@@ -190,7 +190,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator334"
-                            {{ $inputan['indikator33'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator33'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator334">
                             Day-to-day aktivitas operasional telah
                             terintegrasi secara penuh melalui
@@ -201,7 +201,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator335"
-                            {{ $inputan['indikator33'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator33'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator335">
                             Organisasi telah melakukan analisis
                             terhadap stakeholder feedback untuk
@@ -224,7 +224,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator34" id="indikator341"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator34'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator34'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator341">
                             Organisasi setidaknya memiliki tata
                             kelola TI untuk mendukung technical
@@ -235,7 +235,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator34" id="indikator342"
-                            {{ $inputan['indikator34'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator34'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator342">
                             Sebagian tata kelola TI setidaknya
                             telah dipusatkan pada
@@ -246,7 +246,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator34" id="indikator343"
-                            {{ $inputan['indikator34'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator34'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator343">
                             Organisasi telah menindaklanjuti
                             feedback terkait tata kelola TI

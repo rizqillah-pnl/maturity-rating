@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator51" id="indikator511" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator51" id="indikator511"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan ? ($inputan['indikator51'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator511">
                             Aktivitas pengawasan dan pelaporan
                             setidaknya telah dilakukan secara adhoc dan/atau jika terdapat kebutuhan.
@@ -22,7 +23,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator51" id="indikator512"
-                            value="2">
+                            {{ $inputan ? ($inputan['indikator51'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator512">
                             Aktivitas pengawasan dan pelaporan
                             setidaknya telah dilakukan secara
@@ -33,7 +34,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator51" id="indikator513"
-                            value="3">
+                            {{ $inputan ? ($inputan['indikator51'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator513">
                             Aktivitas pengawasan dan pelaporan
                             setidaknya telah dilakukan secara
@@ -44,7 +45,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator51" id="indikator514"
-                            value="4">
+                            {{ $inputan ? ($inputan['indikator51'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator514">
                             Struktur/unit/fungsi khusus yang
                             bertugas untuk mengelola aktivitas pengawasan dan pelaporan di dalam
@@ -60,7 +61,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator51" id="indikator515"
-                            value="5">
+                            {{ $inputan ? ($inputan['indikator51'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator515">
                             Hasil reviu dan evaluasi terhadap
                             pelaksanaan pengawasan dan
@@ -83,8 +84,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator52" id="indikator521" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator52" id="indikator521"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan ? ($inputan['indikator52'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator521">
                             Organisasi telah menghasilkan output
                             pekerjaan dari aktivitas pengawasan
@@ -96,7 +98,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator52" id="indikator522"
-                            value="2">
+                            {{ $inputan ? ($inputan['indikator52'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator522">
                             Terdapat panduan yang setidaknya
                             mencakup beberapa aktivitas
@@ -111,7 +113,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator52" id="indikator523"
-                            value="3">
+                            {{ $inputan ? ($inputan['indikator52'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator523">
                             Terdapat panduan pengawasan dan
                             pelaporan baku dan standar dengan
@@ -130,7 +132,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator52" id="indikator524"
-                            value="4">
+                            {{ $inputan ? ($inputan['indikator52'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator524">
                             Terdapat pelatihan dan penyuluhan
                             secara berkala terkait aktivitas
@@ -147,7 +149,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator52" id="indikator525"
-                            value="5">
+                            {{ $inputan ? ($inputan['indikator52'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator525">
                             Penggunaan SI/TI yang terpadu, yang
                             mendukung aktivitas pengawasan dan
@@ -169,8 +171,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator53" id="indikator531" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator53" id="indikator531"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan ? ($inputan['indikator53'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator531">
                             Aktivitas pengawasan dan pelaporan
                             setidaknya sudah diterapkan atau
@@ -183,7 +186,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator53" id="indikator532"
-                            value="2">
+                            {{ $inputan ? ($inputan['indikator53'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator532">
                             Pelaksanaan aktivitas pengawasan dan
                             pelaporan setidaknya sudah
@@ -194,7 +197,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator53" id="indikator533"
-                            value="3">
+                            {{ $inputan ? ($inputan['indikator53'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator533">
                             Pengawasan dan pelaporan sudah
                             diterapkan atau dilaksanakan di
@@ -219,7 +222,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator53" id="indikator534"
-                            value="5">
+                            {{ $inputan ? ($inputan['indikator53'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator534">
                             Organisasi secara konsisten berupaya
                             untuk berinovasi dalam praktik

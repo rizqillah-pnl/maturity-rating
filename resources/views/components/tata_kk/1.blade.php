@@ -14,7 +14,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator111"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator11'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator11'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator111">
                             Penyusunan rencana strategis setidaknya telah dilakukan secara adhoc.
                         </label>
@@ -23,7 +23,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator112"
-                            {{ $inputan['indikator11'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator11'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator112">
                             Penyusunan rencana strategis setidaknya telah dilakukan secara rutin oleh unit tertentu
                             (misal: Unit TI telah menyusun Rencana Strategis TI/IT Master Plan).
@@ -33,7 +33,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator113"
-                            {{ $inputan['indikator11'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator11'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator113">
                             Rencana strategis setidaknya telah dikembangkan secara berkala dan terjadwal, baik untuk
                             periode tahunan maupun lima tahunan serta Penyusunan rencana strategis setidaknya telah
@@ -45,7 +45,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator114"
-                            {{ $inputan['indikator11'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator11'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator114">
                             Organisasi setidaknya telah melaksanakan reviu dan evaluasi untuk memastikan bahwa Rencana
                             Strategis sudah dilaksanakan sesuai dengan rencana (action plan atau roadmap) yang
@@ -57,7 +57,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator115"
-                            {{ $inputan['indikator11'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator11'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator115">
                             Data dan informasi yang diperoleh dari aktivitas reviu dan evaluasi, serta analisis
                             pencapaian target atas Rencana Strategis setidaknya digunakan sebagai umpan balik atau
@@ -79,7 +79,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator121"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator12'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator12'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator121">
                             Penyusunan rencana strategis setidaknya telah dilakukan oleh unit/divisi tertentu secara
                             informal.
@@ -89,7 +89,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator122"
-                            {{ $inputan['indikator12'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator12'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator122">
                             Kebutuhan setiap stakeholder baik internal maupun eksternal yang terkait dengan perencanaan
                             strategis setidaknya sudah diidentifikasi dan dianalisis.
@@ -99,7 +99,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator123"
-                            {{ $inputan['indikator12'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator12'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator123">
                             Terdapat panduan formal proses penyusunan rencana strategis yang bersifat baku dan
                             terstandardisasi, dilengkapi dengan Petunjuk Pelaksanaan yang terstruktur dan sistematis,
@@ -112,7 +112,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator124"
-                            {{ $inputan['indikator12'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator12'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator124">
                             Rencana strategis diterjemahkan ke dalam bentuk KPI yang harus dicapai oleh organisasi
                             dan/atau unit/divisi, di mana organisasi juga telah melakukan reviu dan evaluasi atas
@@ -123,7 +123,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator125"
-                            {{ $inputan['indikator12'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator12'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator125">
                             Hasil reviu dan evaluasi atas ketercapaian KPI digunakan sebagai umpan balik (feedback) atau
                             referensi dalam penyusunan Rencana Strategis periode berikutnya.

@@ -11,8 +11,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator41" id="indikator411" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator41" id="indikator411"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan ? ($inputan['indikator41'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator411">
                             Manajemen risiko setidaknya telah
                             dilakukan secara ad-hoc dan/atau jika
@@ -23,7 +24,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator412"
-                            value="2">
+                            {{ $inputan ? ($inputan['indikator41'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator412">
                             Manajemen risiko setidaknya telah
                             dilakukan secara rutin (berulang).
@@ -33,7 +34,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator413"
-                            value="3">
+                            {{ $inputan ? ($inputan['indikator41'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator413">
                             Manajemen risiko setidaknya telah
                             dilakukan secara berkala dan
@@ -50,7 +51,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator414"
-                            value="4">
+                            {{ $inputan ? ($inputan['indikator41'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator414">
                             Struktur/unit/fungsi khusus yang
                             bertugas untuk mengelola aktivitas
@@ -68,7 +69,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator41" id="indikator415"
-                            value="5">
+                            {{ $inputan ? ($inputan['indikator41'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator415">
                             Hasil reviu dan evaluasi (audit)
                             terhadap pelaksanaan manajemen
@@ -90,8 +91,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator42" id="indikator421" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator42" id="indikator421"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan ? ($inputan['indikator42'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator421">
                             Organisasi telah menghasilkan output
                             pekerjaan dari aktivitas manajemen
@@ -103,7 +105,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator422"
-                            value="2">
+                            {{ $inputan ? ($inputan['indikator42'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator422">
                             Terdapat panduan manajemen risiko
                             yang setidaknya mencakup beberapa
@@ -117,7 +119,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator423"
-                            value="3">
+                            {{ $inputan ? ($inputan['indikator42'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator423">
                             Manajemen risiko sudah diterapkan
                             atau dilaksanakan di seluruh
@@ -130,7 +132,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator424"
-                            value="4">
+                            {{ $inputan ? ($inputan['indikator42'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator424">
                             Terdapat pelatihan dan penyuluhan
                             secara berkala untuk seluruh pegawai
@@ -143,7 +145,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator42" id="indikator425"
-                            value="5">
+                            {{ $inputan ? ($inputan['indikator42'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator425">
                             Penggunaan SI/TI yang terpadu, yang
                             mendukung real-time risk analytics.
@@ -162,8 +164,9 @@
                 </label>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="indikator43" id="indikator431" checked
-                            value="1">
+                        <input class="form-check-input" type="radio" name="indikator43" id="indikator431"
+                            {{ count($inputan) > 0 ? '' : 'checked' }}
+                            {{ $inputan ? ($inputan['indikator43'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator431">
                             Manajemen risiko setidaknya sudah
                             diterapkan atau berlaku dalam
@@ -175,7 +178,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator43" id="indikator432"
-                            value="2">
+                            {{ $inputan ? ($inputan['indikator43'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator432">
                             Pelaksanaan aktivitas manajemen
                             risiko setidaknya sudah berdasarkan
@@ -186,7 +189,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator43" id="indikator433"
-                            value="3">
+                            {{ $inputan ? ($inputan['indikator43'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator433">
                             Organisasi setidaknya telah
                             menetapkan struktur/unit/fungsi
@@ -199,7 +202,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator43" id="indikator434"
-                            value="5">
+                            {{ $inputan ? ($inputan['indikator43'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator434">
                             Organisasi secara konsisten telah
                             berupaya untuk berinovasi dalam

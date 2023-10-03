@@ -12,7 +12,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator311"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator31'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator31'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator311">
                             Organisasi setidaknya telah memiliki
                             kesadaran terkait pentingnya
@@ -25,7 +25,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator312"
-                            {{ $inputan['indikator31'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator31'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator312">
                             Organisasi setidaknya telah melakukan
                             pengelolaan sumber daya
@@ -39,7 +39,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator313"
-                            {{ $inputan['indikator31'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator31'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator313">
                             Organisasi menganggap sumber daya
                             pengetahuan sebagai informasi yang
@@ -54,7 +54,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator314"
-                            {{ $inputan['indikator31'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator31'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator314">
                             Terdapat aktivitas pengawasan
                             dan/atau evaluasi kegiatan manajemen
@@ -68,7 +68,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator31" id="indikator315"
-                            {{ $inputan['indikator31'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator31'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator315">
                             Kegiatan pengumpulan, penyimpanan,
                             dan berbagi pengetahuan pada
@@ -93,7 +93,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator321"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator32'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator32'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator321">
                             Organisasi setidaknya telah melakukan
                             pengelolaan sumber daya
@@ -106,7 +106,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator322"
-                            {{ $inputan['indikator32'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator32'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator322">
                             Personel (individu) organisasi
                             setidaknya telah melakukan pertukaran
@@ -118,7 +118,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator323"
-                            {{ $inputan['indikator32'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator32'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator323">
                             Organisasi setidaknya telah
                             mendefinisikan standar baku dan
@@ -130,7 +130,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator324"
-                            {{ $inputan['indikator32'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator32'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator324">
                             Terdapat aktivitas pengawasan
                             dan/atau evaluasi terhadap
@@ -142,7 +142,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator32" id="indikator325"
-                            {{ $inputan['indikator32'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator32'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator325">
                             Infrastruktur sistem informasi yang
                             digunakan untuk manajemen
@@ -170,7 +170,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator331"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan['indikator33'] == 1 ? 'checked' : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator33'] == 1 ? 'checked' : '') : '' }} value="1">
                         <label class="form-check-label" for="indikator331">
                             Personel (individu) organisasi
                             setidaknya telah melakukan
@@ -183,7 +183,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator332"
-                            {{ $inputan['indikator33'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator33'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator332">
                             Terdapat pelatihan secara berkala
                             untuk pengetahuan/informasi yang

@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator111"
-                            {{ $inputan['indikator11'] == 1 ? 'checked' : '' }}
+                            {{ $inputan ? ($inputan['indikator11'] == 1 ? 'checked' : '') : '' }}
                             {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator111">
                             Organisasi setidaknya telah memiliki
@@ -25,7 +25,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator112"
-                            {{ $inputan['indikator11'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator11'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator112">
                             Organisasi setidaknya telah melibatkan
                             pengguna layanan (internal BLU)
@@ -39,7 +39,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator113"
-                            {{ $inputan['indikator11'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator11'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator113">
                             Organisasi setidaknya telah melibatkan
                             pengguna layanan (internal dan
@@ -61,7 +61,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator114"
-                            {{ $inputan['indikator11'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator11'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator114">
                             Organisasi setidaknya telah melibatkan
                             pengguna layanan (internal dan
@@ -80,7 +80,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator11" id="indikator115"
-                            {{ $inputan['indikator11'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator11'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator115">
                             Pengguna layanan berperan aktif
                             dalam end-to-end process
@@ -110,7 +110,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator121"
-                            {{ $inputan['indikator12'] == 1 ? 'checked' : '' }}
+                            {{ $inputan ? ($inputan['indikator12'] == 1 ? 'checked' : '') : '' }}
                             {{ count($inputan) > 0 ? '' : 'checked' }} value="1">
                         <label class="form-check-label" for="indikator121">
                             Organisasi setidaknya telah
@@ -122,7 +122,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator122"
-                            {{ $inputan['indikator12'] == 2 ? 'checked' : '' }} value="2">
+                            {{ $inputan ? ($inputan['indikator12'] == 2 ? 'checked' : '') : '' }} value="2">
                         <label class="form-check-label" for="indikator122">
                             Organisasi setidaknya telah
                             melibatkan pengguna layanan (internal
@@ -134,7 +134,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator123"
-                            {{ $inputan['indikator12'] == 3 ? 'checked' : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator12'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator123">
                             Organisasi setidaknya telah menyusun
                             strategi keterlibatan pengguna
@@ -152,7 +152,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator124"
-                            {{ $inputan['indikator12'] == 4 ? 'checked' : '' }} value="4">
+                            {{ $inputan ? ($inputan['indikator12'] == 4 ? 'checked' : '') : '' }} value="4">
                         <label class="form-check-label" for="indikator124">
                             Organisasi telah menyusun strategi
                             keterlibatan pengguna layanan
@@ -166,7 +166,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator12" id="indikator125"
-                            {{ $inputan['indikator12'] == 5 ? 'checked' : '' }} value="5">
+                            {{ $inputan ? ($inputan['indikator12'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator125">
                             Organisasi memiliki tools pendukung
                             yang mampu mendukung pelaksanaan
