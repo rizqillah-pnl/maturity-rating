@@ -1,11 +1,6 @@
 @extends('layouts.main', ['title' => 'Dashboard'])
 
 @section('container')
-    <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center" id="preloader">
-        <img class="animation__shake" src="{{ asset('logo.png') }}" alt="SISURAT LOGO" height="100" width="100">
-    </div>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->

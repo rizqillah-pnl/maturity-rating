@@ -9,14 +9,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <i class="bi bi-person-fill text-white" style="font-size: 30px;"></i>
             </div>
             <div class="info">
                 <a href="{{ url('/') }}" class="d-block">Administrator</a>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -31,8 +31,6 @@
                         </p>
                     </a>
                 </li>
-
-                <li class="nav-header">DATA MASTER</li>
                 <li class="nav-item {{ str_contains(request()->getRequestUri(), 'maturity_rating') ? 'active' : '' }}">
                     <a href="{{ url('maturity_rating') }}"
                         class="nav-link {{ str_contains(request()->getRequestUri(), 'maturity_rating') ? 'active' : '' }}">
@@ -42,13 +40,14 @@
                         </p>
                     </a>
                 </li>
-                <li
-                    class="nav-item {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
+
+                <li class="nav-header">DATA MASTER</li>
+                <li class="nav-item menu-is-opening menu-open">
                     <a href="#"
                         class="nav-link {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'active' : '' }}">
                         <i class="nav-icon bi bi-bar-chart-steps"></i>
                         <p>
-                            DATA MASTER
+                            ASPEK MATURITAS
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>

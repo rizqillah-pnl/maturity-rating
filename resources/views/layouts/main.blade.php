@@ -55,6 +55,8 @@
     {{-- SweetAlert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <link rel="stylesheet" href="{{ asset('css/css_slider_theme.css') }}">
+
     <!-- DataTables -->
     {{-- <link rel="stylesheet" href="{{ asset('template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}"> --}}
     {{-- <link rel="stylesheet"
@@ -102,6 +104,11 @@
     @endif
 
     <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center" id="preloader">
+            <img class="animation__shake" src="{{ asset('logo.png') }}" alt="SISURAT LOGO" height="100"
+                width="100">
+        </div>
         @include('layouts.head')
         @include('layouts.sidebar')
         <main>
