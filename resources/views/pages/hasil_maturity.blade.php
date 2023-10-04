@@ -28,8 +28,8 @@
                                 <h5 style="font-weight: bold">Jenis-jenis Hasil Aspek :</h5>
                                 <ol>
                                     <li class="text-danger">Initial</li>
-                                    <li class="text-warning">Managed</li>
-                                    <li class="text-orange">Defined</li>
+                                    <li class="text-orange">Managed</li>
+                                    <li class="text-warning">Defined</li>
                                     <li class="text-primary">Predicatable</li>
                                     <li class="text-success">Optimizing</li>
                                 </ol>
@@ -44,7 +44,7 @@
                             </style>
                         @endpush
                         @php
-                            $color = ['danger', 'warning', 'orange', 'primary', 'success', 'info', 'dark'];
+                            $color = ['danger', 'orange', 'warning', 'primary', 'success', 'info', 'dark'];
                         @endphp
                         @foreach ($aspek_maturity as $index => $row)
                             <div class="card card-{{ $color[$index] }}">

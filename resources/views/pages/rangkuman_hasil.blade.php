@@ -37,7 +37,7 @@
             </style>
         @endpush
         @php
-            $color = ['danger', 'warning', 'orange', 'primary', 'success', 'info', 'dark'];
+            $color = ['danger', 'orange', 'warning', 'primary', 'success', 'info', 'dark'];
         @endphp
         <!-- Main content -->
         <section class="content">
