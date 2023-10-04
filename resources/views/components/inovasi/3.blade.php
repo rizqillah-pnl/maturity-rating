@@ -170,7 +170,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator331"
                             {{ count($inputan) > 0 ? '' : 'checked' }}
-                            {{ $inputan ? ($inputan['indikator33'] == 1 ? 'checked' : '') : '' }} value="1">
+                            {{ $inputan ? ($inputan['indikator33'] == 3 ? 'checked' : '') : '' }} value="3">
                         <label class="form-check-label" for="indikator331">
                             Personel (individu) organisasi
                             setidaknya telah melakukan
@@ -183,7 +183,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="indikator33" id="indikator332"
-                            {{ $inputan ? ($inputan['indikator33'] == 3 ? 'checked' : '') : '' }} value="3">
+                            {{ $inputan ? ($inputan['indikator33'] == 5 ? 'checked' : '') : '' }} value="5">
                         <label class="form-check-label" for="indikator332">
                             Terdapat pelatihan secara berkala
                             untuk pengetahuan/informasi yang

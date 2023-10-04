@@ -171,7 +171,7 @@
                                     </div>
                                     <div class="col-3">
                                         <h6 style="text-decoration: underline; font-weight: bold">TINGKAT MATURITAS BLU</h6>
-                                        <div class="mb-3 mt-2 border p-5 text-center bg-{{ $color[$maturity > 0 ? round($maturity) - 1 : 0] }}"
+                                        <div class="mb-3 mt-2 border p-5 text-center bg-{{ $color[$maturity > 1 ? round($maturity) - 1 : 0] }}"
                                             style="font-weight: bold;">
                                             <span style="font-size: 50px;">{{ number_format($maturity, 2) }}</span>
                                             <span style="font-size: 20px;"> atau

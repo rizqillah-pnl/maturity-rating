@@ -68,6 +68,13 @@
 </head>
 
 <body class="sidebar-mini layout-fixed control-sidebar-slide-open layout-navbar-fixed">
+    @if (!session()->has('success') && !session()->has('error') && !session()->has('warning'))
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center" id="preloader">
+            <img class="animation__shake" src="{{ asset('logo.png') }}" alt="SISURAT LOGO" height="100"
+                width="100">
+        </div>
+    @endif
     @if (session()->has('success'))
         <script>
             let text = "{{ session()->get('success') }}";
@@ -104,11 +111,8 @@
     @endif
 
     <div class="wrapper">
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center" id="preloader">
-            <img class="animation__shake" src="{{ asset('logo.png') }}" alt="SISURAT LOGO" height="100"
-                width="100">
-        </div>
+
+
         @include('layouts.head')
         @include('layouts.sidebar')
         <main>
