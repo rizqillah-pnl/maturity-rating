@@ -34,4 +34,9 @@ class DashboardController extends Controller
         $level = LevelMaturity::all();
         return view('pages.maturity_rating', ['title' => 'Aspek Maturity Rating', 'data' => $data, 'level' => $level]);
     }
+
+    public function clear_all()
+    {
+        dd('hello');
+    }
 }

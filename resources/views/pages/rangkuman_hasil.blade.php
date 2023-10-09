@@ -124,7 +124,7 @@
                                                     <input type="text" class="form-control"
                                                         value="{{ $loop->iteration . '. ' . $row->nama_aspek }}" readonly>
                                                     <span class="input-group-text bg-{{ $color[$index] }}"
-                                                        id="basic-addon3">{{ $row->bobot }}%</span>
+                                                        id="basic-addon3">{{ $row->bobot > 9 ? $row->bobot : '0' . $row->bobot }}%</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -181,6 +181,14 @@
                                 </div>
                             </div>
                         </div>
+                        <form action="{{ url('/clear-all') }}" method="post">
+                            @csrf
+                            <div class="d-flex flex-row-reverse mb-2">
+                                <button class="btn btn-danger"
+                                    onclick="return confirm('Anda yakin ingin menghapus seluruh data Maturity Rating?!')">Clear
+                                    All Data!</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

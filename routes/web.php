@@ -40,3 +40,6 @@ Route::resource('/lingkungan', LingkunganController::class);
 Route::get('/maturity_rating', [DashboardController::class, 'maturity_rating']);
 Route::get('/hasil_maturity', [HasilMaturityController::class, 'index']);
 Route::get('/rangkuman_hasil', [HasilMaturityController::class, 'rangkuman_hasil']);
+
+// DELETE ALL DATA
+Route::post('/clear-all', [DashboardController::class, 'clear_all']);
