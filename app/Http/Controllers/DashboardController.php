@@ -9,6 +9,8 @@ use App\Models\InputanMaturity;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\IndikatorMaturity;
+use App\Models\KomponenHasil;
+use App\Models\VariabelIndikator;
 
 class DashboardController extends Controller
 {
@@ -37,6 +39,9 @@ class DashboardController extends Controller
 
     public function clear_all()
     {
-        dd('hello');
+        VariabelIndikator::truncate();
+        KomponenHasil::truncate();
+        InputanMaturity::truncate();
+        return redirect()->back()->with('success', 'Berhasil Menghapus Seluruh Data!');
     }
 }
