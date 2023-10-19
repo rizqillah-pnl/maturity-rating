@@ -38,7 +38,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_tingkat_kemandirian">
-                    (%) Target Target Tingkat Kemandirian <span class="text-danger">*</span>
+                    (%) Target Tingkat Kemandirian <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_tingkat_kemandirian')is-invalid @enderror"

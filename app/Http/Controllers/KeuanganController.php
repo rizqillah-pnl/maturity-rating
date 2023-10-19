@@ -115,9 +115,10 @@ class KeuanganController extends Controller
 
 
         // INDIKATOR KE.3
-        $imbalan_atas_aset = ($request->surplus_pos / $request->kerugian) / $request->total_aset;
+        $kerugian = ($request->kerugian <= 0) ? 1 : $request->kerugian;
+        $imbalan_atas_aset = ($request->surplus_pos / $kerugian) / $request->total_aset;
         $target_imbalan_atas_aset = $request->target_imbalan_atas_aset / 100;
-        $imbalan_atas_ekuitas = ($request->surplus_pos / $request->kerugian) / $request->total_ekuitas;
+        $imbalan_atas_ekuitas = ($request->surplus_pos / $kerugian) / $request->total_ekuitas;
         $target_imbalan_atas_ekuitas = $request->target_imbalan_atas_ekuitas / 100;
 
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'imbalan_atas_aset', 'hasil' => $imbalan_atas_aset], ['variabel', 'indikator_maturity_id']);

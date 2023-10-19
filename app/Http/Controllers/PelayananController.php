@@ -147,7 +147,7 @@ class PelayananController extends Controller
 
         // INDIKATOR PL.4
         $tingkat_keberhasilan_pemenuhan_layanan = $request->realisasi_sub_indikator / $request->target_sub_indikator;
-        $target_keberhasilan_pemenuhan_layanan = $request->target_keberhasilan_pemenuhan_layanan;
+        $target_keberhasilan_pemenuhan_layanan = ($request->target_keberhasilan_pemenuhan_layanan / 100);
 
         VariabelIndikator::upsert(['indikator_maturity_id' => 'PL.4', 'variabel' => 'tingkat_keberhasilan_pemenuhan_layanan', 'hasil' => $tingkat_keberhasilan_pemenuhan_layanan], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'PL.4', 'variabel' => 'target_keberhasilan_pemenuhan_layanan', 'hasil' => $target_keberhasilan_pemenuhan_layanan], ['variabel', 'indikator_maturity_id']);

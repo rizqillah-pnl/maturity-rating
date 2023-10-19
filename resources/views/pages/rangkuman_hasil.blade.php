@@ -179,6 +179,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row mt-5" style="font-weight: bold;">
+                                    <p>Tingkat Maturity(Kematangan) BLU Organisasi Anda dinyatakan
+                                        @if ($maturity >= 3)
+                                            <span class="text-success">Sudah Siap!</span>
+                                        @else
+                                            <span class="text-danger">Belum Siap!</span>
+                                        @endif
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <form action="{{ url('/clear-all') }}" method="post">
