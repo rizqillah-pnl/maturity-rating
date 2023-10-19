@@ -130,6 +130,16 @@
                         </p>
                     </a>
                 </li>
+                <li
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'dokumen_pendukung') ? 'active' : '' }}">
+                    <a href="{{ url('dokumen_pendukung') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'dokumen_pendukung') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-activity"></i>
+                        <p>
+                            Dokumen Pendukung
+                        </p>
+                    </a>
+                </li>
                 {{-- <li
                     class="nav-item {{ in_array(request()->getRequestUri(), ['/hasil_keuangan', '/hasil_pelayanan', '/hasil_kapabilitas_internal', '/hasil_tata_kk', '/hasil_inovasi', '/hasil_lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#"

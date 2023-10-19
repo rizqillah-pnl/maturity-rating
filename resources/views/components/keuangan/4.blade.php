@@ -8,7 +8,7 @@
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="pendapatan_lra">
-                    KE.4.1 Total Pendapatan (LRA) <span class="text-danger">*</span>
+                    KE.4.1 Total Pendapatan Laporan Realisasi Anggaran (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pendapatan_lra')is-invalid @enderror"
@@ -23,7 +23,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="total_belanja_lra">
-                    KE.4.2 Total Belanja (LRA) <span class="text-danger">*</span>
+                    KE.4.2 Total Belanja Laporan Realisasi Anggaran (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_belanja_lra')is-invalid @enderror"
@@ -38,13 +38,13 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_tingkat_kemandirian">
-                    (%) Target Tingkat Kemandirian <span class="text-danger">*</span>
+                    Target Tingkat Kemandirian (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_tingkat_kemandirian')is-invalid @enderror"
                         id="target_tingkat_kemandirian" name="target_tingkat_kemandirian"
-                        placeholder="Masukkan Nilai (%) Target Target Tingkat Kemandirian" required
-                        value="{{ $inputan ? $inputan['target_tingkat_kemandirian'] : '' }}">
+                        placeholder="Masukkan Nilai (%) Target Target Tingkat Kemandirian 1-100" min="1"
+                        max="100" required value="{{ $inputan ? $inputan['target_tingkat_kemandirian'] : '' }}">
                     @error('target_tingkat_kemandirian')
                         <div class="invalid-feedback">
                             {{ $message }}

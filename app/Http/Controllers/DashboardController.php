@@ -37,6 +37,24 @@ class DashboardController extends Controller
         return view('pages.maturity_rating', ['title' => 'Aspek Maturity Rating', 'data' => $data, 'level' => $level]);
     }
 
+    public function dokumen_pendukung()
+    {
+        $aspek_maturity = AspekMaturity::with(['indikator_maturity'])->get();
+
+        $indikator_maturity = IndikatorMaturity::all()->toArray();
+        foreach ($indikator_maturity as $index => $row) {
+            $indikator_maturity[$index] = strtolower(str_replace('.', '', $row['kode_indikator']));
+        }
+
+        $level = LevelMaturity::all();
+        return view('pages.dokumen_pendukung', ['title' => 'Dokumen Pendukung', 'aspek_maturity' => $aspek_maturity, 'level' => $level, 'indikator_maturity' => $indikator_maturity]);
+    }
+
+    public function upload_dokumen(Request $request)
+    {
+        dd($request);
+    }
+
     public function clear_all()
     {
         VariabelIndikator::truncate();

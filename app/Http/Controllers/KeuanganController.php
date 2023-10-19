@@ -59,6 +59,7 @@ class KeuanganController extends Controller
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'target_optimalisasi_kas', 'hasil' => $target_optimalisasi_kas], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'target_rasio_lancar', 'hasil' => $target_rasio_lancar], ['variabel', 'indikator_maturity_id']);
 
+        $target_rasio_lancar = ($target_rasio_lancar == 0) ? 1 : $target_rasio_lancar;
         $perbedaan_rasio_lancar = $rasio_lancar / $target_rasio_lancar;
         if ($perbedaan_rasio_lancar >= 0.6) {
             $ke11 = 5;
@@ -71,6 +72,8 @@ class KeuanganController extends Controller
         } else {
             $ke11 = 1;
         }
+
+        $target_optimalisasi_kas = ($target_optimalisasi_kas == 0) ? 1 : $target_optimalisasi_kas;
         $perbedaan_optimalisasi_kas = $rasio_optimalisasi_kas / $target_optimalisasi_kas;
         if ($perbedaan_optimalisasi_kas >= 0.6) {
             $ke12 = 5;
@@ -97,6 +100,7 @@ class KeuanganController extends Controller
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.2', 'variabel' => 'pobo', 'hasil' => $pobo, 'variabel_fullname' => 'Pendapatan Operasional terhadap Beban Operasional (POBO)'], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.2', 'variabel' => 'target_pobo', 'hasil' => $target_pobo], ['variabel', 'indikator_maturity_id']);
 
+        $target_pobo = ($target_pobo == 0) ? 1 : $target_pobo;
         $perbedaan_pobo = $pobo / $target_pobo;
         if ($perbedaan_pobo >= 0.6) {
             $ke2 = 5;
@@ -115,7 +119,7 @@ class KeuanganController extends Controller
 
 
         // INDIKATOR KE.3
-        $kerugian = ($request->kerugian <= 0) ? 1 : $request->kerugian;
+        $kerugian = ($request->kerugian == 0) ? 1 : $request->kerugian;
         $imbalan_atas_aset = ($request->surplus_pos / $kerugian) / $request->total_aset;
         $target_imbalan_atas_aset = $request->target_imbalan_atas_aset / 100;
         $imbalan_atas_ekuitas = ($request->surplus_pos / $kerugian) / $request->total_ekuitas;
@@ -126,6 +130,7 @@ class KeuanganController extends Controller
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'target_imbalan_atas_aset', 'hasil' => $target_imbalan_atas_aset], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'target_imbalan_atas_ekuitas', 'hasil' => $target_imbalan_atas_ekuitas], ['variabel', 'indikator_maturity_id']);
 
+        $target_imbalan_atas_aset = ($target_imbalan_atas_aset == 0) ? 1 : $target_imbalan_atas_aset;
         $perbedaan_imbalan_atas_aset = $imbalan_atas_aset / $target_imbalan_atas_aset;
         if ($perbedaan_imbalan_atas_aset >= 0.6) {
             $ke31 = 5;
@@ -138,6 +143,8 @@ class KeuanganController extends Controller
         } else {
             $ke31 = 1;
         }
+
+        $target_imbalan_atas_ekuitas = ($target_imbalan_atas_ekuitas == 0) ? 1 : $target_imbalan_atas_ekuitas;
         $perbedaan_imbalan_atas_ekuitas = $imbalan_atas_ekuitas / $target_imbalan_atas_ekuitas;
         if ($perbedaan_imbalan_atas_ekuitas >= 0.6) {
             $ke32 = 5;
@@ -163,6 +170,7 @@ class KeuanganController extends Controller
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'tingkat_kemandirian', 'hasil' => $tingkat_kemandirian], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'target_tingkat_kemandirian', 'hasil' => $target_tingkat_kemandirian], ['variabel', 'indikator_maturity_id']);
 
+        $target_tingkat_kemandirian = ($target_tingkat_kemandirian == 0) ? 1 : $target_tingkat_kemandirian;
         $perbedaan_tingkat_kemandirian = $tingkat_kemandirian / $target_tingkat_kemandirian;
         if ($perbedaan_tingkat_kemandirian >= 0.6) {
             $ke4 = 5;

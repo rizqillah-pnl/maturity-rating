@@ -7,7 +7,7 @@
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="aset_lancar">
-                    KE.1.1 Aset Lancar <span class="text-danger">*</span>
+                    KE.1.1 Aset Lancar (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('aset_lancar')is-invalid @enderror"
@@ -22,7 +22,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="kwjb_jgk">
-                    KE.1.2 Kewajiban Jangka Pendek <span class="text-danger">*</span>
+                    KE.1.2 Kewajiban Jangka Pendek (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('kwjb_jgk')is-invalid @enderror" id="kwjb_jgk"
@@ -37,7 +37,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="pdp_inves_jgk">
-                    KE.1.3 Pendapatan Investasi Jangka Pendek <span class="text-danger">*</span>
+                    KE.1.3 Pendapatan Investasi Jangka Pendek (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pdp_inves_jgk')is-invalid @enderror"
@@ -53,7 +53,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="saldo_rek_op">
-                    KE.1.4 Saldo rekening operasional <span class="text-danger">*</span>
+                    KE.1.4 Saldo rekening operasional (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('saldo_rek_op')is-invalid @enderror"
@@ -68,7 +68,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="pengelolaan_kas">
-                    KE.1.5 Pengelolaan Kas <span class="text-danger">*</span>
+                    KE.1.5 Pengelolaan Kas (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('pengelolaan_kas')is-invalid @enderror"
@@ -83,13 +83,13 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_rasio_lancar">
-                    (%) Target Rasio Lancar <span class="text-danger">*</span>
+                    Target Rasio Lancar (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_rasio_lancar')is-invalid @enderror"
                         id="target_rasio_lancar" name="target_rasio_lancar"
-                        placeholder="Masukkan Nilai (%) Target Rasio Lancar" required
-                        value="{{ $inputan ? $inputan['target_rasio_lancar'] : '' }}">
+                        placeholder="Masukkan Nilai (%) Target Rasio Lancar 1-100" min="1" max="100"
+                        required value="{{ $inputan ? $inputan['target_rasio_lancar'] : '' }}">
                     @error('target_rasio_lancar')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -99,13 +99,13 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_optimalisasi_kas">
-                    (%) Target Optimalisasi Kas <span class="text-danger">*</span>
+                    Target Optimalisasi Kas (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_optimalisasi_kas')is-invalid @enderror"
                         id="target_optimalisasi_kas" name="target_optimalisasi_kas"
-                        placeholder="Masukkan Nilai (%) Target Optimalisasi Kas" required
-                        value="{{ $inputan ? $inputan['target_optimalisasi_kas'] : '' }}">
+                        placeholder="Masukkan Nilai (%) Target Optimalisasi Kas 1-100" min="1" max="100"
+                        required value="{{ $inputan ? $inputan['target_optimalisasi_kas'] : '' }}">
                     @error('target_optimalisasi_kas')
                         <div class="invalid-feedback">
                             {{ $message }}

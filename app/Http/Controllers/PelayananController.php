@@ -68,6 +68,7 @@ class PelayananController extends Controller
         VariabelIndikator::upsert(['indikator_maturity_id' => 'PL.1', 'variabel' => 'indeks_kepuasan_masyarakat', 'hasil' => $indeks_kepuasan_masyarakat], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'PL.1', 'variabel' => 'target_ikm', 'hasil' => $target_ikm], ['variabel', 'indikator_maturity_id']);
 
+        $target_ikm = ($target_ikm == 0) ? 1 : $target_ikm;
         $perbedaan_indeks_kepuasan_masyarakat = $indeks_kepuasan_masyarakat / $target_ikm;
         if ($perbedaan_indeks_kepuasan_masyarakat >= 0.6) {
             $pl1 = 5;
@@ -92,6 +93,7 @@ class PelayananController extends Controller
         VariabelIndikator::upsert(['indikator_maturity_id' => 'PL.2', 'variabel' => 'efisiensi_waktu_pelayanan', 'hasil' => $efisiensi_waktu_pelayanan], ['variabel', 'indikator_maturity_id']);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'PL.2', 'variabel' => 'target_efisiensi_pelayanan', 'hasil' => $target_efisiensi_pelayanan], ['variabel', 'indikator_maturity_id']);
 
+        $target_efisiensi_pelayanan = ($target_efisiensi_pelayanan == 0) ? 1 : $target_efisiensi_pelayanan;
         $perbedaan_efisiensi_waktu_pelayanan = $efisiensi_waktu_pelayanan / $target_efisiensi_pelayanan;
         if ($perbedaan_efisiensi_waktu_pelayanan >= 0.6) {
             $pl2 = 5;

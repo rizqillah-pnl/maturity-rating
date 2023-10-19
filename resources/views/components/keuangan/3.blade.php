@@ -7,7 +7,7 @@
         <div class="form-tambah">
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="surplus_pos">
-                    KE.3.1 Surplus atau Defisit sebelum Pos Keuntungan <span class="text-danger">*</span>
+                    KE.3.1 Surplus atau Defisit sebelum Pos Keuntungan (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('surplus_pos')is-invalid @enderror"
@@ -23,7 +23,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="kerugian">
-                    KE.3.2 Kerugian <span class="text-danger">*</span>
+                    KE.3.2 Kerugian (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('kerugian')is-invalid @enderror" id="kerugian"
@@ -38,7 +38,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="total_aset">
-                    KE.3.3 Total Aset <span class="text-danger">*</span>
+                    KE.3.3 Total Aset (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_aset')is-invalid @enderror" id="total_aset"
@@ -53,7 +53,7 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="total_ekuitas">
-                    KE.3.4 Total Ekuitas <span class="text-danger">*</span>
+                    KE.3.4 Total Ekuitas (Rp) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('total_ekuitas')is-invalid @enderror"
@@ -68,13 +68,13 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_imbalan_atas_aset">
-                    (%) Target Imbalan Atas Aset <span class="text-danger">*</span>
+                    Target Imbalan Atas Aset (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_imbalan_atas_aset')is-invalid @enderror"
                         id="target_imbalan_atas_aset" name="target_imbalan_atas_aset"
-                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Aset" required
-                        value="{{ $inputan ? $inputan['target_imbalan_atas_aset'] : '' }}">
+                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Aset 1-100" min="1" max="100"
+                        required value="{{ $inputan ? $inputan['target_imbalan_atas_aset'] : '' }}">
                     @error('target_imbalan_atas_aset')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -84,13 +84,13 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_imbalan_atas_ekuitas">
-                    (%) Target Imbalan Atas Ekuitas <span class="text-danger">*</span>
+                    Target Imbalan Atas Ekuitas (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_imbalan_atas_ekuitas')is-invalid @enderror"
                         id="target_imbalan_atas_ekuitas" name="target_imbalan_atas_ekuitas"
-                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Ekuitas" required
-                        value="{{ $inputan ? $inputan['target_imbalan_atas_ekuitas'] : '' }}">
+                        placeholder="Masukkan Nilai (%) Target Imbalan Atas Ekuitas 1-100" min="1" max="100"
+                        required value="{{ $inputan ? $inputan['target_imbalan_atas_ekuitas'] : '' }}">
                     @error('target_imbalan_atas_ekuitas')
                         <div class="invalid-feedback">
                             {{ $message }}

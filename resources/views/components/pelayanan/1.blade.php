@@ -38,12 +38,12 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_ikm">
-                    (%) Target Indeks Kepuasan Masyarakat (IKM) <span class="text-danger">*</span>
+                    Target Indeks Kepuasan Masyarakat (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_ikm')is-invalid @enderror" id="target_ikm"
-                        name="target_ikm" placeholder="Masukkan Nilai (%) Target Indeks Kepuasan Masyarakat (IKM)"
-                        required value="{{ $inputan ? $inputan['target_ikm'] : '' }}">
+                        name="target_ikm" placeholder="Masukkan Nilai (%) Target Indeks Kepuasan Masyarakat (IKM) 1-100"
+                        min="1" max="100" required value="{{ $inputan ? $inputan['target_ikm'] : '' }}">
                     @error('target_ikm')
                         <div class="invalid-feedback">
                             {{ $message }}

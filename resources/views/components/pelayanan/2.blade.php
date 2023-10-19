@@ -37,13 +37,13 @@
             </div>
             <div class="row mb-3">
                 <label class="col-12 col-md-4 form-label" for="target_efisiensi_pelayanan">
-                    (%) Target Efisiensi Waktu Pelayanan <span class="text-danger">*</span>
+                    Target Efisiensi Waktu Pelayanan (%) <span class="text-danger">*</span>
                 </label>
                 <div class="col-12 col-md-8">
                     <input type="number" class="form-control @error('target_efisiensi_pelayanan')is-invalid @enderror"
                         id="target_efisiensi_pelayanan" name="target_efisiensi_pelayanan"
-                        placeholder="Masukkan Nilai (%) Target Efisiensi Waktu Pelayanan" required
-                        value="{{ $inputan ? $inputan['target_efisiensi_pelayanan'] : '' }}">
+                        placeholder="Masukkan Nilai (%) Target Efisiensi Waktu Pelayanan 1-100" min="1"
+                        max="100" required value="{{ $inputan ? $inputan['target_efisiensi_pelayanan'] : '' }}">
                     @error('target_efisiensi_pelayanan')
                         <div class="invalid-feedback">
                             {{ $message }}

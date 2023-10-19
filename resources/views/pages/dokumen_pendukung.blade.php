@@ -1,0 +1,100 @@
+@extends('layouts.main')
+
+@section('container')
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">{{ $title }}</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="breadcrumb-item active">{{ $title }}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @push('css-script')
+            <style>
+                .text-orange {
+                    color: rgb(187, 121, 0);
+                }
+
+                .btn-orange,
+                .bg-orange {
+                    background-color: rgb(187, 121, 0);
+                    color: white !important;
+                }
+
+                .btn-warning,
+                .bg-warning {
+                    color: white !important;
+                }
+            </style>
+        @endpush
+        @php
+            $color = ['danger', 'orange', 'warning', 'primary', 'success', 'info', 'dark'];
+        @endphp
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center mb-4" style="font-weight: bold;">FORMULIR DOKUMEN PENDUKUNG ASPEK
+                                    MATURITAS</h5>
+                                <form action="{{ url('upload_dokumen') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="row">
+                                        @php
+                                            $arr_aspek_maturity = [];
+                                            $arr_bobot = [];
+                                        @endphp
+
+                                        @foreach ($aspek_maturity as $index => $row)
+                                            <div class="col-4">
+                                                <div class="card card-{{ $color[$index] }}"
+                                                    style="max-height: 510px; overflow-y: auto;">
+                                                    <div class="card-header">
+                                                        <h6 class="text-center text-white">{{ $loop->iteration }}. ASPEK
+                                                            {{ strtoupper($row->nama_aspek) }}</h6>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @php
+                                                            $maturitas_aspek = 0;
+                                                        @endphp
+                                                        @foreach ($row->indikator_maturity as $index2 => $row2)
+                                                            <div class="row mt-2">
+                                                                <label
+                                                                    for="{{ $row2->kode_indikator }}">{{ $row2->kode_indikator . ' ' . $row2->nama_indikator }}</label>
+                                                            </div>
+                                                            @php
+                                                                $maturitas_aspek += count($row2->komponen_hasil) > 0 ? $row2->komponen_hasil[0]->nilai : 0;
+                                                            @endphp
+                                                            <div class="row">
+                                                                <input type="file"
+                                                                    name="data_file_{{ strtolower($row2->kode_indikator) }}"
+                                                                    id="data_file_{{ strtolower($row2->kode_indikator) }}"
+                                                                    class="form-control">
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+@endsection
