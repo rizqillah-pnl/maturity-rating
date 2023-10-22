@@ -46,10 +46,31 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                <span>File yang didukung sebagai berikut:
+                                    <ol>
+                                        <li>File berekstensi .pdf</li>
+                                        <li>dan file berukuran maksimal 10MB</li>
+                                    </ol>
+                                </span>
+
                                 <h5 class="text-center mb-4" style="font-weight: bold;">FORMULIR DOKUMEN PENDUKUNG ASPEK
                                     MATURITAS</h5>
                                 <form action="{{ url('upload_dokumen') }}" method="post" enctype="multipart/form-data">
                                     @csrf
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button type="submit" class="btn btn-primary mb-3">Simpan</button>
+                                    </div>
+
                                     <div class="row">
                                         @php
                                             $arr_aspek_maturity = [];
@@ -59,7 +80,7 @@
                                         @foreach ($aspek_maturity as $index => $row)
                                             <div class="col-4">
                                                 <div class="card card-{{ $color[$index] }}"
-                                                    style="max-height: 510px; overflow-y: auto;">
+                                                    style="max-height: 1000px; overflow-y: auto;">
                                                     <div class="card-header">
                                                         <h6 class="text-center text-white">{{ $loop->iteration }}. ASPEK
                                                             {{ strtoupper($row->nama_aspek) }}</h6>
@@ -80,13 +101,29 @@
                                                                 <input type="file"
                                                                     name="data_file_{{ strtolower($row2->kode_indikator) }}"
                                                                     id="data_file_{{ strtolower($row2->kode_indikator) }}"
-                                                                    class="form-control">
+                                                                    class="form-control" accept="application/pdf">
+                                                                <input type="hidden" name="nama_files[]"
+                                                                    value="data_file_{{ strtolower(str_replace('.', '_', $row2->kode_indikator)) }}">
+                                                                @if (count($row2->dokumen_pendukung) > 0)
+                                                                    @foreach ($row2->dokumen_pendukung as $row3)
+                                                                        <span>
+                                                                            <button type="submit" name="hapus"
+                                                                                value="{{ $row3->id }}"
+                                                                                class="btn btn-link text-danger"
+                                                                                onclick="return confirm('Anda yakin akan menghapus file ({{ $row3->real_name }})?')">Hapus</button>
+                                                                            <a class="link-opacity-50-hover" target="_blank"
+                                                                                href="{{ asset('storage/' . $row3->files) }}">{{ $row3->real_name }}</a>
+                                                                        </span>
+                                                                    @endforeach
+                                                                @endif
                                                             </div>
                                                         @endforeach
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                 </form>

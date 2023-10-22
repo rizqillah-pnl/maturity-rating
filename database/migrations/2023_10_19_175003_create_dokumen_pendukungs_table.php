@@ -15,6 +15,10 @@ class CreateDokumenPendukungsTable extends Migration
     {
         Schema::create('dokumen_pendukungs', function (Blueprint $table) {
             $table->id();
+            $table->string('indikator_maturity_id');
+            $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
+            $table->text('files');
+            $table->text('real_name');
             $table->timestamps();
         });
     }
