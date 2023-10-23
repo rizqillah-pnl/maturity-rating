@@ -106,14 +106,15 @@
                                                                     value="data_file_{{ strtolower(str_replace('.', '_', $row2->kode_indikator)) }}">
                                                                 @if (count($row2->dokumen_pendukung) > 0)
                                                                     @foreach ($row2->dokumen_pendukung as $row3)
-                                                                        <span>
+                                                                        <div
+                                                                            style="text-align: justify; text-justify: inter-word; font-size: 14px;">
                                                                             <button type="submit" name="hapus"
                                                                                 value="{{ $row3->id }}"
                                                                                 class="btn btn-link text-danger"
                                                                                 onclick="return confirm('Anda yakin akan menghapus file ({{ $row3->real_name }})?')">Hapus</button>
                                                                             <a class="link-opacity-50-hover" target="_blank"
                                                                                 href="{{ asset('storage/' . $row3->files) }}">{{ $row3->real_name }}</a>
-                                                                        </span>
+                                                                        </div>
                                                                     @endforeach
                                                                 @endif
                                                             </div>
