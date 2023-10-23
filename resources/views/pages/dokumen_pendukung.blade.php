@@ -56,8 +56,8 @@
                                     </div>
                                 @endif
 
-                                <span>File yang didukung sebagai berikut:
-                                    <ol>
+                                <span>File yang didukung:
+                                    <ol style="font-weight: bold;">
                                         <li>File berekstensi .pdf</li>
                                         <li>dan file berukuran maksimal 10MB</li>
                                     </ol>
@@ -105,17 +105,24 @@
                                                                 <input type="hidden" name="nama_files[]"
                                                                     value="data_file_{{ strtolower(str_replace('.', '_', $row2->kode_indikator)) }}">
                                                                 @if (count($row2->dokumen_pendukung) > 0)
-                                                                    @foreach ($row2->dokumen_pendukung as $row3)
-                                                                        <div
-                                                                            style="text-align: justify; text-justify: inter-word; font-size: 14px;">
-                                                                            <button type="submit" name="hapus"
-                                                                                value="{{ $row3->id }}"
-                                                                                class="btn btn-link text-danger"
-                                                                                onclick="return confirm('Anda yakin akan menghapus file ({{ $row3->real_name }})?')">Hapus</button>
-                                                                            <a class="link-opacity-50-hover" target="_blank"
-                                                                                href="{{ asset('storage/' . $row3->files) }}">{{ $row3->real_name }}</a>
-                                                                        </div>
-                                                                    @endforeach
+                                                                    <div
+                                                                        style="text-align: justify; text-justify: inter-word; font-size: 14px;line-height: 14px;">
+                                                                        <h6 class="text-dark p-0 mt-2 mb-0">Dokumen :
+                                                                        </h6>
+                                                                        @foreach ($row2->dokumen_pendukung as $row3)
+                                                                            <div class="">
+                                                                                <button type="submit" name="hapus"
+                                                                                    value="{{ $row3->id }}"
+                                                                                    class="btn btn-link text-danger p-0"
+                                                                                    onclick="return confirm('Anda yakin akan menghapus file ({{ $row3->real_name }})?')"
+                                                                                    style="font-size: 14px;">Hapus</button>
+                                                                                <a class="link-opacity-50-hover text-dark"
+                                                                                    target="_blank"
+                                                                                    href="{{ asset('storage/' . $row3->files) }}"
+                                                                                    style="">{{ $row3->real_name }}</a>
+                                                                            </div>
+                                                                        @endforeach
+                                                                    </div>
                                                                 @endif
                                                             </div>
                                                         @endforeach

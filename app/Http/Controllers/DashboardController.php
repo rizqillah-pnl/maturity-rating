@@ -75,7 +75,7 @@ class DashboardController extends Controller
 
                     $extFile = $request->file($row)->getClientOriginalExtension();
                     $realname = strtr($request->file($row)->getClientOriginalName(), ['+' => ' ', '_' => ' ', '-' => ' ', '*' => ' ', '~' => ' ', '=' => ' ', '^' => ' ', '%' => ' ', '$' => ' ', '#' => ' ', '@' => ' ', '!' => ' ']);
-                    $outputName = now()->timestamp . '.' . $extFile;
+                    $outputName = $row . '_' . now()->timestamp . '.' . $extFile;
                     $outputName = $request->file($row)->storeAs($request->path(), str_replace('-', '_', $outputName));
 
                     DokumenPendukung::create(['indikator_maturity_id' => strtoupper(str_replace('_', '.', str_replace('data_file_', '', $row))), 'files' => $outputName, 'real_name' => $realname]);
@@ -90,6 +90,11 @@ class DashboardController extends Controller
         VariabelIndikator::truncate();
         KomponenHasil::truncate();
         InputanMaturity::truncate();
+        $dok = DokumenPendukung::all();
+        foreach ($dok as $row) {
+            Storage::delete($row->files);
+        }
+        DokumenPendukung::truncate();
         return redirect()->back()->with('success', 'Berhasil Menghapus Seluruh Data!');
     }
 }
