@@ -42,7 +42,8 @@
                 </li>
 
                 <li class="nav-header">DATA MASTER</li>
-                <li class="nav-item menu-is-opening menu-open">
+                <li
+                    class="nav-item {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#"
                         class="nav-link {{ in_array(request()->getRequestUri(), ['/keuangan', '/pelayanan', '/kapabilitas_internal', '/tata_kk', '/inovasi', '/lingkungan']) ? 'active' : '' }}">
                         <i class="nav-icon bi bi-bar-chart-steps"></i>
@@ -112,12 +113,13 @@
                     </ul>
                 </li>
 
-                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'hasil_maturity') ? 'active' : '' }}">
-                    <a href="{{ url('hasil_maturity') }}"
-                        class="nav-link {{ str_contains(request()->getRequestUri(), 'hasil_maturity') ? 'active' : '' }}">
+                <li
+                    class="nav-item {{ str_contains(request()->getRequestUri(), 'variabel_maturity') ? 'active' : '' }}">
+                    <a href="{{ url('variabel_maturity') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'variabel_maturity') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-activity"></i>
                         <p>
-                            Hasil Maturity
+                            Variabel Maturity
                         </p>
                     </a>
                 </li>
@@ -137,6 +139,15 @@
                         <i class="nav-icon bi bi-activity"></i>
                         <p>
                             Dokumen Pendukung
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item {{ str_contains(request()->getRequestUri(), 'rekap_data') ? 'active' : '' }}">
+                    <a href="{{ url('rekap_data') }}"
+                        class="nav-link {{ str_contains(request()->getRequestUri(), 'rekap_data') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-activity"></i>
+                        <p>
+                            Rekap Seluruh Data
                         </p>
                     </a>
                 </li>

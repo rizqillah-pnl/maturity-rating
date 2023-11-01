@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\KomponenHasil;
 use App\Models\InputanMaturity;
+use App\Models\IndikatorMaturity;
 use App\Models\VariabelIndikator;
 use App\Http\Controllers\Controller;
-use App\Models\KomponenHasil;
 
 class LingkunganController extends Controller
 {
@@ -59,13 +60,13 @@ class LingkunganController extends Controller
         $li1 = intval(round(($request->indikator11 + $request->indikator12 + $request->indikator13) / 3));
         VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.1', 'variabel' => 'li1', 'hasil' => $li1, 'variabel_fullname' => 'LI.1 - Environmental Footprint Management'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'LI.1', 'indikator' => 'li1', 'nilai' => $li1, 'indikator_fullname' => 'LI.1 - Environmental Footprint Management'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'LI.1')->update(['nilai' => $li1]);
 
         // INDIKATOR LI.2
         $li2 = intval(round(($request->indikator21 + $request->indikator22 + $request->indikator23) / 3));
         VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.2', 'variabel' => 'li2', 'hasil' => $li2, 'variabel_fullname' => 'LI.2 - Penggunaan Sumber Daya'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'LI.2', 'indikator' => 'li2', 'nilai' => $li2, 'indikator_fullname' => 'LI.2 - Penggunaan Sumber Daya'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'LI.2')->update(['nilai' => $li2]);
 
         return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
     }

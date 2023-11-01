@@ -27,9 +27,7 @@ class HasilMaturityController extends Controller
 
     public function rangkuman_hasil()
     {
-        $aspek_maturity = AspekMaturity::with(['indikator_maturity' => function ($model) {
-            $model->with(['komponen_hasil']);
-        }])->get();
+        $aspek_maturity = AspekMaturity::with(['indikator_maturity'])->get();
 
         $indikator_maturity = IndikatorMaturity::all()->toArray();
         foreach ($indikator_maturity as $index => $row) {

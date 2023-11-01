@@ -17,18 +17,23 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('id_ID');
+        // $faker = Faker::create('id_ID');
 
-        for ($i = 0; $i < 2000; $i++) {
-            $data[] = [
-                'nama' => $faker->name,
-                'nik' => $faker->nik,
-                'no_telp' => $faker->phoneNumber
-            ];
-        }
+        // for ($i = 0; $i < 2000; $i++) {
+        //     $data[] = [
+        //         'nama' => $faker->name,
+        //         'nik' => $faker->nik,
+        //         'no_telp' => $faker->phoneNumber
+        //     ];
+        // }
 
-        foreach ($data as $item) {
-            User::insert($item);
-        }
+        // foreach ($data as $item) {
+        //     User::insert($item);
+        // }
+        User::create([
+            'nama' => 'Administrator',
+            'username' => 'admin',
+            'password' => bcrypt('admin')
+        ]);
     }
 }

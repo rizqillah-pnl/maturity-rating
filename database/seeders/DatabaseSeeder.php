@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             IndikatorMaturitySeeder::class,
             KriteriaMaturitySeeder::class,
             LevelMaturitySeeder::class,
-            // UserSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

@@ -28,10 +28,10 @@ class IndikatorMaturity extends Model
     {
         return $this->hasMany(InputanMaturity::class, 'indikator_maturity_id', 'kode_indikator');
     }
-    public function komponen_hasil()
-    {
-        return $this->hasMany(KomponenHasil::class, 'indikator_maturity_id', 'kode_indikator');
-    }
+    // public function komponen_hasil()
+    // {
+    //     return $this->hasMany(KomponenHasil::class, 'indikator_maturity_id', 'kode_indikator');
+    // }
     public function dokumen_pendukung()
     {
         return $this->hasMany(DokumenPendukung::class, 'indikator_maturity_id', 'kode_indikator');

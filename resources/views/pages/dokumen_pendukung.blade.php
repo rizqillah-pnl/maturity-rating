@@ -95,7 +95,7 @@
                                                                     for="{{ $row2->kode_indikator }}">{{ $row2->kode_indikator . ' ' . $row2->nama_indikator }}</label>
                                                             </div>
                                                             @php
-                                                                $maturitas_aspek += count($row2->komponen_hasil) > 0 ? $row2->komponen_hasil[0]->nilai : 0;
+                                                                $maturitas_aspek += $row2->hasil > 0 ? $row2->nilai : 0;
                                                             @endphp
                                                             <div class="row">
                                                                 <input type="file"

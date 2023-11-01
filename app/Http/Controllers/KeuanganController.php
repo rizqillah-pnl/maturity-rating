@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\KomponenHasil;
 use App\Models\IndikatorHasil;
+use App\Models\InputanMaturity;
+use App\Models\IndikatorMaturity;
 use App\Models\VariabelIndikator;
 use App\Http\Controllers\Controller;
-use App\Models\InputanMaturity;
-use App\Models\KomponenHasil;
 
 class KeuanganController extends Controller
 {
@@ -54,10 +55,10 @@ class KeuanganController extends Controller
         $rasio_optimalisasi_kas = $request->pdp_inves_jgk / ($request->saldo_rek_op + $request->pengelolaan_kas);
         $target_optimalisasi_kas = $request->target_optimalisasi_kas / 100;
 
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'rasio_lancar', 'hasil' => $rasio_lancar], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'rasio_optimalisasi_kas', 'hasil' => $rasio_optimalisasi_kas], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'target_optimalisasi_kas', 'hasil' => $target_optimalisasi_kas], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'target_rasio_lancar', 'hasil' => $target_rasio_lancar], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'rasio_lancar', 'hasil' => $rasio_lancar, 'variabel_fullname' => 'Rasio Lancar'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'rasio_optimalisasi_kas', 'hasil' => $rasio_optimalisasi_kas, 'variabel_fullname' => 'Rasio Optimalisasi Kas'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'target_optimalisasi_kas', 'hasil' => $target_optimalisasi_kas, 'variabel_fullname' => 'Target Rasio Optimalisasi Kas'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'target_rasio_lancar', 'hasil' => $target_rasio_lancar, 'variabel_fullname' => 'Target Rasio1 Lancar'], ['variabel', 'indikator_maturity_id']);
 
         $target_rasio_lancar = ($target_rasio_lancar == 0) ? 1 : $target_rasio_lancar;
         $perbedaan_rasio_lancar = $rasio_lancar / $target_rasio_lancar;
@@ -90,7 +91,7 @@ class KeuanganController extends Controller
         $ke1 = intval(($ke11 + $ke12) / 2);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.1', 'variabel' => 'ke1', 'hasil' => $ke1, 'variabel_fullname' => 'KE.1 - Likuiditas'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'KE.1', 'indikator' => 'ke1', 'nilai' => $ke1, 'indikator_fullname' => 'KE.1 - Likuiditas'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'KE.1')->update(['nilai' => $ke1]);
 
 
         // INDIKATOR KE.2
@@ -98,7 +99,7 @@ class KeuanganController extends Controller
         $target_pobo = $request->target_pobo / 100;
 
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.2', 'variabel' => 'pobo', 'hasil' => $pobo, 'variabel_fullname' => 'Pendapatan Operasional terhadap Beban Operasional (POBO)'], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.2', 'variabel' => 'target_pobo', 'hasil' => $target_pobo], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.2', 'variabel' => 'target_pobo', 'hasil' => $target_pobo, 'variabel_fullname' => 'Target Pendapatan Operasional terhadap Beban Operasional (POBO)'], ['variabel', 'indikator_maturity_id']);
 
         $target_pobo = ($target_pobo == 0) ? 1 : $target_pobo;
         $perbedaan_pobo = $pobo / $target_pobo;
@@ -115,7 +116,7 @@ class KeuanganController extends Controller
         }
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.2', 'variabel' => 'ke2', 'hasil' => $ke2, 'variabel_fullname' => 'KE.2 - Efisiensi'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'KE.2', 'indikator' => 'ke2', 'nilai' => $ke2, 'indikator_fullname' => 'KE.2 - Efisiensi'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'KE.2')->update(['nilai' => $ke2]);
 
 
         // INDIKATOR KE.3
@@ -125,10 +126,10 @@ class KeuanganController extends Controller
         $imbalan_atas_ekuitas = ($request->surplus_pos / $kerugian) / $request->total_ekuitas;
         $target_imbalan_atas_ekuitas = $request->target_imbalan_atas_ekuitas / 100;
 
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'imbalan_atas_aset', 'hasil' => $imbalan_atas_aset], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'imbalan_atas_ekuitas', 'hasil' => $imbalan_atas_ekuitas], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'target_imbalan_atas_aset', 'hasil' => $target_imbalan_atas_aset], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'target_imbalan_atas_ekuitas', 'hasil' => $target_imbalan_atas_ekuitas], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'imbalan_atas_aset', 'hasil' => $imbalan_atas_aset, 'variabel_fullname' => 'Imbalan Atas Aset'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'imbalan_atas_ekuitas', 'hasil' => $imbalan_atas_ekuitas, 'variabel_fullname' => 'Imbalan Atas Ekuitas'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'target_imbalan_atas_aset', 'hasil' => $target_imbalan_atas_aset, 'variabel_fullname' => 'Target Imbalan Atas Aset'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'target_imbalan_atas_ekuitas', 'hasil' => $target_imbalan_atas_ekuitas, 'variabel_fullname' => 'Target Imbalan Atas Ekuitas'], ['variabel', 'indikator_maturity_id']);
 
         $target_imbalan_atas_aset = ($target_imbalan_atas_aset == 0) ? 1 : $target_imbalan_atas_aset;
         $perbedaan_imbalan_atas_aset = $imbalan_atas_aset / $target_imbalan_atas_aset;
@@ -160,15 +161,15 @@ class KeuanganController extends Controller
         $ke3 = intval(($ke31 + $ke32) / 2);
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.3', 'variabel' => 'ke3', 'hasil' => $ke3, 'variabel_fullname' => 'KE.3 - Efektivitas'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'KE.3', 'indikator' => 'ke3', 'nilai' => $ke3, 'indikator_fullname' => 'KE.3 - Efektivitas'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'KE.3')->update(['nilai' => $ke3]);
 
 
         // INDIKATOR KE.4
         $tingkat_kemandirian = $request->pendapatan_lra / $request->total_belanja_lra;
         $target_tingkat_kemandirian = $request->target_tingkat_kemandirian / 100;
 
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'tingkat_kemandirian', 'hasil' => $tingkat_kemandirian], ['variabel', 'indikator_maturity_id']);
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'target_tingkat_kemandirian', 'hasil' => $target_tingkat_kemandirian], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'tingkat_kemandirian', 'hasil' => $tingkat_kemandirian, 'variabel_fullname' => 'Tingkat Kemandirian'], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'target_tingkat_kemandirian', 'hasil' => $target_tingkat_kemandirian, 'variabel_fullname' => 'Target Tingkat Kemandirian'], ['variabel', 'indikator_maturity_id']);
 
         $target_tingkat_kemandirian = ($target_tingkat_kemandirian == 0) ? 1 : $target_tingkat_kemandirian;
         $perbedaan_tingkat_kemandirian = $tingkat_kemandirian / $target_tingkat_kemandirian;
@@ -185,7 +186,7 @@ class KeuanganController extends Controller
         }
         VariabelIndikator::upsert(['indikator_maturity_id' => 'KE.4', 'variabel' => 'ke4', 'hasil' => $ke4, 'variabel_fullname' => 'KE.4 - Tingkat Kemandirian'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'KE.4', 'indikator' => 'ke4', 'nilai' => $ke4, 'indikator_fullname' => 'KE.4 - Tingkat Kemandirian'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'KE.4')->update(['nilai' => $ke4]);
 
         return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Keuangan!');
     }

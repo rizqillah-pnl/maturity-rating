@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\InputanMaturity;
 use App\Models\VariabelIndikator;
 use App\Http\Controllers\Controller;
+use App\Models\IndikatorMaturity;
 use App\Models\KomponenHasil;
 
 class InovasiController extends Controller
@@ -62,25 +63,25 @@ class InovasiController extends Controller
         $in1 = intval(round(($request->indikator11 + $request->indikator12) / 2));
         VariabelIndikator::upsert(['indikator_maturity_id' => 'IN.1', 'variabel' => 'in1', 'hasil' => $in1, 'variabel_fullname' => 'IN.1 - Keterlibatan Pengguna Jasa'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'IN.1', 'indikator' => 'in1', 'nilai' => $in1, 'indikator_fullname' => 'IN.1 - Keterlibatan Pengguna Jasa'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'IN.1')->update(['nilai' => $in1]);
 
         // INDIKATOR IN.2
         $in2 = intval(round(($request->indikator21 + $request->indikator22) / 2));
         VariabelIndikator::upsert(['indikator_maturity_id' => 'IN.2', 'variabel' => 'in2', 'hasil' => $in2, 'variabel_fullname' => 'IN.2 - Proses Inovasi'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'IN.2', 'indikator' => 'in2', 'nilai' => $in2, 'indikator_fullname' => 'IN.2 - Proses Inovasi'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'IN.2')->update(['nilai' => $in2]);
 
         // INDIKATOR IN.3
         $in3 = intval(round(($request->indikator31 + $request->indikator32 + $request->indikator33) / 3));
         VariabelIndikator::upsert(['indikator_maturity_id' => 'IN.3', 'variabel' => 'in3', 'hasil' => $in3, 'variabel_fullname' => 'IN.3 - Manajemen Pengetahuan'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'IN.3', 'indikator' => 'in3', 'nilai' => $in3, 'indikator_fullname' => 'IN.3 - Manajemen Pengetahuan'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'IN.3')->update(['nilai' => $in3]);
 
         // INDIKATOR IN.4
         $in4 = intval(round(($request->indikator41 + $request->indikator42 + $request->indikator43) / 3));
         VariabelIndikator::upsert(['indikator_maturity_id' => 'IN.4', 'variabel' => 'in4', 'hasil' => $in4, 'variabel_fullname' => 'IN.4 - Manajemen Perubahan'], ['variabel', 'indikator_maturity_id']);
 
-        KomponenHasil::upsert(['indikator_maturity_id' => 'IN.4', 'indikator' => 'in4', 'nilai' => $in4, 'indikator_fullname' => 'IN.4 - Manajemen Perubahan'], ['indikator', 'indikator_maturity_id']);
+        IndikatorMaturity::where('kode_indikator', 'IN.4')->update(['nilai' => $in4]);
 
         return redirect()->back()->with('success', 'Berhasil Mengupload Data Aspek Inovasi!');
     }
