@@ -25,7 +25,7 @@ use App\Http\Controllers\KapabilitasInternalController;
 */
 
 Route::middleware('auth')->prefix('/')->group(function () {
-  Route::get('/dashboard', [DashboardController::class, 'index']);
+  Route::get('/', [DashboardController::class, 'index']);
 
   // ROUTE ASPEK
   Route::resource('/keuangan', KeuanganController::class);
@@ -53,7 +53,8 @@ Route::middleware('auth')->prefix('/')->group(function () {
 });
 
 
-
 // ROUTE LOGIN AND REGISTER
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::prefix('/')->middleware('guest')->group(function () {
+  Route::get('/login', [AuthController::class, 'index'])->name('login');
+  Route::post('/login', [AuthController::class, 'login']);
+});

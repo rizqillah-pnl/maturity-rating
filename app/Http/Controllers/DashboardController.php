@@ -20,6 +20,7 @@ class DashboardController extends Controller
     public function index()
     {
         $inputan_maturity = InputanMaturity::select('aspek_maturity_id', DB::raw('count(*) as total'))
+            ->where('user_id', auth()->user()->id)
             ->groupBy('aspek_maturity_id')
             ->get();
         $new_inputan = [];
@@ -43,7 +44,9 @@ class DashboardController extends Controller
     public function dokumen_pendukung()
     {
         $aspek_maturity = AspekMaturity::with(['indikator_maturity' => function ($model) {
-            $model->with(['dokumen_pendukung']);
+            $model->with(['dokumen_pendukung' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }]);
         }])->get();
 
         $indikator_maturity = IndikatorMaturity::all()->toArray();
@@ -79,7 +82,7 @@ class DashboardController extends Controller
                     $outputName = $row . '_' . now()->timestamp . '.' . $extFile;
                     $outputName = $request->file($row)->storeAs($request->path(), str_replace('-', '_', $outputName));
 
-                    DokumenPendukung::create(['indikator_maturity_id' => strtoupper(str_replace('_', '.', str_replace('data_file_', '', $row))), 'files' => $outputName, 'real_name' => $realname]);
+                    DokumenPendukung::create(['indikator_maturity_id' => strtoupper(str_replace('_', '.', str_replace('data_file_', '', $row))), 'files' => $outputName, 'real_name' => $realname, 'user_id' => auth()->user()->id]);
                 }
             }
             return redirect()->back()->with('success', 'Dokumen Pendukung Berhasil Disimpan!');
@@ -104,7 +107,13 @@ class DashboardController extends Controller
         $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
 
         $data = AspekMaturity::with(['indikator_maturity' => function ($model) {
-            $model->with(['dokumen_pendukung', 'inputan_maturity', 'variabel_indikator']);
+            $model->with(['dokumen_pendukung' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }, 'inputan_maturity' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }, 'variabel_indikator' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }]);
         }])->get();
 
         $sheet = $spreadsheet->getActiveSheet();
@@ -130,7 +139,7 @@ class DashboardController extends Controller
                 ->setWidth(27);
             $sheet
                 ->getColumnDimension('G')
-                ->setWidth(15);
+                ->setWidth(25);
             $sheet
                 ->getColumnDimension('H')
                 ->setWidth(25);
@@ -245,7 +254,10 @@ class DashboardController extends Controller
             }
 
             // CREATE NEW SHEET
-            $sheet = $spreadsheet->createSheet();
+            if (!(($index + 1) == count($data))) {
+                $sheet = $spreadsheet->createSheet();
+            }
+
             $spreadsheet->getActiveSheet()->getStyle('A')->getAlignment()->setVertical('center');
             $spreadsheet->getActiveSheet()->getStyle('A')->getAlignment()->setHorizontal('center');
             $spreadsheet->getActiveSheet()->getStyle('D')->getAlignment()->setVertical('center');

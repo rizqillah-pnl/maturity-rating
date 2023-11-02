@@ -23,7 +23,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $request->session()->put('tahun', date('Y'));
 
-            return redirect()->intended('dashboard');
+            return redirect()->to('/');
         }
 
         return back()->withErrors([

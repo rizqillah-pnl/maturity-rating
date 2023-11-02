@@ -13,16 +13,15 @@ class CreateKomponenHasilsTable extends Migration
      */
     public function up()
     {
-        // Schema::create('komponen_hasils', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('indikator_maturity_id');
-        //     $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
-        //     $table->string('indikator')->unique();
-        //     $table->string('indikator_fullname')->nullable();
-        //     $table->string('nilai');
-        //     // $table->string('work_product')->nullable();
-        //     $table->timestamps();
-        // });
+        Schema::create('komponen_hasils', function (Blueprint $table) {
+            $table->id();
+            $table->string('indikator_maturity_id');
+            $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
+            $table->string('indikator')->unique();
+            $table->string('nilai');
+            $table->foreignId('user_id')->constrained('users', 'id');
+            $table->timestamps();
+        });
     }
 
     /**

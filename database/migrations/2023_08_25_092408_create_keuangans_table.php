@@ -13,12 +13,13 @@ class CreateKeuangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('keuangans', function (Blueprint $table) {
-            $table->id();
-            $table->enum('tipe', ['KE.1', 'KE.2', 'KE.3', 'KE.4']);
-            $table->enum('hasil', ['initial', 'managed', 'defined', 'predicatable', 'optimizing']);
-            $table->timestamps();
-        });
+        // Schema::create('keuangans', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->enum('tipe', ['KE.1', 'KE.2', 'KE.3', 'KE.4']);
+        //     $table->enum('hasil', ['initial', 'managed', 'defined', 'predicatable', 'optimizing']);
+        //     $table->foreignId('user_id')->constrained('users', 'id');
+        //     $table->timestamps();
+        // });
     }
 
     /**

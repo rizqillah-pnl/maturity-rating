@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ url('/dashboard') }}" class="brand-link">
+    <a href="{{ url('/') }}" class="brand-link">
         <img src="{{ asset('logo.png') }}" alt="SISURAT Logo" class="brand-image img-circle">
         <span class="brand-text font-weight-light">Maturity Rating BLU</span>
     </a>
@@ -9,22 +9,22 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <i class="bi bi-person-fill text-white" style="font-size: 30px;"></i>
             </div>
             <div class="info">
-                <a href="{{ url('/dashboard') }}" class="d-block">Administrator</a>
+                <a href="{{ url('/') }}" class="d-block">{{ auth()->user()->nama }}</a>
             </div>
-        </div> --}}
+        </div>
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item {{ request()->getRequestUri() == '/dashboard' ? 'active' : '' }}">
-                    <a href="{{ url('/dashboard') }}"
-                        class="nav-link {{ request()->getRequestUri() == '/dashboard' ? 'active text-white' : '' }}">
+                <li class="nav-item {{ request()->getRequestUri() == '/' ? 'active' : '' }}">
+                    <a href="{{ url('/') }}"
+                        class="nav-link {{ request()->getRequestUri() == '/' ? 'active text-white' : '' }}">
                         <i class="nav-icon bi bi-house-door text-white"></i>
                         <p>
                             Home

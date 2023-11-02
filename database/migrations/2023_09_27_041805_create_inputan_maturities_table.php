@@ -22,6 +22,7 @@ class CreateInputanMaturitiesTable extends Migration
             $table->string('inputan');
             $table->string('tipe_inputan')->unique();
             $table->string('nilai');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }

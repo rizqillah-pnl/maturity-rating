@@ -55,7 +55,7 @@
                                         $arr_bobot = [];
                                     @endphp
                                     @foreach ($aspek_maturity as $index => $row)
-                                        <div class="col-4">
+                                        <div class="col-12 col-sm-6 col-lg-4">
                                             <div class="card card-{{ $color[$index] }}" style="min-height: 385px;">
                                                 <div class="card-header">
                                                     <h6 class="text-center text-white">{{ $loop->iteration }}. ASPEK
@@ -75,14 +75,14 @@
                                                                     value="{{ $row2->kode_indikator . ' ' . $row2->nama_indikator }}">
                                                             </div>
                                                             @php
-                                                                $maturitas_aspek += $row2->nilai ? $row2->nilai : 0;
+                                                                $maturitas_aspek += count($row2->komponen_hasil) > 0 ? $row2->komponen_hasil[0]->nilai : 0;
                                                             @endphp
                                                             <div class="col-4">
                                                                 <input type="text"
-                                                                    name="{{ $row2->nilai ? $row2->kode_indikator : '0' }}"
-                                                                    id="{{ $row2->nilai ? $row2->kode_indikator : '0' }}"
+                                                                    name="{{ count($row2->komponen_hasil) > 0 ? $row2->komponen_hasil[0]->indikator_maturity_id : '0' }}"
+                                                                    id="{{ count($row2->komponen_hasil) > 0 ? $row2->komponen_hasil[0]->indikator_maturity_id : '0' }}"
                                                                     class="form-control" readonly
-                                                                    value="{{ $row2->nilai ? $row2->nilai : '0' }}">
+                                                                    value="{{ count($row2->komponen_hasil) > 0 ? $row2->komponen_hasil[0]->nilai : '0' }}">
                                                             </div>
                                                         </div>
                                                     @endforeach

@@ -19,7 +19,6 @@ class CreateIndikatorMaturitiesTable extends Migration
             $table->string('aspek_maturity_id');
             $table->foreign('aspek_maturity_id')->on('aspek_maturities')->references('kode_aspek');
             $table->string('nama_indikator');
-            $table->string('nilai')->nullable();
             $table->timestamps();
         });
     }

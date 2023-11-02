@@ -33,7 +33,14 @@ class UserSeeder extends Seeder
         User::create([
             'nama' => 'Administrator',
             'username' => 'admin',
-            'password' => bcrypt('admin')
+            'password' => bcrypt('admin'),
+            'role' => 'admin'
+        ]);
+        User::create([
+            'nama' => 'User',
+            'username' => 'user',
+            'password' => bcrypt('user'),
+            'role' => 'user'
         ]);
     }
 }

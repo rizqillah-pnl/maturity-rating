@@ -20,6 +20,7 @@ class CreateVariabelIndikatorsTable extends Migration
             $table->string('variabel')->unique();
             $table->string('variabel_fullname')->nullable();
             $table->string('hasil');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }

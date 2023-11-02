@@ -13,7 +13,11 @@ class HasilMaturityController extends Controller
     public function index()
     {
         $aspek_maturity = AspekMaturity::with(['indikator_maturity' => function ($model) {
-            $model->with(['kriteria_maturity', 'variabel_indikator']);
+            $model->with(['kriteria_maturity', 'variabel_indikator' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }, 'komponen_hasil' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }]);
         }])->get();
 
         $indikator_maturity = IndikatorMaturity::all()->toArray();
@@ -27,7 +31,11 @@ class HasilMaturityController extends Controller
 
     public function rangkuman_hasil()
     {
-        $aspek_maturity = AspekMaturity::with(['indikator_maturity'])->get();
+        $aspek_maturity = AspekMaturity::with(['indikator_maturity' => function ($model) {
+            $model->with(['komponen_hasil' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }]);
+        }])->get();
 
         $indikator_maturity = IndikatorMaturity::all()->toArray();
         foreach ($indikator_maturity as $index => $row) {

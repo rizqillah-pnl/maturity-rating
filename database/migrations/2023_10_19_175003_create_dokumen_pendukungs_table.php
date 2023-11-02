@@ -19,6 +19,7 @@ class CreateDokumenPendukungsTable extends Migration
             $table->foreign('indikator_maturity_id')->on('indikator_maturities')->references('kode_indikator');
             $table->text('files');
             $table->text('real_name');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }
