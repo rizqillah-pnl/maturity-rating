@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -23,26 +24,36 @@ use App\Http\Controllers\KapabilitasInternalController;
 |
 */
 
-// ROOT
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [DashboardController::class, 'index']);
+Route::middleware('auth')->prefix('/')->group(function () {
+  Route::get('/dashboard', [DashboardController::class, 'index']);
+
+  // ROUTE ASPEK
+  Route::resource('/keuangan', KeuanganController::class);
+  Route::resource('/pelayanan', PelayananController::class);
+  Route::resource('/kapabilitas_internal', KapabilitasInternalController::class);
+  Route::resource('/tata_kk', TataKKController::class);
+  Route::resource('/inovasi', InovasiController::class);
+  Route::resource('/lingkungan', LingkunganController::class);
+
+  // UTILITIES
+  Route::get('/maturity_rating', [DashboardController::class, 'maturity_rating']);
+  Route::get('/variabel_maturity', [HasilMaturityController::class, 'index']);
+
+  // RESULT OF MATURITY
+  Route::get('/rangkuman_hasil', [HasilMaturityController::class, 'rangkuman_hasil']);
+  Route::get('/dokumen_pendukung', [DashboardController::class, 'dokumen_pendukung']);
+  Route::post('/upload_dokumen', [DashboardController::class, 'upload_dokumen']);
+  Route::get('/rekap_data', [DashboardController::class, 'rekap_data']);
+
+  // DELETE ALL DATA
+  Route::post('/clear-all', [DashboardController::class, 'clear_all']);
+
+  // ROUTE LOGOUT
+  Route::post('/logout', [AuthController::class, 'logout'])->name('logout');;
+});
 
 
-Route::resource('/keuangan', KeuanganController::class);
-Route::resource('/pelayanan', PelayananController::class);
-Route::resource('/kapabilitas_internal', KapabilitasInternalController::class);
-Route::resource('/tata_kk', TataKKController::class);
-Route::resource('/inovasi', InovasiController::class);
-Route::resource('/lingkungan', LingkunganController::class);
 
-Route::get('/maturity_rating', [DashboardController::class, 'maturity_rating']);
-Route::get('/variabel_maturity', [HasilMaturityController::class, 'index']);
-Route::get('/rangkuman_hasil', [HasilMaturityController::class, 'rangkuman_hasil']);
-Route::get('/dokumen_pendukung', [DashboardController::class, 'dokumen_pendukung']);
-Route::post('/upload_dokumen', [DashboardController::class, 'upload_dokumen']);
-Route::get('/rekap_data', [DashboardController::class, 'rekap_data']);
-
-// DELETE ALL DATA
-Route::post('/clear-all', [DashboardController::class, 'clear_all']);
+// ROUTE LOGIN AND REGISTER
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);

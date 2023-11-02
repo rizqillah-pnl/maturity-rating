@@ -48,14 +48,14 @@
                  <i class="fas fa-expand-arrows-alt"></i>
              </a>
          </li>
-         {{-- <form action="{{ route('logout') }}" method="post" style="d-inline">
+         <form action="{{ route('logout') }}" method="post" style="d-inline">
              @csrf
              <li class="nav-item">
                  <button class="btn btn-danger" type="submit"
                      onclick="return confirm('Anda yakin untuk logout!')">Logout <i
                          class="bi bi-box-arrow-right"></i></button>
              </li>
-         </form> --}}
+         </form>
      </ul>
  </nav>
  <!-- /.navbar -->

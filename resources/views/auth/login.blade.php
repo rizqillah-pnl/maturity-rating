@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/logo.png') }}">
-    <title>{{ $title }} | SISURAT BPS</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <title>{{ $title }} | Maturity Rating</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app-login.css') }}">
@@ -23,21 +23,21 @@
             {{-- <div class="sm:w-1/2 xl:w-2/5 h-full hidden md:flex flex-auto items-center justify-start p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative"
                 style="background-image: url(https://source.unsplash.com/1000x1000?scenery);"> --}}
             <div class="sm:w-1/2 xl:w-2/5 h-full hidden md:flex flex-auto items-center justify-start p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative bg-center"
-                style="background-image: url({{ asset('img/bg-login.jpg') }});">
+                style="background-image: url({{ asset('pnl.jpg') }});">
 
                 <div class="absolute bg-gradient-to-b from-blue-700 to-yellow-700 opacity-40 inset-0 z-0"></div>
                 <div class="absolute triangle  min-h-screen right-0 w-16" style=""></div>
-                <a href="https://github.com/putrijuliasafira" target="_blank" title="Putri Julia Safira"
+                <a href="https://github.com/rizqillah-pnl" target="_blank" title="RIZQILLAH"
                     class="flex absolute top-5 text-center text-gray-100 focus:outline-none">
-                    <p class="text-xl ml-3">SISURAT | BPS</p>
+                    <p class="text-xl ml-3">Maturity Rating | PNL</p>
                 </a>
             </div>
 
             <div
                 class="flex items-center justify-center w-full sm:w-2/4 h-full xl:w-2/5 px-[8px]  md:px-[10px] lg:px-[14px] sm:rounded-lg md:rounded-none bg-white mt-6 md:mt-0">
                 <div class="max-w-md w-full justify-center">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('img/logo.png') }}" alt="PNL" class="mx-auto w-36 h-36">
+                    <a href="http://pnl.ac.id" target="_blank">
+                        <img src="{{ asset('logo.png') }}" alt="PNL" class="mx-auto w-36 h-36">
                     </a>
                     <div class="text-center">
                         <h2 class="mt-6 text-3xl font-bold text-gray-900">
@@ -46,7 +46,7 @@
                         <p class="mt-2 text-sm text-gray-500">Please sign in to your account</p>
                     </div>
 
-                    <form action="{{ url('') }}/login" method="POST" autocomplete="off" autocapitalize="off">
+                    <form action="{{ url('/login') }}" method="POST" autocomplete="off" autocapitalize="off">
                         @csrf
                         <?php $err = 'border-b border-rose-600 focus:border-red-500'; ?>
                         <input type="hidden" name="remember" value="true">
