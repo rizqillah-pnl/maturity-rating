@@ -29,7 +29,7 @@
                         </div> --}}
                         <form action="{{ url('keuangan') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <x-button-submit />
+                            <x-button-submit :back="false" next='pelayanan' />
 
                             <x-keuangan.1 :inputan="$inputan" />
                             <x-keuangan.2 :inputan="$inputan" />
@@ -37,7 +37,7 @@
                             <x-keuangan.4 :inputan="$inputan" />
                             {{-- <x-keuangan.5 :inputan="$inputan"/> --}}
 
-                            <x-button-submit />
+                            <x-button-submit :back="false" next='pelayanan' />
                         </form>
                     </div>
                 </div>

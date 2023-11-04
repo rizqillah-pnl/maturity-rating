@@ -25,12 +25,12 @@
                     <div class="col-12">
                         <form action="{{ url('lingkungan') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <x-button-submit />
+                            <x-button-submit back="inovasi" :next="false" />
 
                             <x-lingkungan.1 :inputan="$inputan" />
                             <x-lingkungan.2 :inputan="$inputan" />
 
-                            <x-button-submit />
+                            <x-button-submit back="inovasi" :next="false" />
                         </form>
                     </div>
                 </div>

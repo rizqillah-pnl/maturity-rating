@@ -25,7 +25,7 @@
                     <div class="col-12">
                         <form action="{{ url('tata_kk') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <x-button-submit />
+                            <x-button-submit back="kapabilitas_internal" next='inovasi' />
 
                             <x-tata_kk.1 :inputan="$inputan" />
                             <x-tata_kk.2 :inputan="$inputan" />
@@ -33,7 +33,7 @@
                             <x-tata_kk.4 :inputan="$inputan" />
                             <x-tata_kk.5 :inputan="$inputan" />
 
-                            <x-button-submit />
+                            <x-button-submit back="kapabilitas_internal" next='inovasi' />
                         </form>
                     </div>
                 </div>

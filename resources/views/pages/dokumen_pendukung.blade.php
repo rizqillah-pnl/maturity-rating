@@ -78,7 +78,7 @@
                                         @endphp
 
                                         @foreach ($aspek_maturity as $index => $row)
-                                            <div class="col-4">
+                                            <div class="col-12 col-sm-6 col-lg-4">
                                                 <div class="card card-{{ $color[$index] }}"
                                                     style="max-height: 1000px; overflow-y: auto;">
                                                     <div class="card-header">

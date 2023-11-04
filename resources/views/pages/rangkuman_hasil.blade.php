@@ -138,7 +138,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-12 col-sm-6 col-lg-3 mb-5">
                                         <h6 style="text-decoration: underline; font-weight: bold">ASPEK</h6>
                                         @foreach ($aspek_maturity as $index => $row)
                                             <div class="mb-3 mt-2">
@@ -146,7 +146,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-12 col-sm-6 col-lg-3 mb-5">
                                         <h6 style="text-decoration: underline; font-weight: bold">BOBOT PENILAIAN</h6>
                                         @foreach ($aspek_maturity as $index => $row)
                                             <div class="mb-3 mt-2">
@@ -154,7 +154,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-12 col-sm-6 col-lg-3 mb-5">
                                         <h6 style="text-decoration: underline; font-weight: bold">TINGKAT MATURITAS</h6>
                                         @php
                                             $maturity = 0;
@@ -169,7 +169,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-12 col-sm-6 col-lg-3 mb-5">
                                         <h6 style="text-decoration: underline; font-weight: bold">TINGKAT MATURITAS BLU</h6>
                                         <div class="mb-3 mt-2 border p-5 text-center bg-{{ $color[$maturity > 1 ? round($maturity) - 1 : 0] }}"
                                             style="font-weight: bold;">
@@ -179,7 +179,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mt-5" style="font-weight: bold;">
+                                <div class="row" style="font-weight: bold;">
                                     <p>Tingkat Maturity(Kematangan) BLU Organisasi Anda dinyatakan
                                         @if ($maturity >= 3)
                                             <span class="text-success">Sudah Siap!</span>
