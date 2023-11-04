@@ -91,14 +91,14 @@ class DashboardController extends Controller
 
     public function clear_all()
     {
-        VariabelIndikator::truncate();
-        KomponenHasil::truncate();
-        InputanMaturity::truncate();
-        $dok = DokumenPendukung::all();
+        VariabelIndikator::where('user_id', auth()->user()->id);
+        KomponenHasil::where('user_id', auth()->user()->id);
+        InputanMaturity::where('user_id', auth()->user()->id);
+        $dok = DokumenPendukung::where('user_id', auth()->user()->id)->get();
         foreach ($dok as $row) {
             Storage::delete($row->files);
         }
-        DokumenPendukung::truncate();
+        DokumenPendukung::where('user_id', auth()->user()->id);
         return redirect()->back()->with('success', 'Berhasil Menghapus Seluruh Data!');
     }
 
@@ -113,12 +113,15 @@ class DashboardController extends Controller
                 $model->where('user_id', auth()->user()->id);
             }, 'variabel_indikator' => function ($model) {
                 $model->where('user_id', auth()->user()->id);
+            }, 'komponen_hasil' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
             }]);
         }])->get();
 
+        // SHEET FOR DATA AND VARIABLE
         $sheet = $spreadsheet->getActiveSheet();
-
         foreach ($data as $index => $row) {
+            // SHEET CONFIG
             $sheet
                 ->getColumnDimension('A')
                 ->setWidth(5);
@@ -127,7 +130,7 @@ class DashboardController extends Controller
                 ->setWidth(14);
             $sheet
                 ->getColumnDimension('C')
-                ->setWidth(18);
+                ->setWidth(25);
             $sheet
                 ->getColumnDimension('D')
                 ->setWidth(14);
@@ -145,34 +148,14 @@ class DashboardController extends Controller
                 ->setWidth(25);
             $sheet
                 ->getColumnDimension('I')
-                ->setWidth(15);
-            $sheet
-                ->getColumnDimension('J')
-                ->setWidth(18);
-            $sheet
-                ->getColumnDimension('K')
-                ->setWidth(18);
-            $sheet
-                ->getColumnDimension('L')
-                ->setWidth(18);
-            $sheet
-                ->getColumnDimension('M')
-                ->setWidth(18);
-            $sheet
-                ->getColumnDimension('N')
-                ->setWidth(18);
-            $sheet
-                ->getColumnDimension('O')
-                ->setWidth(18);
-            $sheet
-                ->getColumnDimension('P')
-                ->setWidth(18);
+                ->setWidth(30);
+
 
             // SET HEADER
-            $sheet->mergeCells('A1:H1');
+            $sheet->mergeCells('A1:I1');
             $sheet->setCellValue('A1', ($index + 1) . ". ASPEK "  . strtoupper($row->nama_aspek));
             $sheet->setCellValue('A2', "Bobot =  " . $row->bobot . '%');
-            $sheet->mergeCells('A2:H2');
+            $sheet->mergeCells('A2:I2');
 
             // ADD DATA
             $sheet
@@ -185,7 +168,8 @@ class DashboardController extends Controller
                 ->setCellValue('F5', 'Nilai Variabel')
                 ->setCellValue('G4', 'Input Maturity')
                 ->setCellValue('G5', 'Nama Inputan')
-                ->setCellValue('H5', 'Nilai Inputan');
+                ->setCellValue('H5', 'Nilai Inputan')
+                ->setCellValue('I4', 'Dokumen Pendukung');
 
             $sheet->mergeCells('A4:A5');
             $sheet->mergeCells('B4:B5');
@@ -193,10 +177,12 @@ class DashboardController extends Controller
             $sheet->mergeCells('D4:D5');
             $sheet->mergeCells('E4:F4');
             $sheet->mergeCells('G4:H4');
-            $sheet->getStyle('A1:H5')->getFont()->setBold(true);
+            $sheet->mergeCells('I4:I5');
+            $sheet->getStyle('A1:I5')->getFont()->setBold(true);
 
             $cell = 6;
             $cell2 = $cell;
+            $cell3 = $cell;
             $old_cell = $cell;
             // INSERT DATA
             foreach ($row->indikator_maturity as $index2 => $row2) {
@@ -229,8 +215,31 @@ class DashboardController extends Controller
                     }
                 }
 
+                // DOKUMEN PENDUKUNG
+                foreach ($row2->dokumen_pendukung as $index5 => $row5) {
+                    $sheet
+                        ->setCellValue("I{$cell3}", ($row5->real_name) ? $row5->real_name : '-');
+                    $sheet->getCell("I{$cell3}")->getHyperlink()->setUrl(url('/storage') . '/' . $row5->files);
+
+                    if (!(($index5 + 1) == count($row2->dokumen_pendukung))) {
+                        $cell3 += 1;
+                    }
+                }
+
+
+                // KOMPONEN HASIL
+                $rata_rata = 0;
+                foreach ($row2->komponen_hasil as $row6) {
+                    $rata_rata += ($row6->nilai) ? $row6->nilai : 0;
+                    $sheet
+                        ->setCellValue("D{$old_cell}", $rata_rata);
+                }
+
                 if ($cell <= $cell2) {
                     $cell = $cell2;
+                }
+                if ($cell <= $cell3) {
+                    $cell = $cell3;
                 }
 
 
@@ -242,11 +251,12 @@ class DashboardController extends Controller
                 // INCREMENT AND SET VALUE
                 $cell += 1;
                 $cell2 += 1;
+                $cell3 += 1;
                 $old_cell = $cell;
 
 
                 // TABEL BORDER
-                $sheet->getStyle("A4:H" . $cell - 1)
+                $sheet->getStyle("A4:I" . $cell - 1)
                     ->getBorders()
                     ->getAllBorders()
                     ->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN)
@@ -270,10 +280,124 @@ class DashboardController extends Controller
             $spreadsheet->getActiveSheet()->getStyle('B')->getAlignment()->setVertical('center');
             $spreadsheet->getActiveSheet()->getStyle('C')->getAlignment()->setVertical('center');
 
-            $spreadsheet->getActiveSheet()->getStyle('A1:H5')->getAlignment()->setVertical('center');
-            $spreadsheet->getActiveSheet()->getStyle('A1:H5')->getAlignment()->setHorizontal('center');
+            $spreadsheet->getActiveSheet()->getStyle('A1:I5')->getAlignment()->setVertical('center');
+            $spreadsheet->getActiveSheet()->getStyle('A1:I5')->getAlignment()->setHorizontal('center');
         }
 
+
+        // NEW SHEET FOR RANGKUMAN HASIL
+        $sheet = $spreadsheet->createSheet();
+
+        // CONFIG
+        $sheet
+            ->getColumnDimension('A')
+            ->setWidth(5);
+        $sheet
+            ->getColumnDimension('B')
+            ->setWidth(35);
+        $sheet
+            ->getColumnDimension('C')
+            ->setWidth(13);
+        $sheet
+            ->getColumnDimension('D')
+            ->setWidth(35);
+        $sheet
+            ->getColumnDimension('E')
+            ->setWidth(15);
+        $sheet
+            ->getColumnDimension('F')
+            ->setWidth(15);
+
+
+        $sheet->mergeCells('A1:F1');
+        $sheet->setCellValue('A1', "RANGKUMAN HASIL MATURITY BLU - " . strtoupper(auth()->user()->nama));
+        $sheet->mergeCells('A2:F2');
+
+        // GET DATA
+        $aspek_maturity = AspekMaturity::with(['indikator_maturity' => function ($model) {
+            $model->with(['komponen_hasil' => function ($model) {
+                $model->where('user_id', auth()->user()->id);
+            }]);
+        }])->get();
+
+        // ADD DATA
+        $sheet
+            ->setCellValue('A4', 'No')
+            ->setCellValue('B4', 'Nama Aspek')
+            ->setCellValue('C4', 'Bobot Aspek')
+            ->setCellValue('D4', 'Nama Indikator')
+            ->setCellValue('E4', 'Rata-rata Indikator')
+            ->setCellValue('F4', 'Nilai Indikator');
+
+        $sheet->getStyle('A1:F4')->getFont()->setBold(true);
+
+        $cell = 5;
+        $old_cell = $cell;
+
+        // INSERT DATA
+        $maturity = 0;
+        foreach ($aspek_maturity as $index => $row) {
+            // INDIKATOR MATURITY
+            $sheet
+                ->setCellValue("A{$cell}", $index + 1)
+                ->setCellValue("B{$cell}", $row->kode_aspek . ' ' . $row->nama_aspek)
+                ->setCellValue("C{$cell}", $row->bobot . '%');
+
+            // VARIABEL MATURITY
+            $rata_rata = 0;
+            foreach ($row->indikator_maturity as $index2 => $row2) {
+                $komponen_hasil = (count($row2->komponen_hasil) > 0) ? $row2->komponen_hasil : 0;
+                $komponen_hasil = ($komponen_hasil !== 0) ? $komponen_hasil[0]->nilai : 0;
+                $rata_rata += $komponen_hasil;
+
+                $sheet
+                    ->setCellValue("D{$cell}", $row2->kode_indikator . ' ' . $row2->nama_indikator)
+                    ->setCellValue("F{$cell}", $komponen_hasil);
+
+                if (!(($index2 + 1) == count($row->indikator_maturity))) {
+                    $cell += 1;
+                }
+            }
+            // GET AVG OF MATURITY
+            $rata_rata = $rata_rata / count($row->indikator_maturity);
+            $sheet->setCellValue("E" . $old_cell, $rata_rata);
+
+            // GET MATURITY RATING
+            $maturity +=  $rata_rata * ($row->bobot / 100);
+
+            $sheet->mergeCells('A' . $old_cell . ':A' . $cell);
+            $sheet->mergeCells('B' . $old_cell . ':B' . $cell);
+            $sheet->mergeCells('C' . $old_cell . ':C' . $cell);
+            $sheet->mergeCells('D' . $old_cell . ':D' . $cell);
+            $sheet->mergeCells('E' . $old_cell . ':E' . $cell);
+
+            // INCREMENT AND SET VALUE
+            $cell += 1;
+            $old_cell = $cell;
+
+            // TABEL BORDER
+            $sheet->getStyle("A4:F" . $cell - 1)
+                ->getBorders()
+                ->getAllBorders()
+                ->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN)
+                ->setColor(new \PhpOffice\PhpSpreadsheet\Style\Color('000'));
+        }
+
+        $sheet->setCellValue("A" . $cell + 2, "Hasil Maturity : " . $maturity . ' atau ' . (($maturity / 5) * 100) . '%');
+        $sheet->mergeCells('A' . $cell + 2 . ':F' . $cell + 2);
+
+        $matang = ($maturity >= 3) ? 'Sudah Siap!' : 'Belum Siap!';
+        $sheet->setCellValue("A" . $cell + 3, "Tingkat Maturity(Kematangan) BLU Organisasi Anda dinyatakan : " . $matang);
+        $sheet->mergeCells('A' . $cell + 3 . ':F' . $cell + 3);
+
+        $sheet->getStyle('A' . $cell + 2 . ':F' . $cell + 3)->getFont()->setBold(true);
+
+        $spreadsheet->getActiveSheet()->getStyle('A1:F' . $cell)->getAlignment()->setVertical('center');
+        $spreadsheet->getActiveSheet()->getStyle('A1:F4')->getAlignment()->setHorizontal('center');
+        $spreadsheet->getActiveSheet()->getStyle('A')->getAlignment()->setHorizontal('center');
+        $spreadsheet->getActiveSheet()->getStyle('C')->getAlignment()->setHorizontal('center');
+        $spreadsheet->getActiveSheet()->getStyle('E')->getAlignment()->setHorizontal('center');
+        $spreadsheet->getActiveSheet()->getStyle('F')->getAlignment()->setHorizontal('center');
 
 
         // Print Out

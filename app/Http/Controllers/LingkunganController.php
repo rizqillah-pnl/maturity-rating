@@ -18,7 +18,7 @@ class LingkunganController extends Controller
      */
     public function index()
     {
-        $inputan = InputanMaturity::where('aspek_maturity_id', 'LI')->get();
+        $inputan = InputanMaturity::where('aspek_maturity_id', 'LI')->where('user_id', auth()->user()->id)->get();
         $new_inputan = [];
         foreach ($inputan as $index => $row) {
             $new_inputan[$row->inputan] = $row->nilai;
@@ -47,24 +47,24 @@ class LingkunganController extends Controller
     {
         // Menginput Nilai Variabel Awal
         InputanMaturity::upsert([
-            ['indikator_maturity_id' => 'LI.1', 'inputan' => 'indikator11', 'tipe_inputan' => 'li_indikator11', 'nilai' => $request->indikator11, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
-            ['indikator_maturity_id' => 'LI.1', 'inputan' => 'indikator12', 'tipe_inputan' => 'li_indikator12', 'nilai' => $request->indikator12, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
-            ['indikator_maturity_id' => 'LI.1', 'inputan' => 'indikator13', 'tipe_inputan' => 'li_indikator13', 'nilai' => $request->indikator13, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
-            ['indikator_maturity_id' => 'LI.2', 'inputan' => 'indikator21', 'tipe_inputan' => 'li_indikator21', 'nilai' => $request->indikator21, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
-            ['indikator_maturity_id' => 'LI.2', 'inputan' => 'indikator22', 'tipe_inputan' => 'li_indikator22', 'nilai' => $request->indikator22, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
-            ['indikator_maturity_id' => 'LI.2', 'inputan' => 'indikator23', 'tipe_inputan' => 'li_indikator23', 'nilai' => $request->indikator23, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
+            ['indikator_maturity_id' => 'LI.1', 'inputan' => 'indikator11', 'tipe_inputan' => 'li_indikator11' . auth()->user()->id, 'nilai' => $request->indikator11, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
+            ['indikator_maturity_id' => 'LI.1', 'inputan' => 'indikator12', 'tipe_inputan' => 'li_indikator12' . auth()->user()->id, 'nilai' => $request->indikator12, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
+            ['indikator_maturity_id' => 'LI.1', 'inputan' => 'indikator13', 'tipe_inputan' => 'li_indikator13' . auth()->user()->id, 'nilai' => $request->indikator13, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
+            ['indikator_maturity_id' => 'LI.2', 'inputan' => 'indikator21', 'tipe_inputan' => 'li_indikator21' . auth()->user()->id, 'nilai' => $request->indikator21, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
+            ['indikator_maturity_id' => 'LI.2', 'inputan' => 'indikator22', 'tipe_inputan' => 'li_indikator22' . auth()->user()->id, 'nilai' => $request->indikator22, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
+            ['indikator_maturity_id' => 'LI.2', 'inputan' => 'indikator23', 'tipe_inputan' => 'li_indikator23' . auth()->user()->id, 'nilai' => $request->indikator23, 'aspek_maturity_id' => 'LI', 'user_id' => auth()->user()->id],
         ], ['tipe_inputan', 'indikator_maturity_id'], ['nilai']);
 
 
         // INDIKATOR LI.1
         $li1 = intval(round(($request->indikator11 + $request->indikator12 + $request->indikator13) / 3));
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.1', 'variabel' => 'li1', 'hasil' => $li1, 'variabel_fullname' => 'LI.1 - Environmental Footprint Management', 'user_id' => auth()->user()->id], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.1', 'variabel' => 'li1' . auth()->user()->id, 'hasil' => $li1, 'variabel_fullname' => 'LI.1 - Environmental Footprint Management', 'user_id' => auth()->user()->id], ['variabel', 'indikator_maturity_id']);
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'LI.1', 'indikator' => 'li.1' . auth()->user()->id, 'nilai' => $li1, 'user_id' => auth()->user()->id], ['indikator', 'user_id', 'indikator_maturity_id']);
 
         // INDIKATOR LI.2
         $li2 = intval(round(($request->indikator21 + $request->indikator22 + $request->indikator23) / 3));
-        VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.2', 'variabel' => 'li2', 'hasil' => $li2, 'variabel_fullname' => 'LI.2 - Penggunaan Sumber Daya', 'user_id' => auth()->user()->id], ['variabel', 'indikator_maturity_id']);
+        VariabelIndikator::upsert(['indikator_maturity_id' => 'LI.2', 'variabel' => 'li2' . auth()->user()->id, 'hasil' => $li2, 'variabel_fullname' => 'LI.2 - Penggunaan Sumber Daya', 'user_id' => auth()->user()->id], ['variabel', 'indikator_maturity_id']);
 
         KomponenHasil::upsert(['indikator_maturity_id' => 'LI.2', 'indikator' => 'li.2' . auth()->user()->id, 'nilai' => $li2, 'user_id' => auth()->user()->id], ['indikator', 'user_id', 'indikator_maturity_id']);
 
