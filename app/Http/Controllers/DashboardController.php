@@ -300,10 +300,10 @@ class DashboardController extends Controller
             ->setWidth(13);
         $sheet
             ->getColumnDimension('D')
-            ->setWidth(35);
+            ->setWidth(18);
         $sheet
             ->getColumnDimension('E')
-            ->setWidth(15);
+            ->setWidth(35);
         $sheet
             ->getColumnDimension('F')
             ->setWidth(15);
@@ -325,8 +325,8 @@ class DashboardController extends Controller
             ->setCellValue('A4', 'No')
             ->setCellValue('B4', 'Nama Aspek')
             ->setCellValue('C4', 'Bobot Aspek')
-            ->setCellValue('D4', 'Nama Indikator')
-            ->setCellValue('E4', 'Rata-rata Indikator')
+            ->setCellValue('D4', 'Rata-rata Indikator')
+            ->setCellValue('E4', 'Nama Indikator')
             ->setCellValue('F4', 'Nilai Indikator');
 
         $sheet->getStyle('A1:F4')->getFont()->setBold(true);
@@ -351,7 +351,7 @@ class DashboardController extends Controller
                 $rata_rata += $komponen_hasil;
 
                 $sheet
-                    ->setCellValue("D{$cell}", $row2->kode_indikator . ' ' . $row2->nama_indikator)
+                    ->setCellValue("E{$cell}", $row2->kode_indikator . ' ' . $row2->nama_indikator)
                     ->setCellValue("F{$cell}", $komponen_hasil);
 
                 if (!(($index2 + 1) == count($row->indikator_maturity))) {
@@ -360,7 +360,7 @@ class DashboardController extends Controller
             }
             // GET AVG OF MATURITY
             $rata_rata = $rata_rata / count($row->indikator_maturity);
-            $sheet->setCellValue("E" . $old_cell, $rata_rata);
+            $sheet->setCellValue("D" . $old_cell, $rata_rata);
 
             // GET MATURITY RATING
             $maturity +=  $rata_rata * ($row->bobot / 100);
@@ -369,7 +369,6 @@ class DashboardController extends Controller
             $sheet->mergeCells('B' . $old_cell . ':B' . $cell);
             $sheet->mergeCells('C' . $old_cell . ':C' . $cell);
             $sheet->mergeCells('D' . $old_cell . ':D' . $cell);
-            $sheet->mergeCells('E' . $old_cell . ':E' . $cell);
 
             // INCREMENT AND SET VALUE
             $cell += 1;
@@ -396,7 +395,7 @@ class DashboardController extends Controller
         $spreadsheet->getActiveSheet()->getStyle('A1:F4')->getAlignment()->setHorizontal('center');
         $spreadsheet->getActiveSheet()->getStyle('A')->getAlignment()->setHorizontal('center');
         $spreadsheet->getActiveSheet()->getStyle('C')->getAlignment()->setHorizontal('center');
-        $spreadsheet->getActiveSheet()->getStyle('E')->getAlignment()->setHorizontal('center');
+        $spreadsheet->getActiveSheet()->getStyle('D')->getAlignment()->setHorizontal('center');
         $spreadsheet->getActiveSheet()->getStyle('F')->getAlignment()->setHorizontal('center');
 
 
