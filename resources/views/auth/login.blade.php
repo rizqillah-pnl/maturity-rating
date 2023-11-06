@@ -78,6 +78,11 @@
                                     Show Password
                                 </label>
                             </div>
+                            <div class="flex items-center">
+                                <p class="register-btn">Belum Punya Akun? <a href="{{ url('register') }}"
+                                        class="btn-link">Register</a>
+                                </p>
+                            </div>
                         </div>
                         <div class="mt-4">
                             <button type="submit"

@@ -57,4 +57,6 @@ Route::middleware('auth')->prefix('/')->group(function () {
 Route::prefix('/')->middleware('guest')->group(function () {
   Route::get('/login', [AuthController::class, 'index'])->name('login');
   Route::post('/login', [AuthController::class, 'login']);
+  Route::get('/register', [AuthController::class, 'register'])->name('register');
+  Route::post('/register', [AuthController::class, 'store']);
 });

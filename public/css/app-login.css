@@ -290,3 +290,22 @@ textarea::placeholder {
 .disabled\:opacity-25:disabled {
     opacity: 0.25;
 }
+
+/* Define the styles for the button link */
+.btn-link {
+    /* Button background color */
+    color: #1638fa;
+    /* Text color */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover state styles for the button link */
+.btn-link:hover {
+    text-decoration: underline;
+    /* Change background color on hover */
+}
+
+.register-btn {
+    font-size: 0.8em;
+}
