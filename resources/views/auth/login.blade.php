@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <title>{{ $title }} | Maturity Rating</title>
+    <title>{{ $title }} | Maturity Rating Kesiapan BLU</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app-login.css') }}">
@@ -29,7 +29,7 @@
                 <div class="absolute triangle  min-h-screen right-0 w-16" style=""></div>
                 <a href="https://github.com/rizqillah-pnl" target="_blank" title="RIZQILLAH"
                     class="flex absolute top-5 text-center text-gray-100 focus:outline-none">
-                    <p class="text-xl ml-3">Maturity Rating | PNL</p>
+                    <p class="text-xl ml-3">Maturity Rating Kesiapan BLU | PNL</p>
                 </a>
             </div>
 

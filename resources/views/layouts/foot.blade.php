@@ -1,6 +1,7 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023-{{ date('Y') }} <a href="{{ url('/') }}">Maturity Rating</a> & <a
-            href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2023{{ date('Y') > 2023 ? '-' . date('Y') : '' }} <a href="{{ url('/') }}">Maturity
+            Rating
+            Kesiapan BLU</a> & <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
         <b>Version 1.0</b>
