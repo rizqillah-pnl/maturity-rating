@@ -47,8 +47,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="text-center mb-4" style="font-weight: bold;">RANGKUMAN HASIL PENILAIAN ASPEK
-                                    MATURITAS
-                                    BLU</h5>
+                                    MATURITAS KESIAPAN BLU</h5>
                                 <div class="row">
                                     @php
                                         $arr_aspek_maturity = [];
@@ -134,7 +133,8 @@
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="text-center mb-4" style="font-weight: bold;">DETAIL PERHITUNGAN MATURITAS</h5>
+                                <h5 class="text-center mb-4" style="font-weight: bold;">DETAIL PERHITUNGAN MATURITAS
+                                    KESIAPAN BLU</h5>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -170,7 +170,8 @@
                                         @endforeach
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mb-5">
-                                        <h6 style="text-decoration: underline; font-weight: bold">TINGKAT MATURITAS BLU</h6>
+                                        <h6 style="text-decoration: underline; font-weight: bold">MATURITY RATING KESIAPAN
+                                            BLU</h6>
                                         <div class="mb-3 mt-2 border p-5 text-center bg-{{ $color[$maturity > 1 ? round($maturity) - 1 : 0] }}"
                                             style="font-weight: bold;">
                                             <span style="font-size: 50px;">{{ number_format($maturity, 2) }}</span>
@@ -180,7 +181,7 @@
                                     </div>
                                 </div>
                                 <div class="row" style="font-weight: bold;">
-                                    <p>Tingkat Maturity(Kematangan) BLU Organisasi Anda dinyatakan
+                                    <p>Tingkat Maturity Rating Kesiapan BLU Organisasi Anda dinyatakan
                                         @if ($maturity >= 3)
                                             <span class="text-success">Sudah Siap!</span>
                                         @else
